@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Semilla Tienda Natural</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+
+    <!-- 1. Barra de aviso superior -->
+    <div class="top-bar">
+        Envíos a todo Catamarca y el NOA
+    </div>
+
+    <!-- 2. Header Principal -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logosemilla.png') }}" alt="Semilla Tienda Natural">
+        </div>
+
+        <form action="/compras" method="get" class="search-container" style="position:relative; flex-direction:column;">
+            <div style="display:flex; width:100%;">
+                <input type="text" name="q" id="search-input" placeholder="¿Qué estás buscando?" autocomplete="off">
+                <button type="submit" class="search-btn">🔍</button>
+            </div>
+            <div id="autocomplete-lista" class="autocomplete-lista" style="display:none;"></div>
+        </form>
+
+        <div class="header-icons">
+            <a href="#" class="icon-btn"><span>♡</span> FAVORITOS</a>
+            <button class="icon-btn" onclick="toggleCarrito()">
+                <span>🛒</span> CARRITO <span id="cart-count" class="badge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. Sub-navegación -->
+    <nav class="nav-sub-bar">
+        <div class="nav-container">
+            <div class="nav-main-buttons">
+                <div class="dropdown">
+                    <button class="nav-item active-gray">☰ CATEGORIAS</button>
+                    <div class="dropdown-content">
+
+                        <!-- FRUTOS SECOS -->
+                        <div class="submenu-container">
+                            <a href="/compras?q=Frutos+Secos" class="parent-link">
+                                Frutos Secos <span class="arrow">›</span>
+                            </a>
+                            <div class="submenu-content">
+                                <a href="/compras?q=Mix+de+Frutos+Secos">Mix de Frutos Secos</a>
+                                <a href="/compras?q=Castañas+de+Caju">Castañas de Cajú</a>
+                                <a href="/compras?q=Pistachos">Pistachos</a>
+                                <a href="/compras?q=Almendras">Almendras</a>
+                                <a href="/compras?q=Nueces">Nueces</a>
+                                <a href="/compras?q=Otros+Frutos+Secos">Otros Frutos Secos</a>
+                                <a href="/compras?q=Frutos+Secos" style="border-top: 1px solid #eee; font-weight: bold;">Todos los Frutos Secos</a>
+                            </div>
+                        </div>
+
+                        <!-- FRUTAS DESHIDRATADAS -->
+                        <div class="submenu-container">
+                            <a href="/compras?q=Frutas+Deshidratadas" class="parent-link">
+                                Frutas Deshidratadas <span class="arrow">›</span>
+                            </a>
+                            <div class="submenu-content">
+                                <a href="/compras?q=Higos">Higos</a>
+                                <a href="/compras?q=Ciruelas">Ciruelas</a>
+                                <a href="/compras?q=Dátiles">Dátiles</a>
+                                <a href="/compras?q=Pasas+de+Uva">Pasas de Uva</a>
+                                <a href="/compras?q=Frutas+Deshidratadas" style="border-top: 1px solid #eee; font-weight: bold;">Ver Todo</a>
+                            </div>
+                        </div>
+
+                        <!-- GRANOLAS -->
+                        <a href="/compras?cat=Granolas">Granolas</a>
+
+                        <!-- HARINAS -->
+                        <div class="submenu-container">
+                            <a href="/compras?q=Harinas" class="parent-link">
+                                Harinas <span class="arrow">›</span>
+                            </a>
+                            <div class="submenu-content">
+                                <a href="/compras?q=Harina+Trigo">Trigo</a>
+                                <a href="/compras?q=Harina+Frutos+Secos">Frutos Secos</a>
+                                <a href="/compras?q=Harina+Semillas">Semillas</a>
+                                <a href="/compras?q=Harina+Cereales">Cereales</a>
+                                <a href="/compras?q=Harina+Legumbres">Legumbres</a>
+                                <a href="/compras?q=Harina+Otras">Otras</a>
+                                <a href="/compras?q=SIN+TACC">Sin TACC</a>
+                                <a href="/compras?q=Harinas" style="border-top: 1px solid #eee; font-weight: bold;">Ver Todas las Harinas</a>
+                            </div>
+                        </div>
+
+                        <!-- ALMACÉN -->
+                        <a href="/compras?q=Almacen">Almacén <span>›</span></a>
+
+                        <!-- DESAYUNO -->
+                        <div class="submenu-container">
+                            <a href="/compras?q=Desayuno" class="parent-link">
+                                Desayuno <span class="arrow">›</span>
+                            </a>
+                            <div class="submenu-content">
+                                <a href="/compras?subcat=Almohaditas+de+Avena">Almohaditas de Avena</a>
+                                <a href="/compras?subcat=Almohaditas+de+Arroz">Almohaditas de Arroz</a>
+                                <a href="/compras?subcat=Ositos">Ositos</a>
+                                <a href="/compras?subcat=Copos+de+Maíz">Copos de Maíz</a>
+                                <a href="/compras?subcat=Tutucas">Tutucas</a>
+                                <a href="/compras?subcat=Otros+Cereales">Otros Cereales</a>
+                                <a href="/compras?q=Desayuno" style="border-top: 1px solid #eee; font-weight: bold;">Ver Todo</a>
+                            </div>
+                        </div>
+
+                        <!-- SUPLEMENTOS -->
+                        <a href="/compras?q=Suplementos">Suplementos</a>
+
+                        <!-- TÉS E INFUSIONES -->
+                        <a href="/compras?cat=Tés e Infusiones">Tés e Infusiones</a>
+
+                        <!-- ARROCES -->
+                        <div class="submenu-container">
+                            <a href="/compras?q=Arroces" class="parent-link">
+                                Arroces <span class="arrow">›</span>
+                            </a>
+                            <div class="submenu-content">
+                                <a href="/compras?q=Arroz+Yamani">Arroz Yamani</a>
+                                <a href="/compras?q=Arroz+Integral">Arroz Integral</a>
+                                <a href="/compras?q=Arroz+Koshihikari">Arroz Koshihikari</a>
+                                <a href="/compras?q=Arroces" style="border-top: 1px solid #eee; font-weight: bold;">Ver Todos los Arroces</a>
+                            </div>
+                        </div>
+
+                        <!-- CEREALES Y LEGUMBRES -->
+                        <div class="submenu-container">
+                            <a href="/compras?q=Cereales+y+Legumbres" class="parent-link">
+                                Cereales y Legumbres <span class="arrow">›</span>
+                            </a>
+                            <div class="submenu-content">
+                                <a href="/compras?subcat=Legumbres">Legumbres</a>
+                                <a href="/compras?subcat=Cereales">Cereales</a>
+                                <a href="/compras?subcat=Maní">Maní</a>
+                                <a href="/compras?q=Cereales+y+Legumbres" style="border-top: 1px solid #eee; font-weight: bold;">Ver Todo</a>
+                            </div>
+                        </div>
+
+                        <a href="/compras?cat=Aceites">Aceites</a>
+                        <a href="/compras?cat=Vinagres">Vinagres</a>
+                        <a href="/compras?cat=Salsas">Salsas</a>
+                        <a href="/compras?cat=Pastas Untables">Pastas Untables</a>
+                        <a href="/compras?q=Semillas">Semillas</a>
+                        <a href="/compras?q=Cosmetica">Cosmética Natural <span>›</span></a>
+                        <a href="/compras?cat=Chocolatería">Chocolatería</a>
+                        <a href="/compras?cat=Hierbas Medicinales">Hierbas Medicinales</a>
+                        <a href="/compras?q=Regionales">Regionales</a>
+                        <a href="/compras?q=Vinos">Vinos</a>
+
+                    </div>
+                </div>
+                <a href="/compras" class="nav-item">PRODUCTOS</a>
+            </div>
+
+            <div class="nav-secondary-links">
+                <a href="/compras?q=Ofertas">OFERTAS</a>
+                <a href="#">NOVEDADES</a>
+                <a href="#quienes-somos">QUIÉNES SOMOS</a>
+                <a href="#contacto">CONTACTO</a>
+                <a href="#seccion-mapa">UBICACIÓN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 4. Hero Image -->
+    <div class="hero-container">
+        <img src="{{ url_for('static', filename='baner.jpeg') }}" alt="Semilla Tienda Natural - Alimentación Consciente" class="hero-image">
+    </div>
+
+    <!-- 5. Quiénes Somos -->
+    <section id="quienes-somos" class="seccion-bio">
+        <div class="bio-contenido">
+            <h2>Quienes Somos</h2>
+            <p>
+                En el corazón de <strong>Andalgalá</strong>, nace <strong>Semilla Tienda Natural</strong> como un proyecto familiar dedicado a promover el bienestar y la alimentación consciente.
+                Surgimos con el propósito de acercar a nuestra comunidad productos naturales de alta calidad, desde frutos secos y harinas integrales hasta suplementos y cosmética natural.
+            </p>
+            <p>
+                Creemos que comer sano es el primer paso para una vida equilibrada. Por eso, seleccionamos cuidadosamente cada producto de nuestro almacén, priorizando la frescura y el origen natural para que cada vecino encuentre aquí una opción saludable para su mesa.
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. Contacto -->
+    <section id="contacto" class="contacto-box">
+        <div class="bio-contenido">
+            <h2>Contacto</h2>
+        </div>
+        <p>📞 +54 9 3515 13 0094</p>
+        <p>📸 Instagram: <a href="https://instagram.com/semillatiendanatural/" target="_blank">@semillatiendanatural</a></p>
+        <p>✉️ Mail: semilla.tiendanatural@gmail.com</p>
+        <hr>
+        <a href="/compras" class="btn-comprar">Ver Productos / Comprar</a>
+    </section>
+
+    <!-- 7. Ubicación -->
+    <section id="seccion-mapa" class="seccion-ubicacion">
+        <div class="bio-contenido">
+            <h2>Nuestra Ubicación</h2>
+        </div>
+        <p>Te esperamos en <strong>Nuñez del Prado 136, Andalgalá, Catamarca</strong></p>
+        <div class="mapa-contenedor">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.3836223913345!2d-66.32026692473907!3d-27.581633776254808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94211408d0c7386b%3A0x66710913f82fe992!2sC%2F%20Nu%C3%B1ez%20del%20Prado%20136%2C%20K5319%20Andalgal%C3%A1%2C%20Catamarca!5e0!3m2!1ses!2sar!4v1776724708746!5m2!1ses!2sar"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- 8. Carrito Lateral -->
+    <div id="carrito-lateral" class="carrito-panel">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="close-btn" onclick="toggleCarrito()">×</button>
+        </div>
+        <div id="carrito-items" class="carrito-body">
+            <!-- Los productos se cargarán aquí con JS -->
+        </div>
+        <div class="carrito-footer">
+            <p style="font-size: 18px; font-weight: bold;">Total: $<span id="carrito-total">0</span></p>
+            <button class="checkout-btn" onclick="enviarWhatsApp()">📲 Finalizar por WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- 9. Scripts -->
+    <script>
+        // --- AUTOCOMPLETADO ---
+        const searchInput = document.getElementById('search-input');
+        const lista = document.getElementById('autocomplete-lista');
+        let timeoutId;
+
+        searchInput.addEventListener('input', () => {
+            clearTimeout(timeoutId);
+            const q = searchInput.value.trim();
+
+            if (q.length < 1) {
+                lista.style.display = 'none';
+                return;
+            }
+
+            timeoutId = setTimeout(() => {
+                fetch(`/buscar?q=${encodeURIComponent(q)}`)
+                    .then(r => r.json())
+                    .then(resultados => {
+                        lista.innerHTML = '';
+                        if (resultados.length === 0) {
+                            lista.innerHTML = '<div class="autocomplete-vacio">Sin resultados</div>';
+                        } else {
+                            resultados.forEach(p => {
+                                const item = document.createElement('div');
+                                item.className = 'autocomplete-item';
+                                item.innerHTML = `
+                                    <span class="autocomplete-nombre">${p.nombre}</span>
+                                    <span class="autocomplete-categoria">${p.categoria}</span>
+                                `;
+                                item.addEventListener('click', () => {
+                                    window.location.href = `/compras?q=${encodeURIComponent(p.nombre)}`;
+                                });
+                                lista.appendChild(item);
+                            });
+                        }
+                        lista.style.display = 'block';
+                    });
+            }, 200);
+        });
+
+        // Cerrar al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !lista.contains(e.target)) {
+                lista.style.display = 'none';
+            }
+        });
+
+        function toggleCarrito() {
+            const lateral = document.getElementById('carrito-lateral');
+            if (!lateral) return;
+            if (lateral.style.right === "") lateral.style.right = "-400px";
+            lateral.style.right = (lateral.style.right === "0px") ? "-400px" : "0px";
+            actualizarInterfaz();
+        }
+
+        function agregarAlCarrito(nombre, precio, presentacion) {
+            let carrito = JSON.parse(localStorage.getItem('carrito_semilla')) || [];
+            const clave = nombre + '|' + presentacion;
+            const index = carrito.findIndex(p => p.clave === clave);
+
+            if (index !== -1) {
+                carrito[index].cantidad++;
+            } else {
+                carrito.push({ clave: clave, nombre: nombre, precio: precio, presentacion: presentacion, cantidad: 1 });
+            }
+
+            localStorage.setItem('carrito_semilla', JSON.stringify(carrito));
+            actualizarInterfaz();
+            const lateral = document.getElementById('carrito-lateral');
+            if (lateral) lateral.style.right = "0px";
+        }
+
+        function actualizarInterfaz() {
+            let carrito = JSON.parse(localStorage.getItem('carrito_semilla')) || [];
+            const contenedor = document.getElementById('carrito-items');
+            const totalTxt = document.getElementById('carrito-total');
+            const badge = document.getElementById('cart-count');
+
+            if (!contenedor) return;
+            contenedor.innerHTML = "";
+            let total = 0;
+            let unidades = 0;
+
+            if (carrito.length === 0) {
+                contenedor.innerHTML = "<p style='text-align:center; padding:20px; color:#999;'>Tu carrito está vacío.</p>";
+            } else {
+                carrito.forEach((item, index) => {
+                    total += item.precio * item.cantidad;
+                    unidades += item.cantidad;
+
+                    contenedor.innerHTML += `
+                        <div class="item-carrito">
+                            <div style="flex-grow: 1;">
+                                <p style="margin: 0; font-size: 14px;"><strong>${item.nombre}</strong></p>
+                                <p style="margin: 0; color: #666; font-size: 12px;">
+                                    ${item.presentacion !== 'unidad' ? item.presentacion + ' — ' : ''}
+                                    ${item.precio > 0 ? '$' + item.precio.toLocaleString('es-AR') : 'A consultar'}
+                                </p>
+                            </div>
+                            <div style="display: flex; align-items: center; background: #f1f1f1; border-radius: 20px; overflow: hidden; margin-left: 10px;">
+                                <button onclick="cambiarCantidad(${index}, -1)" style="border: none; background: #e0e0e0; padding: 5px 10px; cursor: pointer; font-weight: bold;">−</button>
+                                <span style="padding: 0 10px; min-width: 20px; text-align: center; font-size: 14px;">${item.cantidad}</span>
+                                <button onclick="cambiarCantidad(${index}, 1)" style="border: none; background: #e0e0e0; padding: 5px 10px; cursor: pointer; font-weight: bold;">+</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            if (totalTxt) totalTxt.innerText = total.toLocaleString('es-AR');
+            if (badge) badge.innerText = unidades;
+        }
+
+        function cambiarCantidad(index, cambio) {
+            let carrito = JSON.parse(localStorage.getItem('carrito_semilla')) || [];
+            carrito[index].cantidad += cambio;
+            if (carrito[index].cantidad <= 0) {
+                carrito.splice(index, 1);
+            }
+            localStorage.setItem('carrito_semilla', JSON.stringify(carrito));
+            actualizarInterfaz();
+        }
+
+        function enviarWhatsApp() {
+            let carrito = JSON.parse(localStorage.getItem('carrito_semilla')) || [];
+
+            if (carrito.length === 0) {
+                alert("Tu carrito está vacío.");
+                return;
+            }
+
+            let mensaje = "Hola! Quiero hacer un pedido en Semilla Tienda Natural:*\n\n";
+            let total = 0;
+
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                const presentacionLabel = item.presentacion !== 'unidad' ? ` (${item.presentacion})` : '';
+                if (item.precio > 0) {
+                    mensaje += `• ${item.nombre}${presentacionLabel} x${item.cantidad} = $${subtotal.toLocaleString('es-AR')}\n`;
+                } else {
+                    mensaje += `• ${item.nombre}${presentacionLabel} x${item.cantidad} (consultar precio)\n`;
+                }
+            });
+
+            if (total > 0) {
+                mensaje += `\n*Total estimado: $${total.toLocaleString('es-AR')}*`;
+            }
+            mensaje += "\n\n¡Gracias!";
+
+            const numero = "5493515130094";
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,838 @@
+/* --- 1. CONFIGURACIÓN GENERAL --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f7f1; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- 2. HEADER Y TOP BAR --- */
+.top-bar {
+    background-color: #4e3b31;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-header {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 120px;
+}
+
+.search-container {
+    flex-grow: 1;
+    margin: 0 40px;
+    display: flex;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-btn {
+    background: #4a5d33;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #444 !important;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge {
+    background-color: #4a5d33;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 11px;
+}
+
+/* --- 3. NAVEGACIÓN SUB-BAR CENTRADA --- */
+.nav-sub-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1100px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.nav-main-buttons {
+    display: flex;
+    align-items: stretch;
+}
+
+.nav-item {
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #005d49; 
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.active-gray {
+    background-color: #f8f9fa;
+    border-left: 1px solid #f0f0f0;
+}
+
+.nav-secondary-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nav-secondary-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-secondary-links a:hover {
+    color: #005d49;
+}
+
+/* --- 4. DROPDOWNS Y SUBMENÚS --- */
+.dropdown {
+    display: flex;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 250px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 3000;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 20px;
+    color: #005d49;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.submenu-container {
+    position: relative;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 8px 0px 16px rgba(0,0,0,0.1);
+    z-index: 10;
+    border-left: 1px solid #eee;
+}
+
+.submenu-container:hover .submenu-content {
+    display: block;
+}
+
+.parent-link {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    color: #ccc;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.submenu-container:hover .arrow {
+    color: #006666; 
+}
+
+/* --- 5. SECCIONES DE CONTENIDO (BIO, CONTACTO, UBICACIÓN) --- */
+.seccion-bio, .contacto-box, .seccion-ubicacion {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.bio-contenido h2, .contacto-box h2, .seccion-ubicacion h2 {
+    color: #005d49;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bio-contenido h2::after, .contacto-box h2::after, .seccion-ubicacion h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #7a9460;
+    margin: 10px auto;
+}
+
+.mapa-contenedor {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+/* --- 6. CATALOGO Y PRODUCTOS --- */
+.contenedor {
+    max-width: 1200px;
+    margin: 60px auto !important;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumbs a {
+    color: #4e3b31;
+    text-decoration: none;
+}
+
+.titulo-categoria-principal {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px !important;
+}
+
+.producto-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+.producto-card h3 {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    color: #333;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.producto-card .precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4a5d33;
+    margin: auto 0 10px 0;
+}
+
+.btn-comprar {
+    background-color: #4a5d33;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* --- 7. CARRITO LATERAL --- */
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.stepper-container-mini {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.stepper-container-mini .btn-stepper {
+    width: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+}/* --- 1. CONFIGURACIÓN GENERAL --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f7f1; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- 2. HEADER Y TOP BAR --- */
+.top-bar {
+    background-color: #4e3b31;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-header {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 120px;
+}
+
+.search-container {
+    flex-grow: 1;
+    margin: 0 40px;
+    display: flex;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-btn {
+    background: #4a5d33;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #444 !important;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge {
+    background-color: #4a5d33;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 11px;
+}
+
+/* --- 3. NAVEGACIÓN SUB-BAR CENTRADA --- */
+.nav-sub-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1100px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.nav-item {
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #005d49; 
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.active-gray {
+    background-color: #f8f9fa;
+    border-left: 1px solid #f0f0f0;
+}
+
+.nav-secondary-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nav-secondary-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- 4. DROPDOWNS Y SUBMENÚS --- */
+.dropdown {
+    display: flex;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 250px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 3000;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 20px;
+    color: #005d49;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.submenu-container {
+    position: relative;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 8px 0px 16px rgba(0,0,0,0.1);
+    z-index: 10;
+    border-left: 1px solid #eee;
+}
+
+.submenu-container:hover .submenu-content {
+    display: block;
+}
+
+.parent-link {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    color: #ccc;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/* --- 5. HERO IMAGE (RESTAURADA) --- */
+.hero-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+/* --- 6. SECCIONES BIO / CONTACTO / UBICACIÓN --- */
+.seccion-bio, .contacto-box, .seccion-ubicacion {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.bio-contenido h2, .contacto-box h2, .seccion-ubicacion h2 {
+    color: #005d49;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bio-contenido h2::after, .contacto-box h2::after, .seccion-ubicacion h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #7a9460;
+    margin: 10px auto;
+}
+
+/* --- 7. CATÁLOGO Y PRODUCTOS --- */
+.contenedor {
+    max-width: 1200px;
+    margin: 60px auto !important;
+    padding: 0 20px;
+}
+
+.titulo-categoria-principal {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 70px !important;
+}
+
+.producto-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: 100%;
+}
+
+/* --- 8. CARRITO LATERAL (RESTAURADO) --- */
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.carrito-header {
+    background: #4a5d33; /* El verde oscuro del encabezado */
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.carrito-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.stepper-container-mini {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.stepper-container-mini .btn-stepper {
+    width: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.carrito-footer {
+    padding: 20px;
+    border-top: 2px solid #eee;
+    background: #f9f9f9;
+}
+
+.checkout-btn {
+    background: #25d366; /* Verde WhatsApp */
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #1eb954;
+}
+/* --- SELECTOR DE PRESENTACIÓN (100g / 1kg) --- */
+ 
+.selector-presentacion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+ 
+.btn-presentacion {
+    flex: 1;
+    padding: 8px 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #f8f9fa;
+    color: #555;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+ 
+.btn-presentacion:hover {
+    border-color: #4a5d33;
+    color: #4a5d33;
+}
+ 
+.btn-presentacion.activo {
+    border-color: #4a5d33;
+    background: #4a5d33;
+    color: white;
+}
+ 
+.btn-presentacion.activo .badge-ahorro {
+    background: white;
+    color: #4a5d33;
+}
+ 
+.badge-ahorro {
+    font-size: 10px;
+    font-weight: 700;
+    background: #e8f0df;
+    color: #4a5d33;
+    padding: 1px 6px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}/* --- AUTOCOMPLETADO DEL BUSCADOR --- */
+
+.search-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.autocomplete-lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 5000;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.autocomplete-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.15s;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover {
+    background-color: #f0f5eb;
+}
+
+.autocomplete-nombre {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+.autocomplete-categoria {
+    font-size: 11px;
+    color: #999;
+    background: #f4f4f4;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.autocomplete-vacio {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #999;
+    text-align: center;
