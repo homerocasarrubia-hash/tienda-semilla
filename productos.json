@@ -1,0 +1,4184 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mix Energy",
+    "descripcion": "Nuez, almendra, castañas de cajú, maní, pasas de uva negras y rubias.",
+    "precio_100g": 2000,
+    "precio_kg": 18000,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_energy.jpg",
+    "stock": "sin_stock"
+  },
+  {
+    "id": 2,
+    "nombre": "Mix Energy sin Maní",
+    "descripcion": "Nuez, almendra, castañas de cajú, pasas de uva negras y rubias.",
+    "precio_100g": 2000,
+    "precio_kg": 19000,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_energy_sin_mani.jpg",
+    "stock": "ultimas"
+  },
+  {
+    "id": 3,
+    "nombre": "Mix Tropical",
+    "descripcion": "Nuez, almendra, castañas de cajú, maní, pasas de uva, bananas glaseadas, ananá glaseado.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_tropical.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 4,
+    "nombre": "Mix Frutos Secos",
+    "descripcion": "Nuez, almendra, castañas de cajú, maní, avellanas.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_frutos_secos.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 5,
+    "nombre": "Mix Frutos Secos sin Maní",
+    "descripcion": "Nuez, almendra, castañas de cajú, avellanas.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_frutos_sin_mani.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 6,
+    "nombre": "Mix Salty",
+    "descripcion": "Castañas saladas, maní salado, semillas de girasol, semillas de zapallo, maíz frito.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_salty.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 7,
+    "nombre": "Mix Ahumado",
+    "descripcion": "Castañas, almendras y maní salados.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Mix de Frutos Secos",
+    "imagen": "mix_ahumado.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 8,
+    "nombre": "Granola Omega Monarca",
+    "descripcion": "Granola enriquecida con semillas omega. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_omega_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 9,
+    "nombre": "Granola Peanut Butter Monarca",
+    "descripcion": "Granola con mantequilla de maní. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_peanut_butter_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 10,
+    "nombre": "Granola Premium Monarca",
+    "descripcion": "Granola premium con ingredientes seleccionados. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_premium_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 11,
+    "nombre": "Granola Stevia Monarca",
+    "descripcion": "Granola endulzada con stevia, sin azúcar añadida. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_stevia_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 12,
+    "nombre": "Granola Ultra Protein Monarca",
+    "descripcion": "Granola alta en proteínas. Ideal para deportistas. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_ultra_protein_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 13,
+    "nombre": "Granola Keto Monarca",
+    "descripcion": "Granola apta para dieta cetogénica, baja en carbohidratos. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_keto_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 14,
+    "nombre": "Granola Tropical Monarca",
+    "descripcion": "Granola con frutas tropicales deshidratadas. Marca Monarca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_tropical_monarca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 15,
+    "nombre": "Granola Almendra Cajú Arándanos Íntegra",
+    "descripcion": "Granola con almendras, castañas de cajú y arándanos. Marca Íntegra.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_almendra_caju_arandanos_integra.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 16,
+    "nombre": "Granola Chocolate Cacao Almendra Íntegra",
+    "descripcion": "Granola con chocolate, cacao y almendras. Marca Íntegra.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Granolas",
+    "imagen": "granola_chocolate_cacao_almendra_integra.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 17,
+    "nombre": "Harina de Trigo Integral Premium Molcol",
+    "descripcion": "Harina de trigo integral premium. Marca Molcol.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Trigo",
+    "imagen": "harina_trigo_integral_molcol.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 18,
+    "nombre": "Harina de Trigo Integral Orgánica Brotes",
+    "descripcion": "Harina de trigo integral de cultivo orgánico certificado. Marca Brotes.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Trigo",
+    "imagen": "harina_trigo_integral_organica_brotes.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 19,
+    "nombre": "Harina de Trigo Sarraceno Olienka",
+    "descripcion": "Harina de trigo sarraceno. Marca Olienka.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Trigo",
+    "imagen": "harina_trigo_sarraceno_olienka.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 20,
+    "nombre": "Harina de Almendras con Piel Nacional",
+    "descripcion": "Harina de almendras con piel, de origen nacional.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Frutos Secos",
+    "imagen": "harina_almendras_con_piel_nacional.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 21,
+    "nombre": "Harina de Almendras sin Piel Nacional",
+    "descripcion": "Harina de almendras sin piel, de origen nacional.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Frutos Secos",
+    "imagen": "harina_almendras_sin_piel_nacional.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 22,
+    "nombre": "Harina de Almendras sin Piel Premium",
+    "descripcion": "Harina de almendras sin piel de calidad premium.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Frutos Secos",
+    "imagen": "harina_almendras_sin_piel_premium.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 23,
+    "nombre": "Harina de Castañas de Cajú",
+    "descripcion": "Harina de castañas de cajú, suave y versátil.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Frutos Secos",
+    "imagen": "harina_castanas_caju.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 24,
+    "nombre": "Harina de Coco",
+    "descripcion": "Harina de coco, alta en fibra y baja en carbohidratos.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Otras",
+    "imagen": "harina_coco.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 25,
+    "nombre": "Harina de Algarroba",
+    "descripcion": "Harina de algarroba, naturalmente dulce. Ideal para repostería.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Otras",
+    "imagen": "harina_algarroba.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 26,
+    "nombre": "Harina de Garbanzo Molcol",
+    "descripcion": "Harina de garbanzo, rica en proteínas. Marca Molcol.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Legumbres",
+    "imagen": "harina_garbanzo_molcol.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 27,
+    "nombre": "Harina de Soja Molcol",
+    "descripcion": "Harina de soja, alto contenido proteico. Marca Molcol.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Legumbres",
+    "imagen": "harina_soja_molcol.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 28,
+    "nombre": "Harina de Lino Sol Azteca",
+    "descripcion": "Harina de lino, rica en omega-3 y fibra. Marca Sol Azteca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Semillas",
+    "imagen": "harina_lino_sol_azteca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 29,
+    "nombre": "Harina de Chía Sol Azteca",
+    "descripcion": "Harina de chía, rica en omega-3, proteínas y antioxidantes. Marca Sol Azteca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Semillas",
+    "imagen": "harina_chia_sol_azteca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 30,
+    "nombre": "Harina de Sésamo Integral Sol Azteca",
+    "descripcion": "Harina de sésamo integral, rica en calcio y minerales. Marca Sol Azteca.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Semillas",
+    "imagen": "harina_sesamo_integral_sol_azteca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 31,
+    "nombre": "Harina de Maíz Abatí Molcol",
+    "descripcion": "Harina de maíz abatí, ideal para sopa paraguaya. Marca Molcol.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Cereales",
+    "imagen": "harina_maiz_abati_molcol.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 32,
+    "nombre": "Harina de Avena Molcol",
+    "descripcion": "Harina de avena, ideal para repostería y panificados. Marca Molcol.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Cereales",
+    "imagen": "harina_avena_molcol.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 33,
+    "nombre": "Harina de Centeno Molcol",
+    "descripcion": "Harina de centeno, ideal para panes oscuros. Marca Molcol.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Cereales",
+    "imagen": "harina_centeno_molcol.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 34,
+    "nombre": "Harina de Maíz Amarillo Precocida Pan x 1 kg",
+    "descripcion": "Harina de maíz amarillo precocida, ideal para arepas. Marca Pan. Por unidad de 1 kg.",
+    "precio": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Cereales",
+    "imagen": "harina_maiz_pan.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 35,
+    "nombre": "Harina de Maní Desgrasada Snackwell x 250 g — SIN TACC",
+    "descripcion": "Harina de maní desgrasada en envase cerrado. Apta celíacos. SIN TACC. Marca Snackwell. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Frutos Secos",
+    "imagen": "harina_mani_snackwell.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 36,
+    "nombre": "Harina de Quinoa Natural Seed x 250 g — SIN TACC",
+    "descripcion": "Harina de quinoa en envase cerrado. Apta celíacos. SIN TACC. Marca Natural Seed. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Cereales",
+    "imagen": "harina_quinoa_natural_seed.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 37,
+    "nombre": "Harina de Girasol Natural Seed x 250 g — SIN TACC",
+    "descripcion": "Harina de girasol en envase cerrado. Apta celíacos. SIN TACC. Marca Natural Seed. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Semillas",
+    "imagen": "harina_girasol_natural_seed.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 38,
+    "nombre": "Harina de Almendras con Piel Natural Seed x 250 g — SIN TACC",
+    "descripcion": "Harina de almendras con piel en envase cerrado. Apta celíacos. SIN TACC. Marca Natural Seed. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Harinas",
+    "subcategoria": "Harina Frutos Secos",
+    "imagen": "harina_almendras_piel_natural_seed.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 39,
+    "nombre": "Lentejas Rojas",
+    "descripcion": "Lentejas rojas a granel, de cocción rápida.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "lentejas_rojas.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 40,
+    "nombre": "Lentejón",
+    "descripcion": "Lentejón a granel, de mayor tamaño que la lenteja común.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "lentejon.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 41,
+    "nombre": "Lentejas",
+    "descripcion": "Lentejas clásicas a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "lentejas.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 42,
+    "nombre": "Poroto Alubia",
+    "descripcion": "Poroto alubia blanco a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "poroto_alubia.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 43,
+    "nombre": "Poroto Negro",
+    "descripcion": "Poroto negro a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "poroto_negro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 44,
+    "nombre": "Poroto Aduki",
+    "descripcion": "Poroto aduki a granel, muy usado en cocina oriental y macrobiótica.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "poroto_aduki.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 45,
+    "nombre": "Porotos Lupines",
+    "descripcion": "Porotos lupines a granel, ricos en proteínas.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "porotos_lupines.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 46,
+    "nombre": "Porotos Pallares",
+    "descripcion": "Porotos pallares a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "porotos_pallares.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 47,
+    "nombre": "Poroto Colorado",
+    "descripcion": "Poroto colorado a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "poroto_colorado.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 48,
+    "nombre": "Poroto Bolita",
+    "descripcion": "Poroto bolita a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "poroto_bolita.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 49,
+    "nombre": "Poroto de Soja",
+    "descripcion": "Poroto de soja a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "poroto_soja.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 50,
+    "nombre": "Garbanzos",
+    "descripcion": "Garbanzos a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "garbanzos.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 51,
+    "nombre": "Arvejas",
+    "descripcion": "Arvejas a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "arvejas.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 52,
+    "nombre": "Soja Texturizada Fina",
+    "descripcion": "Soja texturizada fina a granel, ideal para guisos y preparaciones.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "soja_texturizada_fina.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 53,
+    "nombre": "Soja Texturizada Gruesa",
+    "descripcion": "Soja texturizada gruesa a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Legumbres",
+    "imagen": "soja_texturizada_gruesa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 54,
+    "nombre": "Trigo Candeal Pelado",
+    "descripcion": "Trigo candeal pelado a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Cereales",
+    "imagen": "trigo_candeal_pelado.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 55,
+    "nombre": "Trigo Burgol Fino",
+    "descripcion": "Trigo burgol fino a granel, ideal para taboulé y ensaladas.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Cereales",
+    "imagen": "trigo_burgol_fino.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 56,
+    "nombre": "Maíz Pisingallo",
+    "descripcion": "Maíz pisingallo a granel, ideal para pochoclo.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Cereales",
+    "imagen": "maiz_pisingallo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 57,
+    "nombre": "Maíz Blanco",
+    "descripcion": "Maíz blanco a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Cereales",
+    "imagen": "maiz_blanco.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 58,
+    "nombre": "Maní Crudo",
+    "descripcion": "Maní crudo a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Maní",
+    "imagen": "mani_crudo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 59,
+    "nombre": "Maní Sin Sal",
+    "descripcion": "Maní tostado sin sal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Maní",
+    "imagen": "mani_sin_sal.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 60,
+    "nombre": "Maní Con Sal",
+    "descripcion": "Maní tostado con sal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Maní",
+    "imagen": "mani_con_sal.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 61,
+    "nombre": "Maní Con Cáscara",
+    "descripcion": "Maní con cáscara a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Cereales y Legumbres",
+    "subcategoria": "Maní",
+    "imagen": "mani_con_cascara.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 62,
+    "nombre": "Arroz Yamani",
+    "descripcion": "Arroz yamani integral a granel, rico en fibra y nutrientes.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Arroces",
+    "imagen": "arroz_yamani.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 63,
+    "nombre": "Arroz Integral Largo Fino",
+    "descripcion": "Arroz integral largo fino a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Arroces",
+    "imagen": "arroz_integral_largo_fino.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 64,
+    "nombre": "Arroz Koshihikari",
+    "descripcion": "Arroz japonés koshihikari a granel, de grano corto y textura cremosa.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Arroces",
+    "imagen": "arroz_koshihikari.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 164,
+    "nombre": "Almendras Bañadas en Chocolate Negro",
+    "descripcion": "Almendras bañadas en chocolate negro a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "almendras_chocolate_negro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 165,
+    "nombre": "Almendras Bañadas en Chocolate Blanco",
+    "descripcion": "Almendras bañadas en chocolate blanco a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "almendras_chocolate_blanco.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 166,
+    "nombre": "Pasas de Uva Bañadas en Chocolate Negro",
+    "descripcion": "Pasas de uva bañadas en chocolate negro a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "pasas_chocolate_negro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 167,
+    "nombre": "Maní Bañado en Chocolate Negro Semiamargo",
+    "descripcion": "Maní bañado en chocolate negro semiamargo a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "mani_chocolate_semiamargo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 168,
+    "nombre": "Lentejas de Chocolate",
+    "descripcion": "Lentejas de chocolate a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "lentejas_chocolate.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 169,
+    "nombre": "Mini Rocklets",
+    "descripcion": "Mini rocklets a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "mini_rocklets.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 170,
+    "nombre": "Gotas de Chocolate Blanco",
+    "descripcion": "Gotas de chocolate blanco a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "gotas_chocolate_blanco.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 171,
+    "nombre": "Gotas de Chocolate Negro",
+    "descripcion": "Gotas de chocolate negro a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Chocolatería",
+    "imagen": "gotas_chocolate_negro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 161,
+    "nombre": "Té Negro en Hebras",
+    "descripcion": "Té negro en hebras a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Tés e Infusiones",
+    "imagen": "te_negro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 162,
+    "nombre": "Té Verde en Hebras",
+    "descripcion": "Té verde en hebras a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Tés e Infusiones",
+    "imagen": "te_verde.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 163,
+    "nombre": "Té Rojo en Hebras",
+    "descripcion": "Té rojo en hebras a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Tés e Infusiones",
+    "imagen": "te_rojo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 172,
+    "nombre": "Aceite de Oliva Virgen Extra Chaquiago x 500 ml",
+    "descripcion": "Aceite de oliva virgen extra. Marca Chaquiago. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_oliva_chaquiago_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 173,
+    "nombre": "Aceite de Oliva Virgen Extra Chaquiago x 5 lt",
+    "descripcion": "Aceite de oliva virgen extra. Marca Chaquiago. Por unidad de 5 litros.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_oliva_chaquiago_5lt.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 174,
+    "nombre": "Aceite de Coco Virgen God Bless You x 125 ml",
+    "descripcion": "Aceite de coco virgen. Marca God Bless You. Por unidad de 125 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_virgen_gby_125.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 175,
+    "nombre": "Aceite de Coco Virgen God Bless You x 225 ml",
+    "descripcion": "Aceite de coco virgen. Marca God Bless You. Por unidad de 225 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_virgen_gby_225.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 176,
+    "nombre": "Aceite de Coco Virgen God Bless You x 500 ml",
+    "descripcion": "Aceite de coco virgen. Marca God Bless You. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_virgen_gby_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 177,
+    "nombre": "Aceite de Coco Virgen x 1 lt",
+    "descripcion": "Aceite de coco virgen a granel. Por unidad de 1 litro.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_virgen_1lt.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 178,
+    "nombre": "Aceite de Coco Neutro God Bless You x 125 ml",
+    "descripcion": "Aceite de coco neutro. Marca God Bless You. Por unidad de 125 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_neutro_gby_125.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 179,
+    "nombre": "Aceite de Coco Neutro God Bless You x 225 ml",
+    "descripcion": "Aceite de coco neutro. Marca God Bless You. Por unidad de 225 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_neutro_gby_225.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 180,
+    "nombre": "Aceite de Coco Neutro God Bless You x 500 ml",
+    "descripcion": "Aceite de coco neutro. Marca God Bless You. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_neutro_gby_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 181,
+    "nombre": "Aceite de Coco Neutro x 1 lt",
+    "descripcion": "Aceite de coco neutro. Por unidad de 1 litro.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_coco_neutro_1lt.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 182,
+    "nombre": "Aceite de Palta Chia Graal x 250 ml",
+    "descripcion": "Aceite de palta. Marca Chia Graal. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_palta_chia_graal_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 183,
+    "nombre": "Aceite de Chía Sol Azteca x 150 ml",
+    "descripcion": "Aceite de chía. Marca Sol Azteca. Por unidad de 150 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_chia_sol_azteca_150.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 184,
+    "nombre": "Aceite de Sésamo Sol Azteca x 150 ml",
+    "descripcion": "Aceite de sésamo. Marca Sol Azteca. Por unidad de 150 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_sesamo_sol_azteca_150.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 185,
+    "nombre": "Aceite de Lino Sol Azteca x 150 ml",
+    "descripcion": "Aceite de lino. Marca Sol Azteca. Por unidad de 150 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_lino_sol_azteca_150.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 186,
+    "nombre": "Aceite de Almendras Sol Azteca x 100 ml",
+    "descripcion": "Aceite de almendras. Marca Sol Azteca. Por unidad de 100 ml.",
+    "precio": 0,
+    "categoria": "Aceites",
+    "imagen": "aceite_almendras_sol_azteca_100.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 200,
+    "nombre": "Vinagre de Vino Chaquiago x 1 lt",
+    "descripcion": "Vinagre de vino. Marca Chaquiago. Por unidad de 1 litro.",
+    "precio": 0,
+    "categoria": "Vinagres",
+    "imagen": "vinagre_vino_chaquiago_1lt.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 201,
+    "nombre": "Vinagre de Alcohol Chaquiago x 1 lt",
+    "descripcion": "Vinagre de alcohol. Marca Chaquiago. Por unidad de 1 litro.",
+    "precio": 0,
+    "categoria": "Vinagres",
+    "imagen": "vinagre_alcohol_chaquiago_1lt.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 202,
+    "nombre": "Vinagre de Manzana Orgánico Pampagourmet x 250 ml",
+    "descripcion": "Vinagre de manzana orgánico. Marca Pampagourmet. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Vinagres",
+    "imagen": "vinagre_manzana_pampagourmet_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 203,
+    "nombre": "Vinagre de Manzana Orgánico Pampagourmet x 500 ml",
+    "descripcion": "Vinagre de manzana orgánico. Marca Pampagourmet. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Vinagres",
+    "imagen": "vinagre_manzana_pampagourmet_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 204,
+    "nombre": "Pasta de Maní King Natural x 245 gr",
+    "descripcion": "Pasta de maní natural. Marca King. Por unidad de 245 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_king_natural_245.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 205,
+    "nombre": "Pasta de Maní King Natural x 485 gr",
+    "descripcion": "Pasta de maní natural. Marca King. Por unidad de 485 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_king_natural_485.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 206,
+    "nombre": "Pasta de Maní King Crunchy x 350 gr",
+    "descripcion": "Pasta de maní crunchy. Marca King. Por unidad de 350 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_king_crunchy_350.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 207,
+    "nombre": "Pasta de Maní King Vita+ x 350 gr",
+    "descripcion": "Pasta de maní enriquecida con vitaminas. Marca King. Por unidad de 350 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_king_vita_350.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 208,
+    "nombre": "Pasta de Maní Entrenuts Natural x 370 gr",
+    "descripcion": "Pasta de maní natural. Marca Entrenuts. Por unidad de 370 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_entrenuts_natural_370.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 209,
+    "nombre": "Pasta de Maní Entrenuts Coco x 370 gr",
+    "descripcion": "Pasta de maní con coco. Marca Entrenuts. Por unidad de 370 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_entrenuts_coco_370.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 210,
+    "nombre": "Pasta de Maní Entrenuts Sal Marina x 370 gr",
+    "descripcion": "Pasta de maní con sal marina. Marca Entrenuts. Por unidad de 370 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_entrenuts_sal_370.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 211,
+    "nombre": "Pasta de Maní Entrenuts Protein Salted Caramel x 370 gr",
+    "descripcion": "Pasta de maní proteica sabor salted caramel. Marca Entrenuts. Por unidad de 370 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_entrenuts_salted_caramel_370.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 212,
+    "nombre": "Pasta de Maní Entrenuts Protein Cookies and Cream x 370 gr",
+    "descripcion": "Pasta de maní proteica sabor cookies and cream. Marca Entrenuts. Por unidad de 370 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "mani_entrenuts_cookies_cream_370.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 213,
+    "nombre": "Tahina de Sésamo Zeeny x 250 gr",
+    "descripcion": "Pasta de sésamo (tahina). Marca Zeeny. Por unidad de 250 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "tahina_zeeny_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 214,
+    "nombre": "Pasta de Pistacho Felices las Vacas Endulzada x 220 gr",
+    "descripcion": "Pasta de pistacho endulzada. Marca Felices las Vacas. Por unidad de 220 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "pistacho_felices_vacas_220.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 215,
+    "nombre": "Pasta de Pistacho Ancestral Natural x 200 gr",
+    "descripcion": "Pasta de pistacho natural. Marca Ancestral. Por unidad de 200 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "pistacho_ancestral_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 216,
+    "nombre": "Pasta de Pistacho Sol Azteca Natural x 200 gr",
+    "descripcion": "Pasta de pistacho natural. Marca Sol Azteca. Por unidad de 200 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "pistacho_sol_azteca_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 217,
+    "nombre": "Pasta de Calabaza Sol Azteca Natural x 200 gr",
+    "descripcion": "Pasta de calabaza natural. Marca Sol Azteca. Por unidad de 200 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "calabaza_sol_azteca_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 218,
+    "nombre": "Pasta de Castañas de Cajú Sol Azteca Natural x 200 gr",
+    "descripcion": "Pasta de castañas de cajú natural. Marca Sol Azteca. Por unidad de 200 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "caju_sol_azteca_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 219,
+    "nombre": "Pasta de Almendras Sol Azteca Natural x 200 gr",
+    "descripcion": "Pasta de almendras natural. Marca Sol Azteca. Por unidad de 200 gr.",
+    "precio": 0,
+    "categoria": "Pastas Untables",
+    "imagen": "almendras_sol_azteca_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 187,
+    "nombre": "Jalapeño Verde Recetas de Entonces x 180 ml",
+    "descripcion": "Salsa de jalapeño verde. Marca Recetas de Entonces. Por unidad de 180 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "jalapeno_verde_recetas_180.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 188,
+    "nombre": "Jalapeño Ahumado Recetas de Entonces x 180 ml",
+    "descripcion": "Salsa de jalapeño ahumado. Marca Recetas de Entonces. Por unidad de 180 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "jalapeno_ahumado_recetas_180.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 189,
+    "nombre": "Jalapeño Rojo Recetas de Entonces x 180 ml",
+    "descripcion": "Salsa de jalapeño rojo. Marca Recetas de Entonces. Por unidad de 180 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "jalapeno_rojo_recetas_180.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 190,
+    "nombre": "Salsa de Soja Recetas de Entonces x 180 ml",
+    "descripcion": "Salsa de soja. Marca Recetas de Entonces. Por unidad de 180 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "salsa_soja_recetas_180.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 191,
+    "nombre": "Salsa Inglesa Recetas de Entonces x 180 ml",
+    "descripcion": "Salsa inglesa. Marca Recetas de Entonces. Por unidad de 180 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "salsa_inglesa_recetas_180.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 192,
+    "nombre": "Aceto Balsámico Recetas de Entonces x 250 ml",
+    "descripcion": "Aceto balsámico. Marca Recetas de Entonces. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "aceto_balsamico_recetas_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 193,
+    "nombre": "Salsa de Soja Bitarwan x 500 ml",
+    "descripcion": "Salsa de soja. Marca Bitarwan. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "salsa_soja_bitarwan_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 194,
+    "nombre": "Salsa de Soja Bitarwan x 1 lt",
+    "descripcion": "Salsa de soja. Marca Bitarwan. Por unidad de 1 litro.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "salsa_soja_bitarwan_1lt.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 195,
+    "nombre": "Tonkatsu Alcaraz Gourmet x 250 ml",
+    "descripcion": "Salsa Tonkatsu japonesa. Marca Alcaraz Gourmet. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "tonkatsu_alcaraz_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 196,
+    "nombre": "Teriyaki Alcaraz Gourmet x 250 ml",
+    "descripcion": "Salsa Teriyaki japonesa. Marca Alcaraz Gourmet. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "teriyaki_alcaraz_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 197,
+    "nombre": "Pimiento Jalapeño Intenso Chovi x 60 gr",
+    "descripcion": "Pimiento jalapeño intenso. Marca Chovi. Por unidad de 60 gr.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "jalapeno_chovi_60.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 198,
+    "nombre": "Chili Picante Pampagourmet x 200 gr",
+    "descripcion": "Salsa chili picante. Marca Pampagourmet. Por unidad de 200 gr.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "chili_pampagourmet_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 199,
+    "nombre": "Spicy Mango Pampagourmet x 295 gr",
+    "descripcion": "Salsa spicy mango. Marca Pampagourmet. Por unidad de 295 gr.",
+    "precio": 0,
+    "categoria": "Salsas",
+    "imagen": "spicy_mango_pampagourmet_295.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 87,
+    "nombre": "Anís Verde",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "anis_verde.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 88,
+    "nombre": "Alcachofa",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "alcachofa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 89,
+    "nombre": "Ajenjo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "ajenjo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 90,
+    "nombre": "Atamisqui",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "atamisqui.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 91,
+    "nombre": "Altamisa",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "altamisa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 92,
+    "nombre": "Artemisa",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "artemisa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 93,
+    "nombre": "Acoro",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "acoro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 94,
+    "nombre": "Bardana",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "bardana.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 95,
+    "nombre": "Bolsa de Pastor",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "bolsa_de_pastor.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 96,
+    "nombre": "Boldo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "boldo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 97,
+    "nombre": "Burro",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "burro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 98,
+    "nombre": "Carqueja",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "carqueja.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 99,
+    "nombre": "Contrayerba",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "contrayerba.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 100,
+    "nombre": "Congorosa",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "congorosa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 101,
+    "nombre": "Corteza de Chañar",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "corteza_chanar.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 102,
+    "nombre": "Cedrón",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cedron.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 103,
+    "nombre": "Ceibo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "ceibo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 104,
+    "nombre": "Cuassia Amarga",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cuassia_amarga.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 105,
+    "nombre": "Cola de Caballo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cola_de_caballo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 106,
+    "nombre": "Cepa Caballo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cepa_caballo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 107,
+    "nombre": "Cardo Mariano",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cardo_mariano.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 108,
+    "nombre": "Cardo Santo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cardo_santo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 109,
+    "nombre": "Cola de Quirquincho",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "cola_de_quirquincho.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 110,
+    "nombre": "Diente de León",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "diente_de_leon.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 111,
+    "nombre": "Doradilla",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "doradilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 112,
+    "nombre": "Eucaliptus",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "eucaliptus.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 113,
+    "nombre": "Estigma de Maíz",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "estigma_de_maiz.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 114,
+    "nombre": "Fresno",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "fresno.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 115,
+    "nombre": "Grataegus",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "grataegus.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 116,
+    "nombre": "Ginkgo Biloba",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "ginkgo_biloba.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 117,
+    "nombre": "Hibiscus / Flor de Jamaica",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "hibiscus.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 118,
+    "nombre": "Hipérico",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "hiperico.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 119,
+    "nombre": "Hisopo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "hisopo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 120,
+    "nombre": "Incayuyo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "incayuyo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 121,
+    "nombre": "Jarilla",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "jarilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 122,
+    "nombre": "Llantén",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "llanten.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 123,
+    "nombre": "Lavanda",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "lavanda.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 124,
+    "nombre": "Melisa",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "melisa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 125,
+    "nombre": "Mastuerzo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "mastuerzo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 126,
+    "nombre": "Manzanilla",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "manzanilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 127,
+    "nombre": "Menta",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "menta.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 128,
+    "nombre": "Marrubio",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "marrubio.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 129,
+    "nombre": "Marcela",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "marcela.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 130,
+    "nombre": "Moringa",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "moringa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 131,
+    "nombre": "Muérdago",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "muerdago.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 132,
+    "nombre": "Muña Muña",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "muna_muna.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 133,
+    "nombre": "Mil Hombres",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "mil_hombres.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 134,
+    "nombre": "Matico",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "matico.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 135,
+    "nombre": "Ortiga",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "ortiga.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 136,
+    "nombre": "Palo Azul",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "palo_azul.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 137,
+    "nombre": "Pulmonaria",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "pulmonaria.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 138,
+    "nombre": "Palo Santo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "palo_santo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 139,
+    "nombre": "Palo Amarillo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "palo_amarillo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 140,
+    "nombre": "Pasionaria",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "pasionaria.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 141,
+    "nombre": "Poleo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "poleo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 142,
+    "nombre": "Peperina",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "peperina.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 143,
+    "nombre": "Paico",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "paico.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 144,
+    "nombre": "Rompepiedra",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "rompepiedra.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 145,
+    "nombre": "Rica Rica",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "rica_rica.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 146,
+    "nombre": "Ruda",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "ruda.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 147,
+    "nombre": "Retamilla",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "retamilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 148,
+    "nombre": "Romerillo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "romerillo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 149,
+    "nombre": "Rosa Mosqueta",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "rosa_mosqueta.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 150,
+    "nombre": "Regaliz",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "regaliz.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 151,
+    "nombre": "Stevia",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "stevia.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 152,
+    "nombre": "Sen",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "sen.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 153,
+    "nombre": "Salvia Blanca",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "salvia_blanca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 154,
+    "nombre": "Sombra de Toro",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "sombra_de_toro.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 155,
+    "nombre": "Suico",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "suico.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 156,
+    "nombre": "Tusca",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "tusca.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 157,
+    "nombre": "Verbena",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "verbena.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 158,
+    "nombre": "Vira Vira",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "vira_vira.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 159,
+    "nombre": "Yerba de Pollo",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "yerba_de_pollo.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 160,
+    "nombre": "Zarzaparrilla",
+    "descripcion": "Hierba medicinal a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Hierbas Medicinales",
+    "imagen": "zarzaparrilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 65,
+    "nombre": "Almohaditas de Avena Frutilla",
+    "descripcion": "Almohaditas de avena sabor frutilla a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Avena",
+    "imagen": "almohaditas_avena_frutilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 66,
+    "nombre": "Almohaditas de Avena Chocolate",
+    "descripcion": "Almohaditas de avena sabor chocolate a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Avena",
+    "imagen": "almohaditas_avena_chocolate.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 67,
+    "nombre": "Almohaditas de Avena Limón y Chocolate",
+    "descripcion": "Almohaditas de avena sabor limón y chocolate a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Avena",
+    "imagen": "almohaditas_avena_limon_chocolate.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 68,
+    "nombre": "Almohaditas de Avena Limón",
+    "descripcion": "Almohaditas de avena sabor limón a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Avena",
+    "imagen": "almohaditas_avena_limon.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 69,
+    "nombre": "Almohaditas de Avena Avellana",
+    "descripcion": "Almohaditas de avena sabor avellana a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Avena",
+    "imagen": "almohaditas_avena_avellana.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 70,
+    "nombre": "Almohaditas de Arroz Frutilla",
+    "descripcion": "Almohaditas de arroz sabor frutilla a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Arroz",
+    "imagen": "almohaditas_arroz_frutilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 71,
+    "nombre": "Almohaditas de Arroz Limón",
+    "descripcion": "Almohaditas de arroz sabor limón a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Arroz",
+    "imagen": "almohaditas_arroz_limon.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 72,
+    "nombre": "Almohaditas de Arroz Avellana",
+    "descripcion": "Almohaditas de arroz sabor avellana a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Arroz",
+    "imagen": "almohaditas_arroz_avellana.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 73,
+    "nombre": "Almohaditas de Arroz Chocolate",
+    "descripcion": "Almohaditas de arroz sabor chocolate a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Almohaditas de Arroz",
+    "imagen": "almohaditas_arroz_chocolate.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 74,
+    "nombre": "Ositos de Avena",
+    "descripcion": "Ositos de avena a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Ositos",
+    "imagen": "ositos_avena.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 75,
+    "nombre": "Ositos de Frutilla",
+    "descripcion": "Ositos sabor frutilla a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Ositos",
+    "imagen": "ositos_frutilla.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 76,
+    "nombre": "Copos de Maíz Azucarados",
+    "descripcion": "Copos de maíz azucarados a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Copos de Maíz",
+    "imagen": "copos_maiz_azucarados.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 77,
+    "nombre": "Copos de Maíz Sin Azúcar",
+    "descripcion": "Copos de maíz sin azúcar a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Copos de Maíz",
+    "imagen": "copos_maiz_sin_azucar.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 78,
+    "nombre": "Copos de Maíz Integral",
+    "descripcion": "Copos de maíz integral a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Copos de Maíz",
+    "imagen": "copos_maiz_integral.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 79,
+    "nombre": "Tutucas con Azúcar",
+    "descripcion": "Tutucas con azúcar a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Tutucas",
+    "imagen": "tutucas_con_azucar.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 80,
+    "nombre": "Tutucas sin Azúcar",
+    "descripcion": "Tutucas sin azúcar a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Tutucas",
+    "imagen": "tutucas_sin_azucar.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 81,
+    "nombre": "Anillitos Frutados",
+    "descripcion": "Anillitos frutados a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Otros Cereales",
+    "imagen": "anillitos_frutados.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 82,
+    "nombre": "Quinoa Pop",
+    "descripcion": "Quinoa pop a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Otros Cereales",
+    "imagen": "quinoa_pop.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 83,
+    "nombre": "Crispin de Arroz",
+    "descripcion": "Crispin de arroz a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Otros Cereales",
+    "imagen": "crispin_arroz.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 84,
+    "nombre": "Bastoncito de Salvado",
+    "descripcion": "Bastoncitos de salvado a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Otros Cereales",
+    "imagen": "bastoncito_salvado.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 85,
+    "nombre": "Bolitas de Chocolate",
+    "descripcion": "Bolitas de chocolate a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Otros Cereales",
+    "imagen": "bolitas_chocolate.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 86,
+    "nombre": "Arroz Inflado",
+    "descripcion": "Arroz inflado a granel.",
+    "precio_100g": 0,
+    "precio_kg": 0,
+    "categoria": "Desayuno",
+    "subcategoria": "Otros Cereales",
+    "imagen": "arroz_inflado.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 220,
+    "nombre": "Arroz Calasparra Murcia x 1 kg",
+    "descripcion": "Arroz Calasparra originario de Murcia, España. Variedad tradicional para paella. Por unidad de 1 kg.",
+    "precio": 0,
+    "categoria": "Arroces",
+    "imagen": "arroz_calasparra_murcia_1kg.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 221,
+    "nombre": "Arroz Jazmín Tailandia x 1 kg",
+    "descripcion": "Arroz jazmín originario de Tailandia, de grano largo y aromático. Por unidad de 1 kg.",
+    "precio": 0,
+    "categoria": "Arroces",
+    "imagen": "arroz_jazmin_tailandia_1kg.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 222,
+    "nombre": "Whey Protein Doy Pack Star Nutrition x 908 g — SIN TACC",
+    "descripcion": "Proteína de suero en doy pack. Sabores disponibles: Vanilla Ice Cream, Strawberry Cream. SIN TACC. Marca Star Nutrition. Por unidad de 908 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Star Nutrition",
+    "imagen": "whey_protein_doy_pack_star_nutrition_908g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 223,
+    "nombre": "Creatina Monohidratada Micronizada Star Nutrition x 300 g — SIN TACC",
+    "descripcion": "Creatina monohidratada ultra micronizada en doy pack. SIN TACC. Marca Star Nutrition. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Star Nutrition",
+    "imagen": "creatina_monohidratada_micronizada_star_nutrition_300g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 224,
+    "nombre": "Multivitamínico All In One Star Nutrition x 60 comp — SIN TACC",
+    "descripcion": "Multivitamínico en comprimidos. SIN TACC. Marca Star Nutrition. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Star Nutrition",
+    "imagen": "multivitaminico_all_in_one_star_nutrition_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 225,
+    "nombre": "Whey Protein TrueMade Isolate ENA x 930 g",
+    "descripcion": "Proteína de suero aislada. Sabores disponibles: Vanilla Ice Cream, Cookies and Cream, Double Rich Chocolate. Marca ENA. Por unidad de 930 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "whey_protein_truemade_isolate_ena_930g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 226,
+    "nombre": "100% Whey ENA x 900 g",
+    "descripcion": "Proteína de suero. Sabores disponibles: Vainilla, Frutilla, Chocolate. Marca ENA. Por unidad de 900 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "100_whey_ena_900g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 227,
+    "nombre": "Whey Protein TrueMade Isolate Doy Pack ENA x 453 g",
+    "descripcion": "Proteína de suero aislada en doy pack. Sabores disponibles: Vanilla Ice Cream, Cookies and Cream, Double Rich Chocolate. Marca ENA. Por unidad de 453 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "whey_protein_truemade_isolate_doy_pack_ena_453g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 228,
+    "nombre": "Creatina Monohidratada Doy Pack ENA x 300 g",
+    "descripcion": "Creatina monohidratada en doy pack. Sabores disponibles: Neutro, Fruit Punch, Naranja. Marca ENA. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "creatina_monohidratada_doy_pack_ena_300g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 229,
+    "nombre": "BCAA Reload ENA x 220 g",
+    "descripcion": "Aminoácidos de cadena ramificada en polvo. Sabores disponibles: Frutos Rojos, Limonada. Marca ENA. Por unidad de 220 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "bcaa_reload_ena_220g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 230,
+    "nombre": "Pre War ENA x 400 g",
+    "descripcion": "Suplemento en polvo para tomar antes de entrenar. Sabores disponibles: Fruit Punch, Limonada. Marca ENA. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "pre_war_ena_400g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 231,
+    "nombre": "Enargy Gel con Cafeína ENA",
+    "descripcion": "Gel energético con cafeína. Sabores disponibles: Uva Citrus. Marca ENA.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "enargy_gel_con_cafeina_ena.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 232,
+    "nombre": "Enargy Gel sin Cafeína ENA",
+    "descripcion": "Gel energético sin cafeína. Sabores disponibles: Frutilla, Vainilla, Limón. Marca ENA.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "enargy_gel_sin_cafeina_ena.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 233,
+    "nombre": "Protein Bar ENA",
+    "descripcion": "Barra proteica. Sabores disponibles: Chocolate Brownie, Frutillas a la Crema, Banana Split, Coco y Dulce de Leche. Marca ENA.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "ENA",
+    "imagen": "protein_bar_ena.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 234,
+    "nombre": "Creatina en Gummies GUM x 60 gomitas",
+    "descripcion": "Creatina en formato de gomitas masticables. Marca GUM. Por unidad de 60 gomitas.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "GUM",
+    "imagen": "creatina_en_gummies_gum_60gomitas.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 235,
+    "nombre": "Whey Protein 7900 Gentech x 1 kg",
+    "descripcion": "Proteína de suero. Sabores disponibles: Vainilla, Frutilla, Chocolate. Marca Gentech. Por unidad de 1 kg.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Gentech",
+    "imagen": "whey_protein_7900_gentech_1kg.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 236,
+    "nombre": "Creatina Monohidrato Gentech x 250 g",
+    "descripcion": "Creatina monohidrato en polvo. Marca Gentech. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Gentech",
+    "imagen": "creatina_monohidrato_gentech_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 237,
+    "nombre": "Creatina Monohidrato Gentech x 500 g",
+    "descripcion": "Creatina monohidrato en polvo. Marca Gentech. Por unidad de 500 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Gentech",
+    "imagen": "creatina_monohidrato_gentech_500g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 238,
+    "nombre": "Iron Bar Gentech",
+    "descripcion": "Barra proteica. Sabores disponibles: Coco, Banana, Frutilla, Dulce de Leche, Chocolate. Marca Gentech.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Gentech",
+    "imagen": "iron_bar_gentech.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 239,
+    "nombre": "Low Carb Barrita Gentech",
+    "descripcion": "Barra proteica reducida en carbohidratos. Sabores disponibles: Cookie Crunch, Brownie Crunch, Peanut Butter. Marca Gentech.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Gentech",
+    "imagen": "low_carb_barrita_gentech.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 240,
+    "nombre": "Best Whey Protein Xtrength x 907 g",
+    "descripcion": "Proteína de suero con creatina y taurina. Sabores disponibles: Chocolate, Frutilla, Banana, Cookies, Vainilla. Marca Xtrength. Por unidad de 907 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Xtrength",
+    "imagen": "best_whey_protein_xtrength_907g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 241,
+    "nombre": "Advance Whey Protein Xtrength x 907 g",
+    "descripcion": "Proteína de suero. Sabores disponibles: Frutilla, Vainilla, Cookies, Banana. Marca Xtrength. Por unidad de 907 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Xtrength",
+    "imagen": "advance_whey_protein_xtrength_907g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 242,
+    "nombre": "Whey Protein Ultratech x 454 g",
+    "descripcion": "Proteína de suero. Sabores disponibles: Frutilla, Coco, Vainilla, Chocolate. Marca Ultratech. Por unidad de 454 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "whey_protein_ultratech_454g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 243,
+    "nombre": "Whey Protein Ultratech x 1 kg",
+    "descripcion": "Proteína de suero. Sabores disponibles: Frutilla, Coco, Vainilla, Chocolate. Marca Ultratech. Por unidad de 1 kg.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "whey_protein_ultratech_1kg.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 244,
+    "nombre": "Creatina Monohidratada Ultratech x 300 g",
+    "descripcion": "Creatina monohidratada en polvo. Marca Ultratech. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "creatina_monohidratada_ultratech_300g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 245,
+    "nombre": "Fat Burner For Men Ultratech x 120 caps",
+    "descripcion": "Suplemento en cápsulas de la línea Fat Burner. Marca Ultratech. Por unidad de 120 caps.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "fat_burner_for_men_ultratech_120caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 246,
+    "nombre": "Fat Burner For Women Ultratech x 120 caps",
+    "descripcion": "Suplemento en cápsulas de la línea Fat Burner. Marca Ultratech. Por unidad de 120 caps.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "fat_burner_for_women_ultratech_120caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 247,
+    "nombre": "Energy Gel sin Cafeína Ultratech x 32 g",
+    "descripcion": "Gel energético sin cafeína. Sabores disponibles: Frutos Rojos, Mango. Marca Ultratech. Por unidad de 32 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "energy_gel_sin_cafeina_ultratech_32g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 248,
+    "nombre": "Energy Gel con Cafeína Ultratech x 32 g",
+    "descripcion": "Gel energético con cafeína. Sabores disponibles: Arándano, Vainilla. Marca Ultratech. Por unidad de 32 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "energy_gel_con_cafeina_ultratech_32g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 249,
+    "nombre": "Amino 2500 Ultratech x 150 comp",
+    "descripcion": "Suplemento de aminoácidos en comprimidos. Marca Ultratech. Por unidad de 150 comp.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "amino_2500_ultratech_150comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 250,
+    "nombre": "BCAA 2000 Ultratech x 120 caps",
+    "descripcion": "Aminoácidos de cadena ramificada en cápsulas. Marca Ultratech. Por unidad de 120 caps.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Ultratech",
+    "imagen": "bcaa_2000_ultratech_120caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 251,
+    "nombre": "Pancakes Proteicos Granger x 400 g",
+    "descripcion": "Preparado en polvo para panqueques proteicos. Sabores disponibles: Chocolate, Vainilla. Marca Granger. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "pancakes_proteicos_granger_400g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 252,
+    "nombre": "Omelettes Proteicos Jamón y Queso Granger x 210 g",
+    "descripcion": "Preparado en polvo para omelettes proteicos. Marca Granger. Por unidad de 210 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "omelettes_proteicos_jamon_y_queso_granger_210g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 253,
+    "nombre": "Pancakes Proteicos Granger x 300 g",
+    "descripcion": "Preparado en polvo para panqueques proteicos salados. Sabores disponibles: Queso, Capresse. Marca Granger. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "pancakes_proteicos_granger_300g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 254,
+    "nombre": "Keto Pancakes Granger x 200 g",
+    "descripcion": "Preparado en polvo para panqueques de la línea Keto. Sabores disponibles: Chocolate, Vainilla. Marca Granger. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "keto_pancakes_granger_200g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 255,
+    "nombre": "Gelatina con Colágeno Granger x 150 g",
+    "descripcion": "Preparado en polvo para gelatina con colágeno. Sabores disponibles: Durazno, Frutilla. Marca Granger. Por unidad de 150 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "gelatina_con_colageno_granger_150g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 256,
+    "nombre": "Pancake Proteico Dulce de Leche Edición Limitada Granger x 300 g",
+    "descripcion": "Preparado en polvo para panqueques proteicos, edición limitada. Marca Granger. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "pancake_proteico_dulce_de_leche_edicion_limitada_granger_300g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 257,
+    "nombre": "Pancake Proteico Vegan Chocolate Granger x 400 g",
+    "descripcion": "Preparado en polvo para panqueques proteicos de origen vegetal. Marca Granger. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Suplementos Deportivos",
+    "subcategoria": "Granger",
+    "imagen": "pancake_proteico_vegan_chocolate_granger_400g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 258,
+    "nombre": "Colágeno Hidrolizado Defense Hydor x 250 g",
+    "descripcion": "Colágeno hidrolizado en polvo, línea Defense. Marca Hydor. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Hydor",
+    "imagen": "colageno_hidrolizado_defense_hydor_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 259,
+    "nombre": "Colágeno Hidrolizado Clear Hydor x 250 g",
+    "descripcion": "Colágeno hidrolizado en polvo, línea Clear. Marca Hydor. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Hydor",
+    "imagen": "colageno_hidrolizado_clear_hydor_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 260,
+    "nombre": "Colágeno Vitality Probiotic Hydor x 250 g",
+    "descripcion": "Colágeno en polvo con probióticos, línea Vitality. Marca Hydor. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Hydor",
+    "imagen": "colageno_vitality_probiotic_hydor_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 261,
+    "nombre": "Colágeno Hidrolizado Sunny Hydor x 250 g",
+    "descripcion": "Colágeno hidrolizado en polvo, línea Sunny. Marca Hydor. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Hydor",
+    "imagen": "colageno_hidrolizado_sunny_hydor_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 262,
+    "nombre": "Colágeno Hidrolizado + Vitamina C Hydor x 250 g",
+    "descripcion": "Colágeno hidrolizado en polvo con vitamina C. Marca Hydor. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Hydor",
+    "imagen": "colageno_hidrolizado_vitamina_c_hydor_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 263,
+    "nombre": "Colágeno Hidrolizado Silhouette Hydor x 150 g",
+    "descripcion": "Colágeno hidrolizado en polvo, línea Silhouette. Marca Hydor. Por unidad de 150 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Hydor",
+    "imagen": "colageno_hidrolizado_silhouette_hydor_150g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 264,
+    "nombre": "Centella Asiática Natier x 50 comp",
+    "descripcion": "Suplemento de centella asiática en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "centella_asiatica_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 265,
+    "nombre": "Potasio Natier x 50 comp",
+    "descripcion": "Suplemento de potasio en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "potasio_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 266,
+    "nombre": "Maca Concentrada Natier x 50 comp",
+    "descripcion": "Suplemento de maca concentrada en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "maca_concentrada_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 267,
+    "nombre": "Spirulina Concentrada Natier x 50 comp",
+    "descripcion": "Suplemento de espirulina concentrada en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "spirulina_concentrada_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 268,
+    "nombre": "Resveratrol Natier x 50 comp",
+    "descripcion": "Suplemento de resveratrol en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "resveratrol_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 269,
+    "nombre": "Omega 3 Vegetal Natier x 250 ml",
+    "descripcion": "Suplemento líquido de omega 3 de origen vegetal. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "omega_3_vegetal_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 270,
+    "nombre": "Triptófano Natier x 50 comp",
+    "descripcion": "Suplemento de triptófano en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "triptofano_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 271,
+    "nombre": "Aceite de Prímula Natier x 250 ml",
+    "descripcion": "Aceite de prímula en presentación líquida. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "aceite_de_primula_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 272,
+    "nombre": "Péptidos de Colágeno Natier x 250 g",
+    "descripcion": "Péptidos de colágeno en polvo. Marca Natier. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "peptidos_de_colageno_natier_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 273,
+    "nombre": "Clorofila Bebible Natier x 250 ml",
+    "descripcion": "Clorofila líquida para diluir. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "clorofila_bebible_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 274,
+    "nombre": "Clorofila Bebible Natier x 500 ml",
+    "descripcion": "Clorofila líquida para diluir. Marca Natier. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "clorofila_bebible_natier_500ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 275,
+    "nombre": "Cúrcuma Concentrada Natier x 50 comp",
+    "descripcion": "Suplemento de cúrcuma concentrada en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "curcuma_concentrada_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 276,
+    "nombre": "Fucus Natier x 50 comp",
+    "descripcion": "Suplemento de fucus en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "fucus_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 277,
+    "nombre": "Moringa Natier x 50 comp",
+    "descripcion": "Suplemento de moringa en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "moringa_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 278,
+    "nombre": "Citrato de Magnesio Natier x 50 comp",
+    "descripcion": "Suplemento de citrato de magnesio en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "citrato_de_magnesio_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 279,
+    "nombre": "Zinc Natier x 50 comp",
+    "descripcion": "Suplemento de zinc en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "zinc_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 280,
+    "nombre": "Colágeno + Magnesio Natier x 250 g",
+    "descripcion": "Colágeno en polvo con magnesio. Marca Natier. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "colageno_magnesio_natier_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 281,
+    "nombre": "Probiótico Digestivo Natier x 50 caps",
+    "descripcion": "Suplemento probiótico en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "probiotico_digestivo_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 282,
+    "nombre": "Aceite Esencial de Orégano Natier x 30 ml",
+    "descripcion": "Aceite esencial de orégano. Marca Natier. Por unidad de 30 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "aceite_esencial_de_oregano_natier_30ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 283,
+    "nombre": "Bisglicinato de Magnesio Natier x 50 comp",
+    "descripcion": "Suplemento de bisglicinato de magnesio en comprimidos. Marca Natier. Por unidad de 50 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "bisglicinato_de_magnesio_natier_50comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 284,
+    "nombre": "Vitamina A Natier x 50 caps",
+    "descripcion": "Suplemento de vitamina A en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_a_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 285,
+    "nombre": "Shot Energía Natier",
+    "descripcion": "Suplemento líquido de la línea Shot Energía. Marca Natier.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "shot_energia_natier.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 286,
+    "nombre": "Aloe Vera Sistema Digestivo Natier x 500 ml",
+    "descripcion": "Bebida de aloe vera, línea Sistema Digestivo. Marca Natier. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "aloe_vera_sistema_digestivo_natier_500ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 287,
+    "nombre": "Ácido Hialurónico Natier x 50 caps",
+    "descripcion": "Suplemento de ácido hialurónico en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "acido_hialuronico_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 288,
+    "nombre": "Hierro Quelado Natier x 50 caps",
+    "descripcion": "Suplemento de hierro quelado en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "hierro_quelado_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 289,
+    "nombre": "Relax Blend Natier x 50 caps",
+    "descripcion": "Suplemento en cápsulas de la línea Relax Blend. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "relax_blend_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 290,
+    "nombre": "Selenio Quelado Natier x 50 caps",
+    "descripcion": "Suplemento de selenio quelado en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "selenio_quelado_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 291,
+    "nombre": "Vitamina K2 Natier x 50 caps",
+    "descripcion": "Suplemento de vitamina K2 en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_k2_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 292,
+    "nombre": "Coenzima Q10 Natier x 50 caps",
+    "descripcion": "Suplemento de coenzima Q10 en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "coenzima_q10_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 293,
+    "nombre": "Aloe Vera Bebible Natier x 250 ml",
+    "descripcion": "Bebida de aloe vera. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "aloe_vera_bebible_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 294,
+    "nombre": "Aloe Vera Bebible Natier x 500 ml",
+    "descripcion": "Bebida de aloe vera. Marca Natier. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "aloe_vera_bebible_natier_500ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 295,
+    "nombre": "Ajo Negro Natier x 50 caps",
+    "descripcion": "Suplemento de ajo negro en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "ajo_negro_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 296,
+    "nombre": "Canela Diabet Natier x 50 caps",
+    "descripcion": "Suplemento de canela en cápsulas, línea Diabet. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "canela_diabet_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 297,
+    "nombre": "Alcachofa Higras Natier x 50 caps",
+    "descripcion": "Suplemento de alcachofa en cápsulas, línea Higras. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "alcachofa_higras_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 298,
+    "nombre": "Aloe Vera Sistema Digestivo Natier x 250 ml",
+    "descripcion": "Bebida de aloe vera, línea Sistema Digestivo. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "aloe_vera_sistema_digestivo_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 299,
+    "nombre": "Vitamina D Natier x 50 caps",
+    "descripcion": "Suplemento de vitamina D en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_d_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 300,
+    "nombre": "Vitamina B12 Bebible Natier x 250 ml",
+    "descripcion": "Suplemento líquido de vitamina B12. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_b12_bebible_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 301,
+    "nombre": "Magnesio en Polvo Natier x 200 g",
+    "descripcion": "Magnesio en polvo. Marca Natier. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "magnesio_en_polvo_natier_200g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 302,
+    "nombre": "Vitamina B12 Bebible Natier x 500 ml",
+    "descripcion": "Suplemento líquido de vitamina B12. Marca Natier. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_b12_bebible_natier_500ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 303,
+    "nombre": "Vitaminas K2 + D3 Natier x 50 caps",
+    "descripcion": "Suplemento de vitaminas K2 y D3 en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitaminas_k2_d3_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 304,
+    "nombre": "Vitamina C Concentrada Natier x 250 g",
+    "descripcion": "Vitamina C concentrada en polvo. Marca Natier. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_c_concentrada_natier_250g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 305,
+    "nombre": "Glutamina en Polvo Natier x 200 g",
+    "descripcion": "Glutamina en polvo. Marca Natier. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "glutamina_en_polvo_natier_200g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 306,
+    "nombre": "Yodo + L-Tirosina Natier x 50 caps",
+    "descripcion": "Suplemento de yodo y L-tirosina en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "yodo_l_tirosina_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 307,
+    "nombre": "Omega 3 EPA + DHA Natier x 60 caps",
+    "descripcion": "Suplemento de omega 3 con EPA y DHA en cápsulas. Marca Natier. Por unidad de 60 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "omega_3_epa_dha_natier_60caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 308,
+    "nombre": "Vitamina C Concentrada Natier x 50 caps",
+    "descripcion": "Vitamina C concentrada en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_c_concentrada_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 309,
+    "nombre": "Vitamina B12 Natier x 50 caps",
+    "descripcion": "Suplemento de vitamina B12 en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vitamina_b12_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 310,
+    "nombre": "Jengibre + Vitamina C Natier x 50 caps",
+    "descripcion": "Suplemento de jengibre con vitamina C en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "jengibre_vitamina_c_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 311,
+    "nombre": "Vinagre de Sidra de Manzana Natier x 50 caps",
+    "descripcion": "Suplemento de vinagre de sidra de manzana en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "vinagre_de_sidra_de_manzana_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 312,
+    "nombre": "Colágeno Hidrolizado + Vitamina E Natier x 50 caps",
+    "descripcion": "Colágeno hidrolizado con vitamina E en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "colageno_hidrolizado_vitamina_e_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 313,
+    "nombre": "Cúrcuma + Pimienta Negra Natier x 50 caps",
+    "descripcion": "Suplemento de cúrcuma con pimienta negra en cápsulas. Marca Natier. Por unidad de 50 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "curcuma_pimienta_negra_natier_50caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 314,
+    "nombre": "Centella Asiática + Jengibre Natier x 250 ml",
+    "descripcion": "Suplemento líquido de centella asiática con jengibre. Marca Natier. Por unidad de 250 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Natier",
+    "imagen": "centella_asiatica_jengibre_natier_250ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 315,
+    "nombre": "Citrato de Magnesio Limón Vitaminway x 180 g",
+    "descripcion": "Citrato de magnesio en polvo, sabor limón. Marca Vitaminway. Por unidad de 180 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "citrato_de_magnesio_limon_vitaminway_180g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 316,
+    "nombre": "NAD+ Advance Formula Vitaminway x 30 caps",
+    "descripcion": "Suplemento en cápsulas de la línea NAD+ Advance Formula. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "nad_advance_formula_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 317,
+    "nombre": "Magnesio Sport Vitaminway x 30 caps",
+    "descripcion": "Suplemento de magnesio en cápsulas, línea Sport. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "magnesio_sport_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 318,
+    "nombre": "Vitamina D Vitaminway x 30 caps",
+    "descripcion": "Suplemento de vitamina D en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "vitamina_d_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 319,
+    "nombre": "Omega 3 Duo Vitaminway x 30 caps",
+    "descripcion": "Suplemento de omega 3 en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "omega_3_duo_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 320,
+    "nombre": "Citrato de Potasio Vitaminway x 30 caps",
+    "descripcion": "Suplemento de citrato de potasio en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "citrato_de_potasio_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 321,
+    "nombre": "Vitamina B12 Vitaminway x 20 caps",
+    "descripcion": "Suplemento de vitamina B12 en cápsulas. Marca Vitaminway. Por unidad de 20 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "vitamina_b12_vitaminway_20caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 322,
+    "nombre": "Vitamina C Vitaminway x 30 caps",
+    "descripcion": "Suplemento de vitamina C en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "vitamina_c_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 323,
+    "nombre": "Multivitamínico Energía Vitaminway x 30 caps",
+    "descripcion": "Multivitamínico en cápsulas, línea Energía. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "multivitaminico_energia_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 324,
+    "nombre": "Colágeno + Calcio Vitaminway x 30 caps",
+    "descripcion": "Suplemento de colágeno con calcio en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "colageno_calcio_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 325,
+    "nombre": "Citrato de Magnesio Vitaminway x 30 caps",
+    "descripcion": "Suplemento de citrato de magnesio en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "citrato_de_magnesio_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 326,
+    "nombre": "Magnesio Stress Vitaminway x 30 caps",
+    "descripcion": "Suplemento de magnesio en cápsulas, línea Stress. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "magnesio_stress_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 327,
+    "nombre": "Vitamina C Bebible Vitaminway x 195 g",
+    "descripcion": "Vitamina C en polvo para diluir. Marca Vitaminway. Por unidad de 195 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "vitamina_c_bebible_vitaminway_195g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 328,
+    "nombre": "Melena de León Vitaminway x 30 caps",
+    "descripcion": "Suplemento de hongo melena de león en cápsulas. Marca Vitaminway. Por unidad de 30 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "melena_de_leon_vitaminway_30caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 329,
+    "nombre": "Super Blend 6 Hongos Vitaminway x 60 caps",
+    "descripcion": "Suplemento en cápsulas con una mezcla de seis hongos. Marca Vitaminway. Por unidad de 60 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitaminway",
+    "imagen": "super_blend_6_hongos_vitaminway_60caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 330,
+    "nombre": "Aceite de Orégano Medinatural x 30 ml",
+    "descripcion": "Aceite de orégano en presentación líquida. Marca Medinatural. Por unidad de 30 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Medinatural",
+    "imagen": "aceite_de_oregano_medinatural_30ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 331,
+    "nombre": "Aceite de Cúrcuma con Pimienta Negra Medinatural x 30 ml",
+    "descripcion": "Aceite de cúrcuma con pimienta negra en presentación líquida. Marca Medinatural. Por unidad de 30 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Medinatural",
+    "imagen": "aceite_de_curcuma_con_pimienta_negra_medinatural_30ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 332,
+    "nombre": "Aceite de Romero con Vitamina E Medinatural x 30 ml",
+    "descripcion": "Aceite de romero con vitamina E en presentación líquida. Marca Medinatural. Por unidad de 30 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Medinatural",
+    "imagen": "aceite_de_romero_con_vitamina_e_medinatural_30ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 333,
+    "nombre": "Ashwagandha Sundance x 60 caps",
+    "descripcion": "Suplemento de ashwagandha en cápsulas. Marca Sundance. Por unidad de 60 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "ashwagandha_sundance_60caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 334,
+    "nombre": "Cardo Mariano (Milk Thistle) Sundance x 60 caps",
+    "descripcion": "Suplemento de cardo mariano en cápsulas. Marca Sundance. Por unidad de 60 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "cardo_mariano_milk_thistle_sundance_60caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 335,
+    "nombre": "Aceite de Orégano Sundance x 60 caps",
+    "descripcion": "Aceite de orégano en cápsulas blandas. Marca Sundance. Por unidad de 60 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "aceite_de_oregano_sundance_60caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 336,
+    "nombre": "Aceite de Pescado Sundance x 100 caps",
+    "descripcion": "Aceite de pescado en cápsulas. Marca Sundance. Por unidad de 100 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "aceite_de_pescado_sundance_100caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 337,
+    "nombre": "Magnesio Sundance x 100 caps",
+    "descripcion": "Suplemento de magnesio en cápsulas. Marca Sundance. Por unidad de 100 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "magnesio_sundance_100caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 338,
+    "nombre": "Selenio Sundance x 100 caps",
+    "descripcion": "Suplemento de selenio en cápsulas. Marca Sundance. Por unidad de 100 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "selenio_sundance_100caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 339,
+    "nombre": "Vitamina B12 Sundance x 90 caps",
+    "descripcion": "Suplemento de vitamina B12 en cápsulas. Marca Sundance. Por unidad de 90 caps.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Sundance",
+    "imagen": "vitamina_b12_sundance_90caps.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 340,
+    "nombre": "Spirulina en Polvo Organikal Super Food x 50 g",
+    "descripcion": "Espirulina en polvo. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "spirulina_en_polvo_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 341,
+    "nombre": "Chlorella Organikal Super Food x 50 g",
+    "descripcion": "Chlorella en polvo. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "chlorella_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 342,
+    "nombre": "Cúrcuma Organikal Super Food x 50 g",
+    "descripcion": "Cúrcuma en polvo. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "curcuma_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 343,
+    "nombre": "Moringa Organikal Super Food x 50 g",
+    "descripcion": "Moringa en polvo. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "moringa_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 344,
+    "nombre": "Matcha Organikal Super Food x 50 g",
+    "descripcion": "Té matcha en polvo. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "matcha_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 345,
+    "nombre": "Cacao Nibs Organikal Super Food x 50 g",
+    "descripcion": "Nibs de cacao. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "cacao_nibs_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 346,
+    "nombre": "Wakame Organikal Super Food x 50 g",
+    "descripcion": "Alga wakame deshidratada. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "wakame_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 347,
+    "nombre": "Remolacha Organikal Super Food x 50 g",
+    "descripcion": "Remolacha en polvo. Marca Organikal Super Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Organikal Super Food",
+    "imagen": "remolacha_organikal_super_food_50g.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 348,
+    "nombre": "Ormus Patagonia Dabar Frecuencial x 500 ml",
+    "descripcion": "Solución líquida de la línea Ormus Patagonia. Marca Dabar Frecuencial. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Dabar Frecuencial",
+    "imagen": "ormus_patagonia_dabar_frecuencial_500ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 349,
+    "nombre": "Solución Frecuencial AntiStress Dabar Frecuencial x 500 ml",
+    "descripcion": "Solución líquida de la línea Frecuencial AntiStress. Marca Dabar Frecuencial. Por unidad de 500 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Dabar Frecuencial",
+    "imagen": "solucion_frecuencial_antistress_dabar_frecuencial_500ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 350,
+    "nombre": "Comprimidos Detox Dabar Frecuencial x 120 comp",
+    "descripcion": "Comprimidos de la línea Detox. Marca Dabar Frecuencial. Por unidad de 120 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Dabar Frecuencial",
+    "imagen": "comprimidos_detox_dabar_frecuencial_120comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 351,
+    "nombre": "Bebida Probiótica Vitabiosa",
+    "descripcion": "Bebida probiótica fermentada. Sabores disponibles: Natural, Frutilla, Naranja. Marca Vitabiosa.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Vitabiosa",
+    "imagen": "bebida_probiotica_vitabiosa.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 352,
+    "nombre": "Betacaroteno Geonat x 30 comp",
+    "descripcion": "Suplemento de betacaroteno en comprimidos. Marca Geonat. Por unidad de 30 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "betacaroteno_geonat_30comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 353,
+    "nombre": "Circulac Geonat x 60 comp",
+    "descripcion": "Suplemento en comprimidos de la línea Circulac. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "circulac_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 354,
+    "nombre": "Algimina Geonat x 60 comp",
+    "descripcion": "Suplemento en comprimidos de la línea Algimina. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "algimina_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 355,
+    "nombre": "Resveratrol Geonat x 30 comp",
+    "descripcion": "Suplemento de resveratrol en comprimidos. Marca Geonat. Por unidad de 30 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "resveratrol_geonat_30comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 356,
+    "nombre": "Aceite de Orégano Geonat x 30 ml",
+    "descripcion": "Aceite de orégano en presentación líquida. Marca Geonat. Por unidad de 30 ml.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "aceite_de_oregano_geonat_30ml.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 357,
+    "nombre": "BlackMaca Geonat x 60 comp",
+    "descripcion": "Suplemento de maca negra en comprimidos. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "blackmaca_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 358,
+    "nombre": "Moringa Geonat x 30 comp",
+    "descripcion": "Suplemento de moringa en comprimidos. Marca Geonat. Por unidad de 30 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "moringa_geonat_30comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 359,
+    "nombre": "Centella Forte Geonat x 60 comp",
+    "descripcion": "Suplemento de centella asiática en comprimidos, línea Forte. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "centella_forte_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 360,
+    "nombre": "Ginseng + Ginkgo Geonat x 40 comp",
+    "descripcion": "Suplemento de ginseng con ginkgo biloba en comprimidos. Marca Geonat. Por unidad de 40 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "ginseng_ginkgo_geonat_40comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 361,
+    "nombre": "Arándano Rojo Puro Geonat x 30 comp",
+    "descripcion": "Suplemento de arándano rojo en comprimidos. Marca Geonat. Por unidad de 30 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "arandano_rojo_puro_geonat_30comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 362,
+    "nombre": "Colágeno Geonat x 60 comp",
+    "descripcion": "Suplemento de colágeno en comprimidos. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "colageno_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 363,
+    "nombre": "Magnesio Geonat x 30 comp",
+    "descripcion": "Suplemento de magnesio en comprimidos. Marca Geonat. Por unidad de 30 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "magnesio_geonat_30comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 364,
+    "nombre": "Arándano Azul Geonat x 60 comp",
+    "descripcion": "Suplemento de arándano azul en comprimidos. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "arandano_azul_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 365,
+    "nombre": "Café Verde Geonat x 60 comp",
+    "descripcion": "Suplemento de café verde en comprimidos. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "cafe_verde_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 366,
+    "nombre": "Ginseng Coreano Geonat x 60 comp",
+    "descripcion": "Suplemento de ginseng coreano en comprimidos. Marca Geonat. Por unidad de 60 comp.",
+    "precio": 0,
+    "categoria": "Suplementos",
+    "subcategoria": "Geonat",
+    "imagen": "ginseng_coreano_geonat_60comp.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 367,
+    "nombre": "Granola Íntegra x 250 g — SIN TACC",
+    "descripcion": "Granola en envase cerrado. Apto celíacos. SIN TACC. Marca Íntegra. Por unidad de 250 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "granola_integra_250.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 368,
+    "nombre": "Talita de Queso Happy Food x 100 g — SIN TACC",
+    "descripcion": "Galletitas saladas sabor queso. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 100 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "talita_queso_happy_food_100.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 369,
+    "nombre": "Talita Clásica Happy Food x 100 g — SIN TACC",
+    "descripcion": "Galletitas saladas clásicas. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 100 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "talita_clasica_happy_food_100.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 370,
+    "nombre": "Talita de Jamón Happy Food x 100 g — SIN TACC",
+    "descripcion": "Galletitas saladas sabor jamón. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 100 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "talita_jamon_happy_food_100.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 371,
+    "nombre": "Alfajor Surtido Happy Food x 50 g — SIN TACC",
+    "descripcion": "Alfajor individual, variedad surtida. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "alfajor_surtido_happy_food_50.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 372,
+    "nombre": "Alfajor sin Azúcar Happy Food x 50 g — SIN TACC",
+    "descripcion": "Alfajor individual sin azúcar agregada. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "alfajor_sin_azucar_happy_food_50.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 373,
+    "nombre": "Alfajor con Dulce de Leche Happy Food x 50 g — SIN TACC",
+    "descripcion": "Alfajor individual relleno con dulce de leche. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "alfajor_dulce_leche_happy_food_50.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 374,
+    "nombre": "Alfajor con Crema de Maní Happy Food x 50 g — SIN TACC",
+    "descripcion": "Alfajor individual relleno con crema de maní. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "alfajor_crema_mani_happy_food_50.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 375,
+    "nombre": "Alfajor de Coco y Dulce de Leche sin Azúcar Happy Food x 50 g — SIN TACC",
+    "descripcion": "Alfajor individual de coco relleno con dulce de leche, sin azúcar agregada. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "alfajor_coco_dulce_leche_sin_azucar_happy_food_50.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 376,
+    "nombre": "Galletita de Naranja Familiar Happy Food x 120 g — SIN TACC",
+    "descripcion": "Galletitas dulces sabor naranja en paquete familiar. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 120 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "galletita_naranja_familiar_happy_food_120.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 377,
+    "nombre": "Galletita de Limón Familiar Happy Food x 120 g — SIN TACC",
+    "descripcion": "Galletitas dulces sabor limón en paquete familiar. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 120 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "galletita_limon_familiar_happy_food_120.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 378,
+    "nombre": "Galletita de Coco Familiar Happy Food x 120 g — SIN TACC",
+    "descripcion": "Galletitas dulces sabor coco en paquete familiar. Apto celíacos. SIN TACC. Marca Happy Food. Por unidad de 120 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "galletita_coco_familiar_happy_food_120.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 379,
+    "nombre": "Bizcochito Natuzen x 200 g — SIN TACC",
+    "descripcion": "Bizcochitos horneados en envase cerrado. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "bizcochito_natuzen_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 380,
+    "nombre": "Galleta Cuadrada de Arroz Ajuar Rojas x 95 g — SIN TACC",
+    "descripcion": "Galletas de arroz en formato cuadrado. Apto celíacos. SIN TACC. Marca Ajuar Rojas. Por unidad de 95 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Galletas y Alfajores",
+    "imagen": "galleta_cuadrada_arroz_ajuar_rojas_95.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 381,
+    "nombre": "Premezcla para Repostería Natuzen x 1 kg — SIN TACC",
+    "descripcion": "Premezcla lista para preparaciones de repostería. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 1 kg.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_reposteria_natuzen_1kg.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 382,
+    "nombre": "Premezcla para Repostería Natuzen x 450 g — SIN TACC",
+    "descripcion": "Premezcla lista para preparaciones de repostería. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 450 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_reposteria_natuzen_450.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 383,
+    "nombre": "Premezcla para Bizcochuelo Natuzen x 450 g — SIN TACC",
+    "descripcion": "Premezcla lista para preparar bizcochuelo. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 450 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_bizcochuelo_natuzen_450.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 384,
+    "nombre": "Premezcla para Pan Natuzen x 450 g — SIN TACC",
+    "descripcion": "Premezcla lista para preparar pan. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 450 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_pan_natuzen_450.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 385,
+    "nombre": "Premezcla para Pizza Natuzen x 450 g — SIN TACC",
+    "descripcion": "Premezcla lista para preparar pizza. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 450 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_pizza_natuzen_450.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 386,
+    "nombre": "Rebozador Pan Rallado Natuzen x 450 g — SIN TACC",
+    "descripcion": "Rebozador tipo pan rallado. Apto celíacos. SIN TACC. Marca Natuzen. Por unidad de 450 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "rebozador_pan_rallado_natuzen_450.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 387,
+    "nombre": "Rebozador de Arroz Arrozen x 240 g — SIN TACC",
+    "descripcion": "Rebozador elaborado a base de arroz. Apto celíacos. SIN TACC. Marca Arrozen. Por unidad de 240 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "rebozador_arroz_arrozen_240.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 388,
+    "nombre": "Premezcla Universal Sana Mundi x 500 g — SIN TACC",
+    "descripcion": "Premezcla de uso general para panificados y repostería. Apto celíacos. SIN TACC. Marca Sana Mundi. Por unidad de 500 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_universal_sana_mundi_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 389,
+    "nombre": "Premezcla Pan y Pizza Sana Mundi x 500 g — SIN TACC",
+    "descripcion": "Premezcla lista para preparar pan y pizza. Apto celíacos. SIN TACC. Marca Sana Mundi. Por unidad de 500 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "premezcla_pan_pizza_sana_mundi_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 390,
+    "nombre": "Rebozador Sana Mundi x 500 g — SIN TACC",
+    "descripcion": "Rebozador en envase cerrado. Apto celíacos. SIN TACC. Marca Sana Mundi. Por unidad de 500 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Premezclas y Rebozadores",
+    "imagen": "rebozador_sana_mundi_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 391,
+    "nombre": "Fideos de Maíz Wakas x 300 g — SIN TACC",
+    "descripcion": "Fideos secos elaborados a base de maíz. Apto celíacos. SIN TACC. Marca Wakas. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_maiz_wakas_300.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 392,
+    "nombre": "Fideos de Amaranto Wakas x 300 g — SIN TACC",
+    "descripcion": "Fideos secos elaborados a base de amaranto. Apto celíacos. SIN TACC. Marca Wakas. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_amaranto_wakas_300.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 393,
+    "nombre": "Fideos de Quinoa Wakas x 300 g — SIN TACC",
+    "descripcion": "Fideos secos elaborados a base de quinoa. Apto celíacos. SIN TACC. Marca Wakas. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_quinoa_wakas_300.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 394,
+    "nombre": "Fideos de Chía Wakas x 300 g — SIN TACC",
+    "descripcion": "Fideos secos elaborados a base de chía. Apto celíacos. SIN TACC. Marca Wakas. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_chia_wakas_300.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 395,
+    "nombre": "Fideos de Kale Wakas x 300 g — SIN TACC",
+    "descripcion": "Fideos secos elaborados a base de kale. Apto celíacos. SIN TACC. Marca Wakas. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_kale_wakas_300.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 396,
+    "nombre": "Fideos de Garbanzo y Alubia Wakas x 300 g — SIN TACC",
+    "descripcion": "Fideos secos elaborados a base de garbanzo y alubia. Apto celíacos. SIN TACC. Marca Wakas. Por unidad de 300 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_garbanzo_alubia_wakas_300.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 397,
+    "nombre": "Fideos Caseritos Morrón Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos tipo caseritos con morrón. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_caseritos_morron_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 398,
+    "nombre": "Fideos Caseritos Espinaca Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos tipo caseritos con espinaca. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_caseritos_espinaca_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 399,
+    "nombre": "Fideos Caseritos Multivegetal Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos tipo caseritos con vegetales. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_caseritos_multivegetal_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 400,
+    "nombre": "Fideos Caseritos al Huevo Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos tipo caseritos al huevo. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_caseritos_huevo_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 401,
+    "nombre": "Fideos Moños al Huevo Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos con forma de moño, al huevo. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_monos_huevo_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 402,
+    "nombre": "Fideos Fusilli Tirabuzón Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos tipo fusilli. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_fusilli_tirabuzon_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 403,
+    "nombre": "Fideos Fusilli Multivegetal Doña Rosa x 400 g — SIN TACC",
+    "descripcion": "Fideos secos tipo fusilli con vegetales. Apto celíacos. SIN TACC. Marca Doña Rosa. Por unidad de 400 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Fideos",
+    "imagen": "fideos_fusilli_multivegetal_dona_rosa_400.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 404,
+    "nombre": "Algas Marinas Kombu Argendiet x 100 g — SIN TACC",
+    "descripcion": "Alga kombu deshidratada. Apto celíacos. SIN TACC. Marca Argendiet. Por unidad de 100 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Algas",
+    "imagen": "algas_marinas_kombu_argendiet_100.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 405,
+    "nombre": "Algas Marinas Nori Argendiet x 50 g — SIN TACC",
+    "descripcion": "Alga nori deshidratada. Apto celíacos. SIN TACC. Marca Argendiet. Por unidad de 50 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Algas",
+    "imagen": "algas_marinas_nori_argendiet_50.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 406,
+    "nombre": "Algas Marinas para Sushi Argendiet x 6 unidades — SIN TACC",
+    "descripcion": "Láminas de alga para preparar sushi. Apto celíacos. SIN TACC. Marca Argendiet. Envase con 6 unidades.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Algas",
+    "imagen": "algas_marinas_sushi_argendiet_6.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 407,
+    "nombre": "Algas Marinas para Sushi Argendiet x 12 unidades — SIN TACC",
+    "descripcion": "Láminas de alga para preparar sushi. Apto celíacos. SIN TACC. Marca Argendiet. Envase con 12 unidades.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Algas",
+    "imagen": "algas_marinas_sushi_argendiet_12.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 408,
+    "nombre": "Levadura de Cerveza Levex x 10 g — SIN TACC",
+    "descripcion": "Levadura de cerveza en polvo. Apto celíacos. SIN TACC. Marca Levex. Por unidad de 10 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Levaduras",
+    "imagen": "levadura_cerveza_levex_10.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 409,
+    "nombre": "Levadura Virgen Nutrileva x 200 g — SIN TACC",
+    "descripcion": "Levadura virgen en escamas. Apto celíacos. SIN TACC. Marca Nutrileva. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Levaduras",
+    "imagen": "levadura_virgen_nutrileva_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 410,
+    "nombre": "Levadura Virgen Nutrileva x 500 g — SIN TACC",
+    "descripcion": "Levadura virgen en escamas. Apto celíacos. SIN TACC. Marca Nutrileva. Por unidad de 500 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Levaduras",
+    "imagen": "levadura_virgen_nutrileva_500.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 411,
+    "nombre": "Levadura Sabor Manzana Nutrileva x 200 g — SIN TACC",
+    "descripcion": "Levadura virgen sabor manzana. Apto celíacos. SIN TACC. Marca Nutrileva. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Levaduras",
+    "imagen": "levadura_sabor_manzana_nutrileva_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 412,
+    "nombre": "Levadura Sabor Queso Nutrileva x 200 g — SIN TACC",
+    "descripcion": "Levadura virgen sabor queso. Apto celíacos. SIN TACC. Marca Nutrileva. Por unidad de 200 g.",
+    "precio": 0,
+    "categoria": "Sin TACC",
+    "subcategoria": "Levaduras",
+    "imagen": "levadura_sabor_queso_nutrileva_200.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 413,
+    "nombre": "Cerveza Straus Classic x 355 ml — SIN TACC",
+    "descripcion": "Cerveza rubia de estilo clásico. Apta celíacos. SIN TACC. Marca Straus. Por unidad de 355 ml.",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "subcategoria": "Straus",
+    "imagen": "cerveza_straus_classic_355.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 414,
+    "nombre": "Cerveza Straus Golden x 355 ml — SIN TACC",
+    "descripcion": "Cerveza rubia de estilo golden. Apta celíacos. SIN TACC. Marca Straus. Por unidad de 355 ml.",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "subcategoria": "Straus",
+    "imagen": "cerveza_straus_golden_355.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 415,
+    "nombre": "Cerveza Straus Californian Hops x 355 ml — SIN TACC",
+    "descripcion": "Cerveza rubia lupulada, elaborada con lúpulos californianos. Apta celíacos. SIN TACC. Marca Straus. Por unidad de 355 ml.",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "subcategoria": "Straus",
+    "imagen": "cerveza_straus_californian_hops_355.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 416,
+    "nombre": "Cerveza Linz Clásica x 355 ml — SIN TACC",
+    "descripcion": "Cerveza rubia de estilo clásico. Apta celíacos. SIN TACC. Marca Linz. Por unidad de 355 ml.",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "subcategoria": "Linz",
+    "imagen": "cerveza_linz_clasica_355.jpg",
+    "stock": "disponible"
+  },
+  {
+    "id": 417,
+    "nombre": "Cerveza Linz Tostada x 355 ml — SIN TACC",
+    "descripcion": "Cerveza tostada. Apta celíacos. SIN TACC. Marca Linz. Por unidad de 355 ml.",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "subcategoria": "Linz",
+    "imagen": "cerveza_linz_tostada_355.jpg",
+    "stock": "disponible"
+  }
+]

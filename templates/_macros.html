@@ -1,0 +1,95 @@
+{# =========================================================================
+   Card de producto del catálogo.
+
+   Resuelve sola todo lo que antes estaba duplicado: si el producto es a
+   granel o por unidad, su estado de stock, si tiene foto y qué botón le
+   corresponde. Sirve en cualquier página que muestre productos.
+
+   Se importa "with context" porque usa imagen_existe() y estado_stock(),
+   que app.py inyecta en el contexto de las plantillas:
+
+       {% from '_macros.html' import card_producto with context %}
+   ========================================================================= #}
+
+{% macro card_producto(p) %}
+{% set stock = estado_stock(p) %}
+{% set agotado = stock == 'sin_stock' %}
+{% set granel = p.precio_100g is defined %}
+<article class="producto-card{{ ' agotado' if agotado }}"
+         id="card-{{ p.id }}"
+         data-nombre="{{ p.nombre }}"
+         data-stock="{{ stock }}"
+         {%- if granel %}
+         data-precio-100g="{{ p.precio_100g }}"
+         data-precio-kg="{{ p.precio_kg }}"
+         data-presentacion-activa="100g"
+         {%- else %}
+         data-precio="{{ p.precio }}"
+         {%- endif %}>
+
+    <div class="card-media">
+        <span class="card-inicial" aria-hidden="true">{{ p.nombre[0]|upper }}</span>
+        {% if imagen_existe(p.imagen) %}
+        <img class="card-img" loading="lazy" onerror="this.remove()"
+             src="{{ url_for('static', filename='img/' ~ p.imagen) }}"
+             alt="{{ p.nombre }}">
+        {% endif %}
+        {% if stock == 'ultimas' %}
+        <span class="badge-stock badge-ultimas">Últimas unidades</span>
+        {% elif agotado %}
+        <span class="badge-stock badge-agotado">Sin stock</span>
+        {% endif %}
+    </div>
+
+    <div class="card-cuerpo">
+        <h3 class="card-nombre">{{ p.nombre }}</h3>
+        <p class="card-desc">{{ p.descripcion }}</p>
+
+        {# El selector de presentación no tiene sentido si no se puede comprar #}
+        {% if granel and not agotado %}
+        <div class="segmented" role="group" aria-label="Presentación">
+            <button type="button" class="seg-btn activo" aria-pressed="true"
+                    data-accion="presentacion" data-presentacion="100g">100 g</button>
+            <button type="button" class="seg-btn" aria-pressed="false"
+                    data-accion="presentacion" data-presentacion="1kg">1 kg</button>
+        </div>
+        {% endif %}
+
+        <div class="bloque-precio">
+            {% if granel %}
+            <p class="precio" id="precio-{{ p.id }}">
+                {% if p.precio_100g and p.precio_100g > 0 %}
+                <span class="precio-monto">${{ "{:,.0f}".format(p.precio_100g).replace(",", ".") }}</span>
+                <span class="precio-unidad">/ 100g</span>
+                {% else %}
+                <span class="precio-consultar">Precio a confirmar</span>
+                {% endif %}
+            </p>
+            {% if p.precio_kg and p.precio_kg > 0 and not agotado %}
+            <p class="nota-ahorro" hidden>+ barato por kilo</p>
+            {% endif %}
+            {% else %}
+            <p class="precio">
+                {% if p.precio and p.precio > 0 %}
+                <span class="precio-monto">${{ "{:,.0f}".format(p.precio).replace(",", ".") }}</span>
+                {% else %}
+                <span class="precio-consultar">Precio a confirmar</span>
+                {% endif %}
+            </p>
+            {% endif %}
+        </div>
+
+        {% if agotado %}
+        <button type="button" class="btn-avisar" data-accion="avisar">
+            <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-whatsapp"></use></svg>
+            Avisame cuando llegue
+        </button>
+        {% else %}
+        <button type="button" class="btn-comprar" id="btn-{{ p.id }}" data-accion="agregar">
+            <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-carrito"></use></svg>
+            Agregar al carrito
+        </button>
+        {% endif %}
+    </div>
+</article>
+{% endmacro %}

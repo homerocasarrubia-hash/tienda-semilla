@@ -1,0 +1,34 @@
+{# Panel del carrito. Se abre/cierra con la clase .abierto (la animación
+   vive en el CSS, el JS solo alterna la clase). #}
+
+{# Los productos agotados, para que el carrito guardado en el navegador
+   pueda marcar los que se agotaron después de haberlos agregado. #}
+<script type="application/json" id="datos-sin-stock">{{ nombres_sin_stock|tojson }}</script>
+
+<aside class="carrito-panel" id="carrito-lateral" aria-label="Carrito de compras">
+
+    <div class="carrito-header">
+        <h3>Tu pedido</h3>
+        <button type="button" class="close-btn" data-accion="toggle-carrito" aria-label="Cerrar carrito">
+            <svg class="ico" aria-hidden="true"><use href="#ico-cerrar"></use></svg>
+        </button>
+    </div>
+
+    <div id="carrito-items" class="carrito-body">
+        <!-- Se llena desde app.js -->
+    </div>
+
+    <div class="carrito-footer">
+        <div class="carrito-total">
+            <span class="carrito-total-label">Total</span>
+            <span class="carrito-total-monto">$<span id="carrito-total">0</span></span>
+        </div>
+
+        <button type="button" class="checkout-btn" data-accion="checkout">
+            <svg class="ico" aria-hidden="true"><use href="#ico-whatsapp"></use></svg>
+            Finalizar por WhatsApp
+        </button>
+
+        <p class="carrito-nota">Coordinamos el pago y la entrega por WhatsApp.</p>
+    </div>
+</aside>

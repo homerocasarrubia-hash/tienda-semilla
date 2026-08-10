@@ -1,0 +1,1 @@
+# Fotos de producto. El nombre del archivo debe coincidir con el campo "imagen" del producto en app.py (por ejemplo: mix_energy.jpg).

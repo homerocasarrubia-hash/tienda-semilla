@@ -1,0 +1,239 @@
+{# Header, navegación desktop y panel mobile.
+   Única fuente para inicio.html y productos.html.
+   El árbol de categorías se declara una sola vez y se recorre dos veces:
+   dropdown en desktop, acordeón en mobile. #}
+
+{% set inicio_prefijo = '' if request.path == '/' else '/' %}
+
+{% set categorias = [
+    {'label': 'Frutos Secos', 'href': '/compras?q=Frutos+Secos', 'ver_todo': 'Todos los Frutos Secos', 'hijos': [
+        ('Mix de Frutos Secos', '/compras?q=Mix+de+Frutos+Secos'),
+        ('Castañas de Cajú', '/compras?q=Castañas+de+Caju'),
+        ('Pistachos', '/compras?q=Pistachos'),
+        ('Almendras', '/compras?q=Almendras'),
+        ('Nueces', '/compras?q=Nueces'),
+        ('Otros Frutos Secos', '/compras?q=Otros+Frutos+Secos')
+    ]},
+    {'label': 'Frutas Deshidratadas', 'href': '/compras?q=Frutas+Deshidratadas', 'ver_todo': 'Ver Todo', 'hijos': [
+        ('Higos', '/compras?q=Higos'),
+        ('Ciruelas', '/compras?q=Ciruelas'),
+        ('Dátiles', '/compras?q=Dátiles'),
+        ('Pasas de Uva', '/compras?q=Pasas+de+Uva')
+    ]},
+    {'label': 'Granolas', 'href': '/compras?cat=Granolas', 'hijos': []},
+    {'label': 'Harinas', 'href': '/compras?q=Harinas', 'ver_todo': 'Ver Todas las Harinas', 'hijos': [
+        ('Trigo', '/compras?q=Harina+Trigo'),
+        ('Frutos Secos', '/compras?q=Harina+Frutos+Secos'),
+        ('Semillas', '/compras?q=Harina+Semillas'),
+        ('Cereales', '/compras?q=Harina+Cereales'),
+        ('Legumbres', '/compras?q=Harina+Legumbres'),
+        ('Otras', '/compras?q=Harina+Otras'),
+        ('Sin TACC', '/compras?q=SIN+TACC')
+    ]},
+    {'label': 'Almacén', 'href': '/compras?q=Almacen', 'hijos': []},
+    {'label': 'Desayuno', 'href': '/compras?q=Desayuno', 'ver_todo': 'Ver Todo', 'hijos': [
+        ('Almohaditas de Avena', '/compras?subcat=Almohaditas+de+Avena'),
+        ('Almohaditas de Arroz', '/compras?subcat=Almohaditas+de+Arroz'),
+        ('Ositos', '/compras?subcat=Ositos'),
+        ('Copos de Maíz', '/compras?subcat=Copos+de+Maíz'),
+        ('Tutucas', '/compras?subcat=Tutucas'),
+        ('Otros Cereales', '/compras?subcat=Otros+Cereales')
+    ]},
+    {'label': 'Sin TACC', 'href': '/compras?cat=Sin TACC', 'ver_todo': 'Ver Todo', 'hijos': [
+        ('Galletas y Alfajores', '/compras?subcat=Galletas+y+Alfajores'),
+        ('Premezclas y Rebozadores', '/compras?subcat=Premezclas+y+Rebozadores'),
+        ('Fideos', '/compras?subcat=Fideos'),
+        ('Algas', '/compras?subcat=Algas'),
+        ('Levaduras', '/compras?subcat=Levaduras')
+    ]},
+    {'label': 'Suplementos Deportivos', 'href': '/compras?cat=Suplementos Deportivos', 'ver_todo': 'Ver Todo', 'hijos': [
+        ('Star Nutrition', '/compras?subcat=Star+Nutrition'),
+        ('ENA', '/compras?subcat=ENA'),
+        ('GUM', '/compras?subcat=GUM'),
+        ('Gentech', '/compras?subcat=Gentech'),
+        ('Xtrength', '/compras?subcat=Xtrength'),
+        ('Ultratech', '/compras?subcat=Ultratech'),
+        ('Granger', '/compras?subcat=Granger')
+    ]},
+    {'label': 'Suplementos', 'href': '/compras?cat=Suplementos', 'ver_todo': 'Ver Todo', 'hijos': [
+        ('Hydor', '/compras?subcat=Hydor'),
+        ('Natier', '/compras?subcat=Natier'),
+        ('Vitaminway', '/compras?subcat=Vitaminway'),
+        ('Medinatural', '/compras?subcat=Medinatural'),
+        ('Sundance', '/compras?subcat=Sundance'),
+        ('Organikal Super Food', '/compras?subcat=Organikal+Super+Food'),
+        ('Dabar Frecuencial', '/compras?subcat=Dabar+Frecuencial'),
+        ('Vitabiosa', '/compras?subcat=Vitabiosa'),
+        ('Geonat', '/compras?subcat=Geonat')
+    ]},
+    {'label': 'Tés e Infusiones', 'href': '/compras?cat=Tés e Infusiones', 'hijos': []},
+    {'label': 'Arroces', 'href': '/compras?q=Arroces', 'ver_todo': 'Ver Todos los Arroces', 'hijos': [
+        ('Arroz Yamani', '/compras?q=Arroz+Yamani'),
+        ('Arroz Integral', '/compras?q=Arroz+Integral'),
+        ('Arroz Koshihikari', '/compras?q=Arroz+Koshihikari')
+    ]},
+    {'label': 'Cereales y Legumbres', 'href': '/compras?q=Cereales+y+Legumbres', 'ver_todo': 'Ver Todo', 'hijos': [
+        ('Legumbres', '/compras?subcat=Legumbres'),
+        ('Cereales', '/compras?subcat=Cereales'),
+        ('Maní', '/compras?subcat=Maní')
+    ]},
+    {'label': 'Aceites', 'href': '/compras?cat=Aceites', 'hijos': []},
+    {'label': 'Vinagres', 'href': '/compras?cat=Vinagres', 'hijos': []},
+    {'label': 'Salsas', 'href': '/compras?cat=Salsas', 'hijos': []},
+    {'label': 'Pastas Untables', 'href': '/compras?cat=Pastas Untables', 'hijos': []},
+    {'label': 'Semillas', 'href': '/compras?q=Semillas', 'hijos': []},
+    {'label': 'Cosmética Natural', 'href': '/compras?q=Cosmetica', 'hijos': []},
+    {'label': 'Chocolatería', 'href': '/compras?cat=Chocolatería', 'hijos': []},
+    {'label': 'Hierbas Medicinales', 'href': '/compras?cat=Hierbas Medicinales', 'hijos': []},
+    {'label': 'Regionales', 'href': '/compras?q=Regionales', 'hijos': []},
+    {'label': 'Cervezas', 'href': '/compras?cat=Cervezas', 'ver_todo': 'Ver Todas', 'hijos': [
+        ('Straus', '/compras?subcat=Straus'),
+        ('Linz', '/compras?subcat=Linz')
+    ]},
+    {'label': 'Vinos', 'href': '/compras?q=Vinos', 'hijos': []}
+] %}
+
+{% set enlaces_secundarios = [
+    ('Ofertas', '/compras?q=Ofertas'),
+    ('Novedades', '#'),
+    ('Quiénes Somos', inicio_prefijo ~ '#quienes-somos'),
+    ('Contacto', inicio_prefijo ~ '#contacto'),
+    ('Ubicación', inicio_prefijo ~ '#seccion-mapa')
+] %}
+
+<div class="top-bar">Envíos a todo Catamarca y el NOA</div>
+
+<header class="sitio-header" id="sitio-header">
+
+    <div class="main-header contenedor">
+
+        <button type="button" class="btn-menu" data-accion="abrir-menu"
+                aria-label="Abrir menú" aria-controls="nav-mobile" aria-expanded="false">
+            <svg class="ico" aria-hidden="true"><use href="#ico-menu"></use></svg>
+        </button>
+
+        <div class="logo">
+            <a href="/">
+                <img src="{{ url_for('static', filename='logosemilla.png') }}"
+                     alt="Semilla Tienda Natural" width="150" height="100">
+            </a>
+        </div>
+
+        <form action="/compras" method="get" class="search-wrapper" role="search">
+            <div class="search-fila">
+                <input type="text" name="q" id="search-input" autocomplete="off"
+                       placeholder="¿Qué estás buscando?" aria-label="Buscar productos">
+                <button type="submit" class="search-btn" aria-label="Buscar">
+                    <svg class="ico" aria-hidden="true"><use href="#ico-buscar"></use></svg>
+                </button>
+            </div>
+            <div id="autocomplete-lista" class="autocomplete-lista" hidden></div>
+        </form>
+
+        <div class="header-icons">
+            <button type="button" class="icon-btn btn-buscar-mobile" data-accion="toggle-buscador" aria-label="Buscar">
+                <svg class="ico" aria-hidden="true"><use href="#ico-buscar"></use></svg>
+            </button>
+
+            <a href="#" class="icon-btn">
+                <svg class="ico" aria-hidden="true"><use href="#ico-corazon"></use></svg>
+                <span>Favoritos</span>
+            </a>
+
+            <button type="button" class="icon-btn" data-accion="toggle-carrito" aria-controls="carrito-lateral">
+                <svg class="ico" aria-hidden="true"><use href="#ico-carrito"></use></svg>
+                <span>Carrito</span>
+                <span id="cart-count" class="badge">0</span>
+            </button>
+        </div>
+    </div>
+
+    <nav class="nav-sub-bar" aria-label="Navegación principal">
+        <div class="nav-container contenedor">
+            <div class="nav-main-buttons">
+                <div class="dropdown">
+                    <button type="button" class="nav-item active-gray">
+                        <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-menu"></use></svg>
+                        Categorías
+                    </button>
+                    <div class="dropdown-content">
+                        {% for c in categorias %}
+                            {% if c.hijos %}
+                                <div class="submenu-container">
+                                    <a href="{{ c.href }}">
+                                        {{ c.label }}
+                                        <span class="arrow">
+                                            <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-chevron"></use></svg>
+                                        </span>
+                                    </a>
+                                    <div class="submenu-content">
+                                        {% for nombre, href in c.hijos %}
+                                            <a href="{{ href }}">{{ nombre }}</a>
+                                        {% endfor %}
+                                        <a href="{{ c.href }}" class="dd-ver-todo">{{ c.ver_todo }}</a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <a href="{{ c.href }}">{{ c.label }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <a href="/compras" class="nav-item">Productos</a>
+            </div>
+
+            <div class="nav-secondary-links">
+                {% for nombre, href in enlaces_secundarios %}
+                    <a href="{{ href }}">{{ nombre }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Panel de navegación mobile -->
+<div class="nav-mobile" id="nav-mobile">
+    <div class="nav-mobile-header">
+        <span class="nav-mobile-titulo">Semilla</span>
+        <button type="button" class="close-btn" data-accion="cerrar-menu" aria-label="Cerrar menú">
+            <svg class="ico" aria-hidden="true"><use href="#ico-cerrar"></use></svg>
+        </button>
+    </div>
+
+    <div class="nav-mobile-body">
+        <p class="nav-mobile-seccion">Categorías</p>
+
+        {% for c in categorias %}
+            {% if c.hijos %}
+                <div class="acordeon-item">
+                    <button type="button" class="acordeon-trigger" data-accion="acordeon" aria-expanded="false">
+                        {{ c.label }}
+                        <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-chevron"></use></svg>
+                    </button>
+                    <div class="acordeon-panel">
+                        {% for nombre, href in c.hijos %}
+                            <a href="{{ href }}">{{ nombre }}</a>
+                        {% endfor %}
+                        <a href="{{ c.href }}">{{ c.ver_todo }}</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="acordeon-item">
+                    <a href="{{ c.href }}" class="nav-mobile-link">{{ c.label }}</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <p class="nav-mobile-seccion">La tienda</p>
+        <div class="acordeon-item">
+            <a href="/compras" class="nav-mobile-link">Todos los productos</a>
+        </div>
+        {% for nombre, href in enlaces_secundarios %}
+            <div class="acordeon-item">
+                <a href="{{ href }}" class="nav-mobile-link">{{ nombre }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="overlay" id="overlay" data-accion="cerrar-todo"></div>

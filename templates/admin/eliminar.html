@@ -1,0 +1,29 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Eliminar producto{% endblock %}
+
+{% block contenido %}
+<div class="confirmar-caja">
+    <h1>¿Eliminar este producto?</h1>
+
+    <div class="confirmar-producto">
+        <p class="confirmar-nombre">{{ producto.nombre }}</p>
+        <p class="confirmar-dato">{{ producto.categoria }}{% if producto.subcategoria %} · {{ producto.subcategoria }}{% endif %}</p>
+        {% if producto.descripcion %}
+        <p class="confirmar-dato">{{ producto.descripcion }}</p>
+        {% endif %}
+    </div>
+
+    <p class="confirmar-texto">
+        Se va a borrar del catálogo y deja de verse en la tienda.
+        Esto no se puede deshacer desde el panel.
+    </p>
+
+    <div class="form-acciones">
+        <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <button type="submit" class="btn-peligro">Sí, eliminar</button>
+        </form>
+        <a href="{{ url_for('admin.lista') }}" class="btn-primario">No, volver</a>
+    </div>
+</div>
+{% endblock %}

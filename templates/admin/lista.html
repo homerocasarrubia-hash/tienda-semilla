@@ -1,0 +1,141 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Productos{% endblock %}
+
+{% block contenido %}
+<div class="admin-encabezado">
+    <div>
+        <h1>Productos</h1>
+        <p class="admin-resumen">
+            {{ total }} en el catálogo · {{ sin_precio }} todavía sin precio ·
+            {{ sin_foto }} todavía sin foto · {{ agotados }} sin stock
+        </p>
+    </div>
+    <a href="{{ url_for('admin.nuevo') }}" class="btn-primario">
+        <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-mas"></use></svg>
+        Agregar producto
+    </a>
+</div>
+
+<form class="admin-filtros" method="get" action="{{ url_for('admin.lista') }}">
+    <input type="search" name="q" value="{{ q }}" placeholder="Buscar por nombre o descripción">
+
+    <select name="cat">
+        <option value="">Todas las categorías</option>
+        {% for c in todas_las_categorias %}
+        <option value="{{ c }}" {% if c == cat %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="stock">
+        <option value="">Todos los estados</option>
+        <option value="revisar" {% if stock == 'revisar' %}selected{% endif %}>Para revisar (sin stock o últimas)</option>
+        <option value="sin_stock" {% if stock == 'sin_stock' %}selected{% endif %}>Solo sin stock</option>
+        <option value="ultimas" {% if stock == 'ultimas' %}selected{% endif %}>Solo últimas unidades</option>
+    </select>
+
+    <button type="submit" class="btn-primario">Buscar</button>
+
+    {% if q or cat or stock %}
+    <a href="{{ url_for('admin.lista') }}" class="btn-texto">Limpiar</a>
+    {% endif %}
+</form>
+
+{% if productos %}
+<p class="admin-resultado">
+    {% if q or cat %}{{ productos|length }} producto{{ '' if productos|length == 1 else 's' }} encontrado{{ '' if productos|length == 1 else 's' }}{% endif %}
+</p>
+
+<div class="tabla-scroll">
+<table class="tabla">
+    <thead>
+        <tr>
+            <th class="col-id">N°</th>
+            <th>Producto</th>
+            <th>Categoría</th>
+            <th>Precios</th>
+            <th class="col-stock">Estado</th>
+            <th class="col-foto">Foto</th>
+            <th><span class="solo-lectores">Acciones</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in productos %}
+        <tr>
+            <td class="col-id" data-titulo="N° de producto">{{ p.id }}</td>
+
+            <td>
+                <span class="tabla-nombre">{{ p.nombre }}</span>
+                {% if p.descripcion %}
+                <span class="tabla-desc">{{ p.descripcion }}</span>
+                {% endif %}
+            </td>
+
+            <td>
+                {{ p.categoria }}
+                {% if p.subcategoria %}
+                <span class="tabla-sub">{{ p.subcategoria }}</span>
+                {% endif %}
+            </td>
+
+            <td>
+                {% if p.precio_100g is defined %}
+                    {% if p.precio_100g or p.precio_kg %}
+                    <span class="tabla-precio">${{ p.precio_100g|pesos }} <small>/100g</small></span>
+                    <span class="tabla-precio">${{ p.precio_kg|pesos }} <small>/1kg</small></span>
+                    {% else %}
+                    <span class="tabla-sin-precio">Sin precio</span>
+                    {% endif %}
+                {% else %}
+                    {% if p.precio %}
+                    <span class="tabla-precio">${{ p.precio|pesos }} <small>/unidad</small></span>
+                    {% else %}
+                    <span class="tabla-sin-precio">Sin precio</span>
+                    {% endif %}
+                {% endif %}
+            </td>
+
+            <td class="col-stock" data-titulo="Estado">
+                <form method="post" class="form-stock"
+                      action="{{ url_for('admin.cambiar_stock', id_producto=p.id) }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                    <input type="hidden" name="q" value="{{ q }}">
+                    <input type="hidden" name="cat" value="{{ cat }}">
+                    <input type="hidden" name="filtro_stock" value="{{ stock }}">
+                    <select name="stock" class="select-stock estado-{{ estado_stock(p) }}"
+                            aria-label="Estado de {{ p.nombre }}">
+                        {% for clave, etiqueta in estados_stock %}
+                        <option value="{{ clave }}" {% if estado_stock(p) == clave %}selected{% endif %}>{{ etiqueta }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit" class="btn-texto btn-guardar-stock">Guardar</button>
+                </form>
+            </td>
+
+            <td class="col-foto" data-titulo="Foto">
+                {% if imagen_existe(p.imagen) %}
+                <svg class="ico ico-chico tiene-foto" aria-hidden="true"><use href="#ico-tilde"></use></svg>
+                <span class="solo-lectores">Tiene foto</span>
+                {% else %}
+                <span class="sin-foto" aria-hidden="true">—</span>
+                <span class="solo-lectores">Sin foto</span>
+                {% endif %}
+            </td>
+
+            <td class="tabla-acciones">
+                <a href="{{ url_for('admin.editar', id_producto=p.id) }}">Editar</a>
+                <a href="{{ url_for('admin.eliminar', id_producto=p.id) }}" class="link-peligro">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% else %}
+<div class="admin-vacio">
+    <svg class="ico ico-grande" aria-hidden="true"><use href="#ico-sin-resultados"></use></svg>
+    <p>No encontramos ningún producto con esa búsqueda.</p>
+    <a href="{{ url_for('admin.lista') }}" class="btn-primario">Ver todos</a>
+</div>
+{% endif %}
+{% endblock %}

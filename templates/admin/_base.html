@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>{% block titulo %}Panel{% endblock %} · Semilla</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body class="admin">
+
+    {% include 'partials/_iconos.html' %}
+
+    {% if session.admin %}
+    <header class="admin-barra">
+        <div class="contenedor admin-barra-fila">
+            <a href="{{ url_for('admin.lista') }}" class="admin-marca">
+                Semilla <span>Panel</span>
+            </a>
+
+            <nav class="admin-nav">
+                <a href="{{ url_for('admin.lista') }}"
+                   class="{{ 'activo' if request.endpoint != 'admin.precios' }}">Productos</a>
+                <a href="{{ url_for('admin.precios') }}"
+                   class="{{ 'activo' if request.endpoint == 'admin.precios' }}">Precios</a>
+                <a href="{{ url_for('inicio') }}" target="_blank" rel="noopener">Ver la tienda</a>
+            </nav>
+
+            <form method="post" action="{{ url_for('admin.logout') }}" class="admin-salir">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <button type="submit" class="btn-texto">Salir</button>
+            </form>
+        </div>
+    </header>
+    {% endif %}
+
+    <main class="contenedor admin-main">
+        {% for categoria, mensaje in get_flashed_messages(with_categories=true) %}
+        <p class="aviso aviso-{{ categoria }}">
+            <svg class="ico" aria-hidden="true">
+                <use href="#{{ 'ico-cerrar' if categoria == 'error' else 'ico-hoja' }}"></use>
+            </svg>
+            {{ mensaje }}
+        </p>
+        {% endfor %}
+
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>

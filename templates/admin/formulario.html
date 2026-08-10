@@ -1,0 +1,147 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}{{ 'Agregar producto' if es_nuevo else 'Editar producto' }}{% endblock %}
+
+{% block contenido %}
+{% set es_granel = (producto is none) or ('precio_100g' in producto) %}
+<div class="admin-encabezado">
+    <div>
+        <h1>{{ 'Agregar producto' if es_nuevo else 'Editar producto' }}</h1>
+        {% if not es_nuevo %}
+        <p class="admin-resumen">{{ producto.nombre }}</p>
+        {% endif %}
+    </div>
+    <a href="{{ url_for('admin.lista') }}" class="btn-texto">Volver a la lista</a>
+</div>
+
+{% if errores %}
+<div class="aviso aviso-error">
+    <p class="aviso-titulo">No se guardó todavía. Revisá esto:</p>
+    <ul>
+        {% for e in errores %}
+        <li>{{ e }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="post" class="form-admin">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+    <label class="campo">
+        <span class="campo-titulo">Nombre <span class="obligatorio">obligatorio</span></span>
+        <input type="text" name="nombre" required
+               value="{{ producto.nombre if producto else '' }}">
+    </label>
+
+    <label class="campo">
+        <span class="campo-titulo">Descripción</span>
+        <textarea name="descripcion" rows="3">{{ producto.descripcion if producto else '' }}</textarea>
+        <span class="campo-ayuda">Es el texto chiquito que se ve abajo del nombre en la tienda.</span>
+    </label>
+
+    <label class="campo">
+        <span class="campo-titulo">Categoría <span class="obligatorio">obligatorio</span></span>
+        <select name="categoria" id="select-categoria">
+            <option value="">Elegí una…</option>
+            {% for c in todas_las_categorias %}
+            <option value="{{ c }}" {% if producto and producto.categoria == c %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+            <option value="__nueva__">Otra (escribir una nueva)</option>
+        </select>
+    </label>
+
+    <label class="campo" id="campo-categoria-nueva" hidden>
+        <span class="campo-titulo">Nombre de la categoría nueva</span>
+        <input type="text" name="categoria_nueva" value="">
+    </label>
+
+    <label class="campo">
+        <span class="campo-titulo">Subcategoría <span class="campo-opcional">opcional</span></span>
+        <input type="text" name="subcategoria" list="lista-subcategorias"
+               value="{{ producto.subcategoria if producto and producto.subcategoria else '' }}">
+        <datalist id="lista-subcategorias">
+            {% for s in todas_las_subcategorias %}
+            <option value="{{ s }}"></option>
+            {% endfor %}
+        </datalist>
+        <span class="campo-ayuda">Solo si el producto va dentro de un submenú, por ejemplo «Legumbres».</span>
+    </label>
+
+    <label class="campo">
+        <span class="campo-titulo">Estado</span>
+        <select name="stock">
+            {% for clave, etiqueta in estados_stock %}
+            <option value="{{ clave }}"
+                {% if (producto and estado_stock(producto) == clave) or (not producto and clave == 'disponible') %}selected{% endif %}>
+                {{ etiqueta }}
+            </option>
+            {% endfor %}
+        </select>
+        <span class="campo-ayuda">
+            «Últimas unidades» muestra un cartel en la tienda pero se sigue vendiendo.
+            «Sin stock» lo saca de la venta: el cliente ve un botón para preguntar
+            por WhatsApp cuándo vuelve.
+        </span>
+    </label>
+
+    <fieldset class="campo campo-tipo">
+        <legend class="campo-titulo">¿Cómo se vende?</legend>
+
+        <label class="opcion">
+            <input type="radio" name="tipo" value="granel" {% if es_granel %}checked{% endif %}>
+            <span>Por peso — se cobra por 100 gramos y por kilo</span>
+        </label>
+
+        <label class="opcion">
+            <input type="radio" name="tipo" value="unidad" {% if not es_granel %}checked{% endif %}>
+            <span>Por unidad — un solo precio</span>
+        </label>
+    </fieldset>
+
+    <div class="campos-precio" id="campos-granel">
+        <label class="campo">
+            <span class="campo-titulo">Precio por 100 gramos</span>
+            <input type="text" inputmode="numeric" name="precio_100g"
+                   value="{{ producto.precio_100g if producto and producto.precio_100g else '' }}">
+        </label>
+
+        <label class="campo">
+            <span class="campo-titulo">Precio por 1 kilo</span>
+            <input type="text" inputmode="numeric" name="precio_kg"
+                   value="{{ producto.precio_kg if producto and producto.precio_kg else '' }}">
+        </label>
+    </div>
+
+    <div class="campos-precio" id="campos-unidad">
+        <label class="campo">
+            <span class="campo-titulo">Precio</span>
+            <input type="text" inputmode="numeric" name="precio"
+                   value="{{ producto.precio if producto and producto.precio else '' }}">
+        </label>
+    </div>
+
+    <p class="campo-ayuda campo-ayuda-suelta">
+        Escribí solo los números, sin el signo $. Si todavía no sabés el precio,
+        dejalo vacío: en la tienda va a decir «Precio a confirmar».
+    </p>
+
+    <label class="campo">
+        <span class="campo-titulo">Foto <span class="campo-opcional">opcional</span></span>
+        <input type="text" name="imagen"
+               value="{{ producto.imagen if producto and producto.imagen else '' }}">
+        <span class="campo-ayuda">
+            Se completa solo mientras escribís el nombre, y podés cambiarlo.
+            Es el nombre del archivo que va guardado en la carpeta
+            <code>static/img</code>, por ejemplo <code>almendras.jpg</code>.
+            Si la foto todavía no está, la tienda muestra la inicial del producto.
+        </span>
+    </label>
+
+    <div class="form-acciones">
+        <button type="submit" class="btn-primario">
+            {{ 'Agregar al catálogo' if es_nuevo else 'Guardar cambios' }}
+        </button>
+        <a href="{{ url_for('admin.lista') }}" class="btn-texto">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

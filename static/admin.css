@@ -1,0 +1,704 @@
+/* =========================================================================
+   PANEL DE ADMINISTRACIÓN
+   Usa los tokens de estilos.css: misma paleta, tipografía, radios y bordes.
+   ========================================================================= */
+
+.admin {
+    background: var(--crema);
+}
+
+/* --- Barra superior --------------------------------------------------- */
+.admin-barra {
+    background: var(--verde-900);
+    color: var(--blanco);
+}
+
+.admin-barra-fila {
+    display: flex;
+    align-items: center;
+    gap: var(--e-6);
+    flex-wrap: wrap;
+    padding-top: var(--e-3);
+    padding-bottom: var(--e-3);
+}
+
+.admin-marca {
+    font-family: var(--fuente-display);
+    font-optical-sizing: auto;
+    font-size: var(--texto-h3);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--blanco);
+}
+
+.admin-marca:hover {
+    color: var(--blanco);
+}
+
+.admin-marca span {
+    font-family: var(--fuente-ui);
+    font-size: var(--texto-mini);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blanco-suave);
+    margin-left: var(--e-1);
+}
+
+.admin-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--e-2);
+    margin-right: auto;
+}
+
+.admin-nav a {
+    padding: var(--e-2) var(--e-3);
+    border-radius: var(--r-chico);
+    color: var(--blanco-suave);
+    font-size: var(--texto-chico);
+    font-weight: 500;
+    transition: background var(--trans), color var(--trans);
+}
+
+.admin-nav a:hover {
+    background: var(--blanco-velo);
+    color: var(--blanco);
+}
+
+.admin-nav a.activo {
+    background: var(--blanco-velo);
+    color: var(--blanco);
+}
+
+.admin-salir {
+    display: flex;
+}
+
+.admin-barra .btn-texto {
+    color: var(--blanco-suave);
+}
+
+.admin-barra .btn-texto:hover {
+    color: var(--blanco);
+}
+
+.admin-main {
+    padding-top: var(--e-8);
+    padding-bottom: var(--e-24);
+}
+
+/* --- Encabezado de sección ------------------------------------------- */
+.admin-encabezado {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--e-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--e-6);
+}
+
+.admin-resumen {
+    margin-top: var(--e-2);
+    color: var(--tinta-60);
+    font-size: var(--texto-chico);
+}
+
+.admin-resultado {
+    margin-bottom: var(--e-3);
+    color: var(--tinta-60);
+    font-size: var(--texto-chico);
+}
+
+/* --- Avisos ----------------------------------------------------------- */
+.aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--e-3);
+    margin-bottom: var(--e-4);
+    padding: var(--e-3) var(--e-4);
+    border: 1px solid var(--borde);
+    border-left-width: 3px;
+    border-radius: var(--r-chico);
+    background: var(--blanco);
+    font-size: var(--texto-chico);
+}
+
+.aviso-ok {
+    border-left-color: var(--verde-700);
+}
+
+.aviso-ok .ico {
+    color: var(--verde-700);
+}
+
+.aviso-error {
+    border-left-color: var(--ocre);
+}
+
+.aviso-error .ico {
+    color: var(--ocre);
+}
+
+.aviso-titulo {
+    font-weight: 600;
+    margin-bottom: var(--e-2);
+}
+
+.aviso ul {
+    margin: 0;
+    padding-left: var(--e-4);
+}
+
+.aviso li + li {
+    margin-top: var(--e-1);
+}
+
+/* --- Filtros ---------------------------------------------------------- */
+.admin-filtros {
+    display: flex;
+    align-items: center;
+    gap: var(--e-2);
+    flex-wrap: wrap;
+    margin-bottom: var(--e-6);
+}
+
+.admin-filtros input[type="search"] {
+    flex: 1 1 260px;
+}
+
+/* --- Campos de formulario -------------------------------------------- */
+input[type="text"],
+input[type="search"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: var(--e-3) var(--e-3);
+    font-family: var(--fuente-ui);
+    font-size: var(--texto-chico);
+    color: var(--tinta);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-chico);
+    outline: none;
+    transition: border-color var(--trans), box-shadow var(--trans);
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--verde-500);
+    box-shadow: var(--anillo-foco);
+}
+
+.admin-filtros select,
+.admin-filtros input[type="search"] {
+    width: auto;
+}
+
+.form-admin {
+    max-width: 640px;
+}
+
+.campo {
+    display: block;
+    margin-bottom: var(--e-6);
+    border: none;
+    padding: 0;
+}
+
+.campo-titulo {
+    display: block;
+    margin-bottom: var(--e-2);
+    font-size: var(--texto-chico);
+    font-weight: 600;
+    color: var(--verde-900);
+}
+
+.campo-ayuda {
+    display: block;
+    margin-top: var(--e-2);
+    font-size: var(--texto-mini);
+    color: var(--tinta-60);
+    line-height: 1.5;
+}
+
+.campo-ayuda-suelta {
+    margin-top: calc(var(--e-4) * -1);
+    margin-bottom: var(--e-6);
+}
+
+.campo-ayuda code {
+    padding: 1px var(--e-1);
+    background: var(--verde-50);
+    border-radius: var(--r-chico);
+    font-size: 0.95em;
+}
+
+.obligatorio,
+.campo-opcional {
+    margin-left: var(--e-2);
+    font-size: var(--texto-mini);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.obligatorio {
+    color: var(--ocre);
+}
+
+.campo-opcional {
+    color: var(--tinta-60);
+}
+
+.campo-tipo {
+    padding: var(--e-4);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-card);
+    background: var(--blanco);
+}
+
+.campo-tipo legend {
+    padding: 0 var(--e-2);
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: var(--e-3);
+    padding: var(--e-2) 0;
+    font-size: var(--texto-chico);
+    cursor: pointer;
+}
+
+.opcion input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--verde-700);
+    flex: none;
+}
+
+.campos-precio {
+    display: grid;
+    gap: var(--e-4);
+}
+
+.form-acciones {
+    display: flex;
+    align-items: center;
+    gap: var(--e-3);
+    flex-wrap: wrap;
+    margin-top: var(--e-8);
+}
+
+/* --- Botones propios del panel --------------------------------------- */
+.btn-texto {
+    padding: var(--e-2) var(--e-3);
+    background: none;
+    border: none;
+    color: var(--verde-700);
+    font-size: var(--texto-chico);
+    font-weight: 500;
+    transition: color var(--trans);
+}
+
+.btn-texto:hover {
+    color: var(--verde-500);
+}
+
+.btn-peligro {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--e-2);
+    padding: var(--e-3) var(--e-6);
+    background: var(--blanco);
+    color: var(--ocre);
+    border: 1px solid var(--ocre);
+    border-radius: var(--r-chico);
+    font-family: var(--fuente-ui);
+    font-size: var(--texto-chico);
+    font-weight: 600;
+    transition: background var(--trans), color var(--trans);
+}
+
+.btn-peligro:hover {
+    background: var(--ocre);
+    color: var(--blanco);
+}
+
+.link-peligro {
+    color: var(--tinta-60);
+}
+
+.link-peligro:hover {
+    color: var(--ocre);
+}
+
+/* --- Tablas ----------------------------------------------------------- */
+.tabla-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--borde);
+    border-radius: var(--r-card);
+    background: var(--blanco);
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--texto-chico);
+}
+
+.tabla th {
+    padding: var(--e-3) var(--e-4);
+    border-bottom: 1px solid var(--borde);
+    color: var(--tinta-60);
+    font-size: var(--texto-mini);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tabla td {
+    padding: var(--e-3) var(--e-4);
+    border-bottom: 1px solid var(--borde);
+    vertical-align: top;
+}
+
+.tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla tbody tr:hover {
+    background: var(--verde-50);
+}
+
+.tabla-nombre {
+    display: block;
+    font-weight: 600;
+    color: var(--tinta);
+}
+
+.tabla-desc {
+    display: block;
+    margin-top: var(--e-1);
+    max-width: 46ch;
+    color: var(--tinta-60);
+    font-size: var(--texto-mini);
+    line-height: 1.45;
+}
+
+.tabla-sub {
+    display: block;
+    margin-top: var(--e-1);
+    color: var(--tinta-60);
+    font-size: var(--texto-mini);
+}
+
+.tabla-precio {
+    display: block;
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--verde-900);
+}
+
+.tabla-precio small {
+    font-weight: 400;
+    color: var(--tinta-60);
+}
+
+.tabla-sin-precio {
+    color: var(--tinta-60);
+}
+
+.tabla-acciones {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.tabla-acciones a {
+    margin-left: var(--e-3);
+    font-weight: 500;
+}
+
+.celda-vacia {
+    color: var(--borde);
+}
+
+/* Estado de stock, editable en la misma fila */
+.col-stock {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.form-stock {
+    display: flex;
+    align-items: center;
+    gap: var(--e-2);
+}
+
+.select-stock {
+    width: auto;
+    min-width: 150px;
+    padding: var(--e-1) var(--e-2);
+    font-size: var(--texto-mini);
+    font-weight: 600;
+}
+
+.select-stock.estado-disponible {
+    color: var(--verde-700);
+}
+
+.select-stock.estado-ultimas {
+    color: var(--ocre);
+    border-color: var(--ocre);
+}
+
+.select-stock.estado-sin_stock {
+    color: var(--tinta-60);
+    background: var(--verde-50);
+}
+
+.stock-guardado {
+    font-size: var(--texto-mini);
+    color: var(--verde-700);
+    opacity: 1;
+    transition: opacity 600ms ease;
+}
+
+.stock-guardado.apagando {
+    opacity: 0;
+}
+
+/* Número de producto y estado de la foto */
+.col-id {
+    width: 1%;
+    white-space: nowrap;
+    color: var(--tinta-60);
+    font-variant-numeric: tabular-nums;
+}
+
+.col-foto {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.tiene-foto {
+    color: var(--verde-700);
+    vertical-align: middle;
+}
+
+.sin-foto {
+    color: var(--tinta-60);
+}
+
+.input-precio {
+    width: 130px;
+    text-align: right;
+}
+
+.tabla-precios td {
+    vertical-align: middle;
+}
+
+/* Barra de guardado, siempre a la vista al final de la lista de precios */
+.barra-guardar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--e-3);
+    margin-top: var(--e-4);
+    padding: var(--e-4) 0;
+    background: var(--crema);
+    border-top: 1px solid var(--borde);
+}
+
+/* --- Estado vacío ----------------------------------------------------- */
+.admin-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--e-4);
+    padding: var(--e-16) var(--e-6);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-card);
+    text-align: center;
+    color: var(--tinta-60);
+}
+
+.admin-vacio .ico-grande {
+    color: var(--verde-500);
+    opacity: 0.5;
+}
+
+/* --- Login ------------------------------------------------------------ */
+.login-caja {
+    max-width: 380px;
+    margin: var(--e-16) auto;
+    padding: var(--e-8);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-card);
+}
+
+.login-texto {
+    margin: var(--e-3) 0 var(--e-6);
+    color: var(--tinta-60);
+    font-size: var(--texto-chico);
+}
+
+.login-caja .btn-primario {
+    width: 100%;
+}
+
+.login-pie {
+    margin-top: var(--e-6);
+    text-align: center;
+    font-size: var(--texto-chico);
+}
+
+/* --- Confirmación de borrado ----------------------------------------- */
+.confirmar-caja {
+    max-width: 520px;
+    margin: var(--e-8) auto;
+    padding: var(--e-8);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-card);
+}
+
+.confirmar-producto {
+    margin: var(--e-6) 0;
+    padding: var(--e-4);
+    background: var(--verde-50);
+    border-radius: var(--r-chico);
+}
+
+.confirmar-nombre {
+    font-family: var(--fuente-display);
+    font-optical-sizing: auto;
+    font-size: var(--texto-h3);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--verde-900);
+}
+
+.confirmar-dato {
+    margin-top: var(--e-1);
+    color: var(--tinta-60);
+    font-size: var(--texto-chico);
+}
+
+.confirmar-texto {
+    color: var(--tinta-60);
+    font-size: var(--texto-chico);
+    line-height: 1.6;
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+@media (min-width: 640px) {
+    .campos-precio {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 639.98px) {
+    /* Las tablas pasan a ser fichas apiladas: en el teléfono no hay ancho */
+    .tabla-scroll {
+        border: none;
+        background: none;
+        overflow: visible;
+    }
+
+    .tabla thead {
+        display: none;
+    }
+
+    .tabla,
+    .tabla tbody,
+    .tabla tr,
+    .tabla td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabla tr {
+        margin-bottom: var(--e-4);
+        padding: var(--e-4);
+        background: var(--blanco);
+        border: 1px solid var(--borde);
+        border-radius: var(--r-card);
+    }
+
+    .tabla td {
+        padding: var(--e-1) 0;
+        border-bottom: none;
+    }
+
+    .tabla td[data-titulo]::before {
+        content: attr(data-titulo);
+        display: block;
+        margin-bottom: var(--e-1);
+        color: var(--tinta-60);
+        font-size: var(--texto-mini);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .tabla td[data-titulo] {
+        margin-top: var(--e-3);
+    }
+
+    .tabla .celda-vacia {
+        display: none;
+    }
+
+    .tabla-acciones {
+        margin-top: var(--e-3);
+        padding-top: var(--e-3);
+        border-top: 1px solid var(--borde);
+        text-align: left;
+    }
+
+    .tabla-acciones a {
+        margin-left: 0;
+        margin-right: var(--e-4);
+    }
+
+    .input-precio {
+        width: 100%;
+        text-align: left;
+    }
+
+    .admin-filtros select,
+    .admin-filtros input[type="search"] {
+        width: 100%;
+    }
+
+    .admin-barra-fila {
+        gap: var(--e-3);
+    }
+
+    .login-caja,
+    .confirmar-caja {
+        padding: var(--e-6);
+        margin-top: var(--e-8);
+    }
+}

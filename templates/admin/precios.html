@@ -1,0 +1,97 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Precios{% endblock %}
+
+{% block contenido %}
+<div class="admin-encabezado">
+    <div>
+        <h1>Actualizar precios</h1>
+        <p class="admin-resumen">
+            Cambiá los que necesites y guardá todo junto al final.
+        </p>
+    </div>
+</div>
+
+<form class="admin-filtros" method="get" action="{{ url_for('admin.precios') }}">
+    <select name="cat">
+        <option value="">Todas las categorías</option>
+        {% for c in todas_las_categorias %}
+        <option value="{{ c }}" {% if c == cat %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit" class="btn-primario">Mostrar</button>
+    {% if cat %}
+    <a href="{{ url_for('admin.precios') }}" class="btn-texto">Ver todas</a>
+    {% endif %}
+</form>
+
+{% if productos %}
+<form method="post" action="{{ url_for('admin.precios') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <input type="hidden" name="cat" value="{{ cat }}">
+
+    <p class="admin-resultado">
+        {{ productos|length }} producto{{ '' if productos|length == 1 else 's' }}.
+        Dejá vacío el precio que todavía no sepas.
+    </p>
+
+    <div class="tabla-scroll">
+    <table class="tabla tabla-precios">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Por 100 g</th>
+                <th>Por 1 kg</th>
+                <th>Por unidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in productos %}
+            <tr>
+                <td>
+                    <span class="tabla-nombre">{{ p.nombre }}</span>
+                    <span class="tabla-sub">{{ p.categoria }}</span>
+                </td>
+
+                {% if p.precio_100g is defined %}
+                <td data-titulo="Por 100 g">
+                    <input type="text" inputmode="numeric" class="input-precio"
+                           name="precio_100g-{{ p.id }}"
+                           value="{{ p.precio_100g if p.precio_100g else '' }}"
+                           aria-label="Precio por 100 gramos de {{ p.nombre }}">
+                </td>
+                <td data-titulo="Por 1 kg">
+                    <input type="text" inputmode="numeric" class="input-precio"
+                           name="precio_kg-{{ p.id }}"
+                           value="{{ p.precio_kg if p.precio_kg else '' }}"
+                           aria-label="Precio por kilo de {{ p.nombre }}">
+                </td>
+                <td class="celda-vacia">—</td>
+                {% else %}
+                <td class="celda-vacia">—</td>
+                <td class="celda-vacia">—</td>
+                <td data-titulo="Por unidad">
+                    <input type="text" inputmode="numeric" class="input-precio"
+                           name="precio-{{ p.id }}"
+                           value="{{ p.precio if p.precio else '' }}"
+                           aria-label="Precio de {{ p.nombre }}">
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="barra-guardar">
+        <button type="submit" class="btn-primario">Guardar los precios</button>
+    </div>
+</form>
+
+{% else %}
+<div class="admin-vacio">
+    <svg class="ico ico-grande" aria-hidden="true"><use href="#ico-sin-resultados"></use></svg>
+    <p>No hay productos en esa categoría.</p>
+    <a href="{{ url_for('admin.precios') }}" class="btn-primario">Ver todos</a>
+</div>
+{% endif %}
+{% endblock %}

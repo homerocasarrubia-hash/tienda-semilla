@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+productos.json.bak
+productos.json.tmp
+.env
+scripts/fotos_log.txt
+scripts/sin_foto.txt
