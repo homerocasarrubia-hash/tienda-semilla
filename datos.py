@@ -1,25 +1,27 @@
-"""Acceso al catálogo guardado en productos.json.
+"""Acceso al catálogo, guardado en Postgres.
 
-El resto de la aplicación no lee ni escribe el archivo directamente: todo
-pasa por acá, para que la caché y el guardado atómico valgan siempre.
+La forma de los productos que ve el resto de la aplicación es la misma que
+tenía el JSON: un diccionario por producto, **sin las claves que están en
+nulo**. Un producto a granel no tiene la clave "precio", y uno por unidad
+no tiene "precio_100g" ni "precio_kg", que es de lo que dependen las
+plantillas para distinguirlos.
 """
-import io
-import json
 import os
-import shutil
-import threading
+
+from sqlalchemy import delete, func, insert, or_, select, update
+from sqlalchemy.sql import case
+
+import db
 
 CARPETA = os.path.dirname(os.path.abspath(__file__))
-RUTA = os.path.join(CARPETA, 'productos.json')
-RUTA_BACKUP = RUTA + '.bak'
 CARPETA_IMAGENES = os.path.join(CARPETA, 'static', 'img')
+RUTA_JSON = os.path.join(CARPETA, 'productos.json')
 
-# Orden de las claves con el que se escribe cada producto, para que el JSON
-# se mantenga legible y estable entre guardados.
+# Orden en que se arma cada diccionario, para que el JSON exportado quede
+# igual al de siempre.
 _ORDEN_CLAVES = ('id', 'nombre', 'descripcion', 'precio_100g', 'precio_kg',
                  'precio', 'categoria', 'subcategoria', 'imagen', 'stock')
 
-# Estados de stock. El primero es el valor por defecto.
 ESTADOS_STOCK = (
     ('disponible', 'Disponible'),
     ('ultimas', 'Últimas unidades'),
@@ -27,101 +29,76 @@ ESTADOS_STOCK = (
 )
 _CLAVES_STOCK = {clave for clave, _ in ESTADOS_STOCK}
 
-_cache = None
-_cache_mtime = None
 _cache_imagenes = None
 _cache_imagenes_mtime = None
-_candado = threading.Lock()
+
+# La tabla se puede cambiar para correr pruebas contra otra
+_tabla = db.tabla()
 
 
-def cargar():
-    """Devuelve la lista de productos, recargando si el archivo cambió.
-
-    La lista devuelta es la interna: quien la modifique tiene que hacerlo
-    sobre una copia (ver obtener()) y volver a llamar a guardar().
-    """
-    global _cache, _cache_mtime
-
-    try:
-        mtime = os.path.getmtime(RUTA)
-    except FileNotFoundError:
-        return []
-
-    if _cache is None or mtime != _cache_mtime:
-        with io.open(RUTA, encoding='utf-8') as f:
-            _cache = json.load(f)
-        _cache_mtime = mtime
-
-    return _cache
+def usar_tabla(nombre):
+    """Apunta el módulo a otra tabla (lo usan las pruebas)."""
+    global _tabla
+    _tabla = db.tabla(nombre)
+    return _tabla
 
 
-def guardar(lista):
-    """Escribe el catálogo entero.
-
-    Primero deja una copia de seguridad del archivo anterior y después
-    escribe en un temporal que reemplaza al original de una sola vez: si el
-    proceso se corta a la mitad, productos.json nunca queda incompleto.
-    """
-    global _cache, _cache_mtime
-
-    ordenada = [_ordenar_claves(p) for p in lista]
-
-    with _candado:
-        if os.path.exists(RUTA):
-            shutil.copy2(RUTA, RUTA_BACKUP)
-
-        temporal = RUTA + '.tmp'
-        with io.open(temporal, 'w', encoding='utf-8', newline='\n') as f:
-            json.dump(ordenada, f, ensure_ascii=False, indent=2)
-            f.write('\n')
-
-        os.replace(temporal, RUTA)
-
-        _cache = ordenada
-        _cache_mtime = os.path.getmtime(RUTA)
-
-    return ordenada
+def tabla():
+    return _tabla
 
 
-def _ordenar_claves(producto):
-    ordenado = {k: producto[k] for k in _ORDEN_CLAVES if k in producto}
-    # Cualquier clave que no esté en la lista de arriba se conserva igual
-    for k, v in producto.items():
-        if k not in ordenado:
-            ordenado[k] = v
-    return ordenado
+# --- conversión entre filas y diccionarios -------------------------------
+
+def _numero(valor):
+    """Decimal -> int cuando es redondo, para que 2000.00 vuelva a ser 2000."""
+    if valor is None:
+        return None
+    flotante = float(valor)
+    return int(flotante) if flotante == int(flotante) else flotante
 
 
-# --- consultas -----------------------------------------------------------
+def _a_dict(fila):
+    mapa = fila._mapping
+    producto = {}
 
-def obtener(id_producto):
-    """Copia del producto con ese id, o None. Es copia para que editarla no
-    toque la caché hasta que se guarde."""
-    for p in cargar():
-        if p.get('id') == id_producto:
-            return dict(p)
-    return None
+    for clave in _ORDEN_CLAVES:
+        if clave not in mapa:
+            continue
+        valor = mapa[clave]
+        if valor is None:
+            # La clave directamente no existe, igual que en el JSON
+            continue
+        if clave in ('precio', 'precio_100g', 'precio_kg'):
+            valor = _numero(valor)
+        producto[clave] = valor
 
-
-def siguiente_id():
-    ids = [p.get('id', 0) for p in cargar()]
-    return (max(ids) + 1) if ids else 1
-
-
-def categorias():
-    return sorted({p.get('categoria', '') for p in cargar() if p.get('categoria')})
+    return producto
 
 
-def subcategorias():
-    return sorted({p.get('subcategoria', '') for p in cargar() if p.get('subcategoria')})
+def _valores(producto):
+    """Diccionario -> columnas. Lo que no está pasa a NULL."""
+    return {
+        'nombre': producto.get('nombre', ''),
+        'descripcion': producto.get('descripcion', '') or '',
+        'categoria': producto.get('categoria', ''),
+        'subcategoria': producto.get('subcategoria') or None,
+        'imagen': producto.get('imagen') or None,
+        'stock': estado_stock(producto),
+        'precio': producto.get('precio'),
+        'precio_100g': producto.get('precio_100g'),
+        'precio_kg': producto.get('precio_kg'),
+    }
 
+
+def _filas(consulta):
+    with db.motor().connect() as cx:
+        return [_a_dict(f) for f in cx.execute(consulta)]
+
+
+# --- estado de stock (sin tocar la base) ---------------------------------
 
 def estado_stock(producto):
-    """El estado del producto, tolerando que el campo falte o venga raro.
-
-    Los productos viejos pueden no tener el campo, y nunca hay que romper
-    por eso: cualquier valor desconocido cuenta como disponible.
-    """
+    """Tolera que el campo falte o venga con un valor desconocido."""
     valor = (producto.get('stock') or '').strip()
     return valor if valor in _CLAVES_STOCK else 'disponible'
 
@@ -131,18 +108,237 @@ def sin_stock(producto):
 
 
 def nombres_sin_stock():
-    """Nombres de los productos agotados, para que el carrito los detecte."""
-    return [p['nombre'] for p in cargar() if sin_stock(p)]
+    consulta = (select(_tabla.c.nombre)
+                .where(_tabla.c.stock == 'sin_stock')
+                .order_by(_tabla.c.orden))
+    with db.motor().connect() as cx:
+        return [f[0] for f in cx.execute(consulta)]
 
+
+# --- lecturas -------------------------------------------------------------
+
+def cargar():
+    """Todo el catálogo en el orden del catálogo (el que usa el panel)."""
+    return _filas(select(_tabla).order_by(_tabla.c.orden, _tabla.c.id))
+
+
+def obtener(id_producto):
+    filas = _filas(select(_tabla).where(_tabla.c.id == id_producto))
+    return filas[0] if filas else None
+
+
+def siguiente_id():
+    with db.motor().connect() as cx:
+        maximo = cx.execute(select(func.max(_tabla.c.id))).scalar()
+    return (maximo or 0) + 1
+
+
+def _siguiente_orden(cx):
+    maximo = cx.execute(select(func.max(_tabla.c.orden))).scalar()
+    return (maximo or 0) + 1
+
+
+def categorias():
+    with db.motor().connect() as cx:
+        crudas = cx.execute(select(_tabla.c.categoria).distinct()).scalars()
+        # El orden se resuelve en Python: así no depende del "collation" de
+        # la base y queda igual que cuando el catálogo era un archivo.
+        return sorted({c for c in crudas if c})
+
+
+def subcategorias():
+    with db.motor().connect() as cx:
+        crudas = cx.execute(select(_tabla.c.subcategoria).distinct()).scalars()
+        return sorted({s for s in crudas if s})
+
+
+def existe_nombre(nombre, categoria, excepto_id=None):
+    consulta = select(func.count()).select_from(_tabla).where(
+        func.lower(func.btrim(_tabla.c.nombre)) == nombre.strip().lower(),
+        func.lower(func.btrim(_tabla.c.categoria)) == categoria.strip().lower(),
+    )
+    if excepto_id is not None:
+        consulta = consulta.where(_tabla.c.id != excepto_id)
+
+    with db.motor().connect() as cx:
+        return cx.execute(consulta).scalar() > 0
+
+
+# --- filtros de la tienda -------------------------------------------------
+
+def _orden_publico():
+    """Los agotados al final; dentro de cada grupo, el orden del catálogo."""
+    return (case((_tabla.c.stock == 'sin_stock', 1), else_=0), _tabla.c.orden)
+
+
+def _empieza_alguna_palabra(palabra):
+    """Equivale a: alguna palabra del nombre empieza con `palabra`."""
+    escapada = palabra.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_')
+    nombre = func.lower(_tabla.c.nombre)
+    return or_(nombre.like(escapada + '%', escape='\\'),
+               nombre.like('% ' + escapada + '%', escape='\\'))
+
+
+def catalogo_ordenado():
+    return _filas(select(_tabla).order_by(*_orden_publico()))
+
+
+def filtrar_por_categoria(cat):
+    return _filas(select(_tabla)
+                  .where(_tabla.c.categoria == cat)
+                  .order_by(*_orden_publico()))
+
+
+def filtrar_sin_tacc():
+    """La categoría "Sin TACC" junta además lo que lo aclara en el nombre."""
+    return _filas(select(_tabla)
+                  .where(or_(_tabla.c.categoria == 'Sin TACC',
+                             func.lower(_tabla.c.nombre).contains('sin tacc',
+                                                                  autoescape=True)))
+                  .order_by(*_orden_publico()))
+
+
+def filtrar_por_subcategoria(subcat):
+    return _filas(select(_tabla)
+                  .where(_tabla.c.subcategoria == subcat)
+                  .order_by(*_orden_publico()))
+
+
+def filtrar_por_texto(busqueda):
+    """Cada palabra tiene que aparecer en el nombre, la descripción, la
+    categoría o la subcategoría."""
+    condiciones = []
+    for palabra in busqueda.lower().split():
+        condiciones.append(or_(
+            _empieza_alguna_palabra(palabra),
+            func.lower(_tabla.c.descripcion).contains(palabra, autoescape=True),
+            func.lower(_tabla.c.categoria).contains(palabra, autoescape=True),
+            func.lower(func.coalesce(_tabla.c.subcategoria, ''))
+                .contains(palabra, autoescape=True),
+        ))
+
+    consulta = select(_tabla)
+    for condicion in condiciones:
+        consulta = consulta.where(condicion)
+
+    return _filas(consulta.order_by(*_orden_publico()))
+
+
+def autocompletar(busqueda, limite=8):
+    """Sugerencias del buscador: solo por nombre, con el mismo puntaje."""
+    consulta = select(_tabla.c.nombre, _tabla.c.categoria, _tabla.c.stock)
+
+    for palabra in busqueda.split():
+        consulta = consulta.where(_empieza_alguna_palabra(palabra))
+
+    escapada = busqueda.replace('\\', '\\\\').replace('%', '\\%').replace('_', '\\_')
+    nombre = func.lower(_tabla.c.nombre)
+    puntaje = case(
+        (nombre.like(escapada + '%', escape='\\'), 0),
+        (nombre.like('% ' + escapada + '%', escape='\\'), 1),
+        (nombre.contains(busqueda, autoescape=True), 2),
+        else_=3,
+    )
+
+    # Empates: el orden del catálogo, igual que el sort estable de antes
+    consulta = consulta.order_by(puntaje, _tabla.c.orden).limit(limite)
+
+    with db.motor().connect() as cx:
+        return [{'nombre': f.nombre, 'categoria': f.categoria,
+                 'stock': f.stock if f.stock in _CLAVES_STOCK else 'disponible'}
+                for f in cx.execute(consulta)]
+
+
+# --- altas, cambios y bajas ----------------------------------------------
+
+def crear(producto):
+    valores = _valores(producto)
+
+    with db.motor().begin() as cx:
+        maximo = cx.execute(select(func.max(_tabla.c.id))).scalar()
+        valores['id'] = (maximo or 0) + 1
+        valores['orden'] = _siguiente_orden(cx)
+        cx.execute(insert(_tabla).values(**valores))
+
+    return obtener(valores['id'])
+
+
+def actualizar(id_producto, producto):
+    valores = _valores(producto)
+
+    with db.motor().begin() as cx:
+        resultado = cx.execute(update(_tabla)
+                               .where(_tabla.c.id == id_producto)
+                               .values(**valores))
+        if resultado.rowcount == 0:
+            return None
+
+    return obtener(id_producto)
+
+
+def eliminar(id_producto):
+    producto = obtener(id_producto)
+    if producto is None:
+        return None
+
+    with db.motor().begin() as cx:
+        cx.execute(delete(_tabla).where(_tabla.c.id == id_producto))
+
+    return producto
+
+
+def actualizar_precios(cambios):
+    """Aplica varios cambios de precio de una sola vez.
+
+    Solo toca los campos de precio que el producto ya tiene: a un producto
+    a granel no se le carga un "precio" suelto.
+    """
+    if not cambios:
+        return 0
+
+    modificados = 0
+
+    with db.motor().begin() as cx:
+        filas = cx.execute(select(_tabla).where(_tabla.c.id.in_(list(cambios)))).all()
+
+        for fila in filas:
+            actual = _a_dict(fila)
+            nuevos = cambios.get(actual['id']) or {}
+            pendientes = {}
+
+            for clave, valor in nuevos.items():
+                if clave in actual and actual[clave] != valor:
+                    pendientes[clave] = valor
+
+            if pendientes:
+                cx.execute(update(_tabla)
+                           .where(_tabla.c.id == actual['id'])
+                           .values(**pendientes))
+                modificados += 1
+
+    return modificados
+
+
+def reemplazar_todo(lista):
+    """Vacía la tabla y carga la lista entera. Lo usa la migración."""
+    with db.motor().begin() as cx:
+        cx.execute(delete(_tabla))
+        for posicion, producto in enumerate(lista):
+            valores = _valores(producto)
+            valores['id'] = producto['id']
+            valores['orden'] = posicion
+            cx.execute(insert(_tabla).values(**valores))
+    return len(lista)
+
+
+def contar():
+    with db.motor().connect() as cx:
+        return cx.execute(select(func.count()).select_from(_tabla)).scalar()
+
+
+# --- imágenes (siguen viviendo en el disco) ------------------------------
 
 def imagenes_disponibles():
-    """Archivos que hay en static/img/.
-
-    Se relee solo cuando cambia la fecha de la carpeta, así preguntar por
-    cientos de productos en una misma página cuesta un stat y no cientos de
-    listados. Como no cachea para siempre, las fotos nuevas aparecen sin
-    reiniciar el servidor.
-    """
     global _cache_imagenes, _cache_imagenes_mtime
 
     try:
@@ -163,79 +359,4 @@ def imagenes_disponibles():
 
 
 def imagen_existe(nombre):
-    """Si el archivo de foto del producto está realmente en static/img/."""
     return bool(nombre) and nombre.lower() in imagenes_disponibles()
-
-
-def existe_nombre(nombre, categoria, excepto_id=None):
-    """Para avisar de posibles duplicados al cargar un producto nuevo."""
-    nombre = nombre.strip().lower()
-    categoria = categoria.strip().lower()
-    for p in cargar():
-        if p.get('id') == excepto_id:
-            continue
-        if p.get('nombre', '').strip().lower() == nombre and \
-           p.get('categoria', '').strip().lower() == categoria:
-            return True
-    return False
-
-
-# --- altas, cambios y bajas ---------------------------------------------
-
-def crear(producto):
-    lista = [dict(p) for p in cargar()]
-    producto = dict(producto)
-    producto['id'] = siguiente_id()
-    lista.append(producto)
-    guardar(lista)
-    return producto
-
-
-def actualizar(id_producto, producto):
-    lista = [dict(p) for p in cargar()]
-    for i, p in enumerate(lista):
-        if p.get('id') == id_producto:
-            producto = dict(producto)
-            producto['id'] = id_producto
-            lista[i] = producto
-            guardar(lista)
-            return producto
-    return None
-
-
-def eliminar(id_producto):
-    lista = [dict(p) for p in cargar()]
-    for i, p in enumerate(lista):
-        if p.get('id') == id_producto:
-            borrado = lista.pop(i)
-            guardar(lista)
-            return borrado
-    return None
-
-
-def actualizar_precios(cambios):
-    """Aplica varios cambios de precio de una sola vez.
-
-    cambios: {id: {'precio_100g': 1500, ...}}. Devuelve cuántos productos
-    quedaron efectivamente modificados.
-    """
-    lista = [dict(p) for p in cargar()]
-    modificados = 0
-
-    for p in lista:
-        nuevos = cambios.get(p.get('id'))
-        if not nuevos:
-            continue
-        cambio_este = False
-        for clave, valor in nuevos.items():
-            # Solo se tocan los campos de precio que el producto ya tiene
-            if clave in p and p[clave] != valor:
-                p[clave] = valor
-                cambio_este = True
-        if cambio_este:
-            modificados += 1
-
-    if modificados:
-        guardar(lista)
-
-    return modificados

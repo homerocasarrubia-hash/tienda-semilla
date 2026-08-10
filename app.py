@@ -89,33 +89,10 @@ def buscar():
     if len(q) < 1:
         return jsonify([])
 
-    palabras = q.split()
-
-    def coincide(p):
-        nombre = p['nombre'].lower()
-        # Todas las palabras escritas deben aparecer en algún lugar del nombre
-        return all(any(palabra_nombre.startswith(palabra) for palabra_nombre in nombre.split())
-                   for palabra in palabras)
-
-    def puntaje(p):
-        nombre = p['nombre'].lower()
-        if nombre.startswith(q):
-            return 0
-        elif any(palabra.startswith(q) for palabra in nombre.split()):
-            return 1
-        elif q in nombre:
-            return 2
-        else:
-            return 3
-
-    resultados = [p for p in datos.cargar() if coincide(p)]
-    resultados.sort(key=puntaje)
-
-    return jsonify([
-        {"nombre": p["nombre"], "categoria": p["categoria"],
-         "stock": datos.estado_stock(p)}
-        for p in resultados[:8]
-    ])
+    # Mismo criterio de siempre —todas las palabras tienen que empezar alguna
+    # palabra del nombre, ordenado por qué tan al principio coincide—, ahora
+    # resuelto por la base en vez de recorriendo el catálogo entero.
+    return jsonify(datos.autocompletar(q, limite=8))
 
 
 @app.route('/compras')
@@ -123,45 +100,26 @@ def compras():
     busqueda = request.args.get('q', '').lower().strip()
     subcat = request.args.get('subcat', '').strip()
     cat = request.args.get('cat', '').strip()
-    productos = datos.cargar()
 
+    # Cada consulta trae ya los agotados al final y, dentro de cada grupo,
+    # el orden del catálogo.
     if cat == 'Sin TACC':
         # Lo sin TACC está repartido: además de su categoría propia, hay
-        # harinas, cervezas y suplementos que lo aclaran en el nombre. Se
-        # recorre la lista una sola vez, así no se repite ningún producto
-        # y se respeta el orden del catálogo.
-        resultados = [p for p in productos
-                      if p.get('categoria', '') == cat
-                      or 'sin tacc' in p.get('nombre', '').lower()]
+        # harinas, cervezas y suplementos que lo aclaran en el nombre.
+        resultados = datos.filtrar_sin_tacc()
         titulo = cat
     elif cat:
-        # Filtro exacto por categoría (desde el menú)
-        resultados = [p for p in productos if p.get('categoria', '') == cat]
+        resultados = datos.filtrar_por_categoria(cat)
         titulo = cat
     elif subcat:
-        # Filtro exacto por subcategoría (desde el menú)
-        resultados = [p for p in productos if p.get('subcategoria', '') == subcat]
+        resultados = datos.filtrar_por_subcategoria(subcat)
         titulo = subcat.upper()
     elif busqueda:
-        palabras = busqueda.split()
-        resultados = [
-            p for p in productos
-            if all(
-                any(palabra_nombre.startswith(palabra) for palabra_nombre in p['nombre'].lower().split())
-                or palabra in p['descripcion'].lower()
-                or palabra in p['categoria'].lower()
-                or palabra in p.get('subcategoria', '').lower()
-                for palabra in palabras
-            )
-        ]
+        resultados = datos.filtrar_por_texto(busqueda)
         titulo = busqueda.upper()
     else:
-        resultados = productos
+        resultados = datos.catalogo_ordenado()
         titulo = "Nuestros Productos"
-
-    # Lo agotado va al fondo de la grilla en todas las vistas. sorted() es
-    # estable, así que dentro de cada grupo se respeta el orden del catálogo.
-    resultados = sorted(resultados, key=datos.sin_stock)
 
     return render_template('productos.html', productos=resultados, titulo=titulo)
 

@@ -7,7 +7,7 @@
     "precio_kg": 18000,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_energy.jpg",
-    "stock": "sin_stock"
+    "stock": "disponible"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "precio_kg": 19000,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_energy_sin_mani.jpg",
-    "stock": "ultimas"
+    "stock": "disponible"
   },
   {
     "id": 3,
