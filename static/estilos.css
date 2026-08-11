@@ -482,6 +482,27 @@ button {
     background: var(--blanco);
     border: 1px solid var(--borde);
     border-radius: var(--r-card);
+
+    /* Con 17 categorías el menú mide más de 1000 px y no entra en pantalla.
+       Scrollea solo, sin arrastrar la página. */
+    max-height: calc(100vh - var(--alto-header) - var(--e-8));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--borde) transparent;
+}
+
+.dropdown-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: var(--borde);
+    border-radius: var(--r-chico);
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .dropdown:hover .dropdown-content,
@@ -516,17 +537,39 @@ button {
     position: relative;
 }
 
+/* Los submenús van fijos a la pantalla, no absolutos dentro del menú:
+   un contenedor con scroll recorta a sus hijos, y al darle overflow-y al
+   menú el navegador fuerza también overflow-x, así que el submenú quedaba
+   cortado y le agregaba una barra horizontal. Quién se abre lo sigue
+   decidiendo el :hover de acá abajo; el JS solo le pone las coordenadas. */
 .submenu-content {
     display: none;
-    position: absolute;
-    left: 100%;
-    top: calc(var(--e-1) * -1);
+    position: fixed;
     z-index: 210;
     min-width: 230px;
     padding: var(--e-1) 0;
     background: var(--blanco);
     border: 1px solid var(--borde);
     border-radius: var(--r-card);
+
+    max-height: calc(100vh - var(--e-8));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--borde) transparent;
+}
+
+.submenu-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.submenu-content::-webkit-scrollbar-thumb {
+    background: var(--borde);
+    border-radius: var(--r-chico);
+}
+
+.submenu-content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .submenu-container:hover .submenu-content,

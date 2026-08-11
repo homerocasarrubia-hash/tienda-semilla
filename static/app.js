@@ -550,6 +550,66 @@
         });
     }
 
+    /* --- submenús del menú de categorías --------------------------------
+       El menú de categorías scrollea solo (con 17 categorías no entra en
+       pantalla) y un contenedor con scroll recorta a sus hijos. Por eso los
+       submenús laterales son position: fixed y las coordenadas se calculan
+       acá. Quién se abre y quién se cierra lo sigue decidiendo el :hover del
+       CSS: esto solo los ubica. */
+
+    function iniciarSubmenus() {
+        var menu = document.querySelector('.dropdown-content');
+        if (!menu) return;
+
+        var abierto = null;
+
+        function ubicar(contenedor) {
+            var submenu = contenedor.querySelector('.submenu-content');
+            if (!submenu) return;
+
+            var fila = contenedor.getBoundingClientRect();
+            submenu.style.left = Math.round(fila.right) + 'px';
+            submenu.style.top = Math.round(fila.top) + 'px';
+
+            if (!submenu.scrollHeight) return;   // todavía no se está mostrando
+
+            // Arranca alineado con su fila, pero sin salirse: ni más arriba
+            // del menú (si la fila se fue scrolleando), ni más abajo de lo
+            // que entra en pantalla.
+            var minimo = Math.max(8, Math.round(menu.getBoundingClientRect().top));
+            var disponible = window.innerHeight - minimo - 8;
+            var alto = Math.min(submenu.scrollHeight, disponible);
+            var maximo = Math.max(minimo, Math.round(window.innerHeight - alto - 8));
+            var top = Math.min(Math.max(Math.round(fila.top), minimo), maximo);
+
+            submenu.style.top = top + 'px';
+            // Si ni subiéndolo entra, se le da scroll propio en vez de
+            // dejar que se corte contra el borde de la pantalla.
+            submenu.style.maxHeight = (window.innerHeight - top - 8) + 'px';
+        }
+
+        menu.querySelectorAll('.submenu-container').forEach(function (contenedor) {
+            contenedor.addEventListener('mouseenter', function () {
+                abierto = contenedor;
+                ubicar(contenedor);
+                // Segunda pasada: recién ahí el submenú ya se está mostrando
+                // y se puede medir su alto real.
+                window.setTimeout(function () {
+                    if (abierto === contenedor) ubicar(contenedor);
+                }, 0);
+            });
+
+            contenedor.addEventListener('mouseleave', function () {
+                if (abierto === contenedor) abierto = null;
+            });
+        });
+
+        // Al scrollear el menú, el submenú abierto acompaña a su fila
+        menu.addEventListener('scroll', function () {
+            if (abierto) ubicar(abierto);
+        }, { passive: true });
+    }
+
     /* --- header sticky ------------------------------------------------ */
 
     function iniciarHeaderSticky() {
@@ -635,6 +695,7 @@
         actualizarInterfaz();   // el contador debe reflejar el localStorage ya en la carga
         iniciarAutocompletado();
         iniciarHeaderSticky();
+        iniciarSubmenus();
         revalidarDescuento();
 
         var campo = document.getElementById('codigo-descuento');
