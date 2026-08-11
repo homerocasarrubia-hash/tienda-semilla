@@ -140,7 +140,7 @@
             {% endfor %}
 
             <td class="col-foto" data-titulo="Foto">
-                {% if imagen_existe(p.imagen) %}
+                {% if foto_de(p) %}
                 <svg class="ico ico-chico tiene-foto" aria-hidden="true"><use href="#ico-tilde"></use></svg>
                 <span class="solo-lectores">Tiene foto</span>
                 {% else %}

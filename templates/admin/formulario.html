@@ -24,7 +24,7 @@
 </div>
 {% endif %}
 
-<form method="post" class="form-admin">
+<form method="post" class="form-admin" enctype="multipart/form-data">
     <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
 
     <label class="campo">
@@ -146,17 +146,33 @@
         dejalo vacío: en la tienda va a decir «Precio a confirmar».
     </p>
 
-    <label class="campo">
+    <div class="campo">
         <span class="campo-titulo">Foto <span class="campo-opcional">opcional</span></span>
-        <input type="text" name="imagen"
-               value="{{ producto.imagen if producto and producto.imagen else '' }}">
+
+        {% set foto_actual = foto_de(producto) if producto else None %}
+        {% if foto_actual %}
+        <div class="foto-actual">
+            <img src="{{ foto_actual }}" alt="Foto actual de {{ producto.nombre }}">
+            <label class="opcion">
+                <input type="checkbox" name="quitar_foto" value="1">
+                <span>Quitar esta foto</span>
+            </label>
+        </div>
+        {% endif %}
+
+        <input type="file" name="foto" accept="image/*" class="campo-foto">
+
         <span class="campo-ayuda">
-            Se completa solo mientras escribís el nombre, y podés cambiarlo.
-            Es el nombre del archivo que va guardado en la carpeta
-            <code>static/img</code>, por ejemplo <code>almendras.jpg</code>.
-            Si la foto todavía no está, la tienda muestra la inicial del producto.
+            {% if foto_actual %}
+            Elegí una foto nueva solo si querés reemplazar la de arriba.
+            {% else %}
+            Desde el celular podés sacarla con la cámara en el momento o
+            elegir una de la galería.
+            {% endif %}
+            Se achica y se optimiza sola antes de guardarse. Si el producto
+            no tiene foto, la tienda muestra la inicial del nombre.
         </span>
-    </label>
+    </div>
 
     <div class="form-acciones">
         <button type="submit" class="btn-primario">

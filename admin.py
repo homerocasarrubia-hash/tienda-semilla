@@ -13,6 +13,7 @@ from flask import (Blueprint, flash, jsonify, redirect, render_template,
 
 import datos
 import descuentos
+imagenes = None  # se importa perezoso, ver _resolver_foto
 
 bp_admin = Blueprint('admin', __name__, url_prefix='/admin')
 
@@ -139,7 +140,7 @@ def lista():
 
     todos = datos.cargar()
     sin_precio = sum(1 for p in todos if not _tiene_precio(p))
-    sin_foto = sum(1 for p in todos if not datos.imagen_existe(p.get('imagen')))
+    sin_foto = sum(1 for p in todos if not datos.tiene_foto(p))
     agotados = sum(1 for p in todos if datos.estado_stock(p) == 'sin_stock')
     en_oferta = sum(1 for p in todos if p.get('es_oferta'))
     novedades = sum(1 for p in todos if p.get('es_novedad'))
@@ -241,8 +242,14 @@ def nuevo():
                                    producto=producto, errores=errores,
                                    es_nuevo=True)
 
+        # La foto se sube recién cuando el resto está bien: así un error de
+        # validación no deja una imagen huérfana en el servicio.
+        producto['imagen'], avisos, _ = _resolver_foto(None)
+
         creado = datos.crear(producto)
         flash('Se agregó «%s» al catálogo.' % creado['nombre'], 'ok')
+        for aviso in avisos:
+            flash(aviso, 'error')
         return redirect(url_for('admin.lista', q=creado['nombre']))
 
     return render_template('admin/formulario.html',
@@ -269,12 +276,24 @@ def editar(id_producto):
                 % (editado['nombre'], editado['categoria']))
 
         if errores:
+            # Se conserva la foto actual para que el formulario la siga
+            # mostrando aunque el guardado no haya pasado.
+            editado['imagen'] = producto.get('imagen')
             return render_template('admin/formulario.html',
                                    producto=editado, errores=errores,
                                    es_nuevo=False)
 
+        editado['imagen'], avisos, anterior = _resolver_foto(producto)
+
         datos.actualizar(id_producto, editado)
         flash('Se guardaron los cambios de «%s».' % editado['nombre'], 'ok')
+        for aviso in avisos:
+            flash(aviso, 'error')
+
+        # Recién con el producto guardado se limpia la foto reemplazada
+        if anterior and anterior != editado['imagen']:
+            imagenes.borrar(anterior)
+
         return redirect(url_for('admin.lista'))
 
     return render_template('admin/formulario.html',
@@ -427,6 +446,52 @@ def _leer_precios_en_lote():
     return cambios, errores
 
 
+def _resolver_foto(actual):
+    """Decide qué queda en el campo "imagen" del producto.
+
+    Devuelve (valor, avisos, url_anterior_a_borrar).
+
+    - Si no se eligió archivo, queda la foto que ya tenía: editar el precio
+      no puede borrar la imagen sin querer.
+    - Si se tildó "quitar", queda sin foto.
+    - Si se subió una, se procesa y se manda al servicio externo.
+
+    Si la subida falla, el producto se guarda igual con su foto anterior y
+    se avisa: perder todo lo escrito por un problema de red sería peor.
+    """
+    global imagenes
+    if imagenes is None:
+        import imagenes as _imagenes
+        imagenes = _imagenes
+
+    anterior = ((actual or {}).get('imagen') or '').strip() or None
+    avisos = []
+
+    if request.form.get('quitar_foto'):
+        return None, avisos, anterior
+
+    archivo = request.files.get('foto')
+    if archivo is None or not (archivo.filename or '').strip():
+        return anterior, avisos, None
+
+    try:
+        crudo = archivo.read()
+        url = imagenes.subir(crudo)
+    except imagenes.ErrorDeImagen as e:
+        avisos.append('No se pudo usar la foto: %s' % e)
+        return anterior, avisos, None
+    except imagenes.FaltaConfiguracion:
+        avisos.append('El producto se guardó, pero la foto no: todavía no está '
+                      'configurado el servicio de fotos (falta CLOUDINARY_URL).')
+        return anterior, avisos, None
+    except Exception:
+        avisos.append('El producto se guardó, pero la foto no se pudo subir. '
+                      'Probá de nuevo en un rato.')
+        return anterior, avisos, None
+
+    return url, avisos, anterior
+
+
 # --- lectura y validación del formulario ---------------------------------
 
 _NOMBRE_PRECIO = {
@@ -478,7 +543,6 @@ def _leer_formulario():
 
     nombre = f.get('nombre', '').strip()
     descripcion = f.get('descripcion', '').strip()
-    imagen = f.get('imagen', '').strip()
     subcategoria = f.get('subcategoria', '').strip()
     tipo = f.get('tipo', 'granel')
 
@@ -517,7 +581,6 @@ def _leer_formulario():
     producto['categoria'] = categoria
     if subcategoria:
         producto['subcategoria'] = subcategoria
-    producto['imagen'] = imagen
 
     stock = f.get('stock', '').strip()
     producto['stock'] = stock if stock in dict(datos.ESTADOS_STOCK) else 'disponible'

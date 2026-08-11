@@ -47,51 +47,6 @@
         mostrar(campo, select.value === '__nueva__');
     }
 
-    /* Sugerencia del nombre de archivo de la foto -------------------------
-       Misma convención que usa el catálogo: minúsculas, guiones bajos, sin
-       tildes, sin conectores, y el número sin la unidad (salvo kg y lt). */
-
-    var CONECTORES = ['de', 'del', 'la', 'el', 'los', 'las', 'para', 'al', 'a', 'y', 'con'];
-
-    function nombreDeArchivo(nombre) {
-        var s = nombre.split('—')[0];                       // fuera el "— SIN TACC"
-        // NFD separa la tilde de la letra; despues se filtran las marcas
-        // de acento por codigo, para no meter caracteres raros en este archivo.
-        s = s.normalize('NFD').split('').filter(function (c) {
-            var n = c.charCodeAt(0);
-            return n < 0x300 || n > 0x36f;
-        }).join('');
-        s = s.toLowerCase();
-        s = s.replace(/\s+x\s+/g, ' ');                     // fuera la "x" del gramaje
-        s = s.replace(/(\d+)\s*(kg|lt)\b/g, '$1$2');        // 1 kg -> 1kg
-        s = s.replace(/(\d+)\s*(g|ml|unidades|caps|comp)\b/g, '$1');
-
-        var palabras = s.split(/[^a-z0-9]+/).filter(function (p) {
-            return p && CONECTORES.indexOf(p) === -1;
-        });
-
-        return palabras.length ? palabras.join('_') + '.jpg' : '';
-    }
-
-    function iniciarSugerenciaDeImagen() {
-        var campoNombre = document.querySelector('.form-admin input[name="nombre"]');
-        var campoImagen = document.querySelector('.form-admin input[name="imagen"]');
-        if (!campoNombre || !campoImagen) return;
-
-        // Si ya trae algo (estamos editando), no se pisa nunca. Si lo vacía,
-        // vuelve a sugerir.
-        var aMano = campoImagen.value.trim() !== '';
-
-        campoImagen.addEventListener('input', function () {
-            aMano = campoImagen.value.trim() !== '';
-        });
-
-        campoNombre.addEventListener('input', function () {
-            if (aMano) return;
-            campoImagen.value = nombreDeArchivo(campoNombre.value);
-        });
-    }
-
     /* Cambio de estado desde el listado ----------------------------------
        El formulario de cada fila funciona solo con su botón Guardar. Si hay
        JS, se envía al elegir y no se recarga la página: es lo que más se
@@ -206,7 +161,6 @@
     document.addEventListener('DOMContentLoaded', function () {
         iniciarTipoDePrecio();
         iniciarCategoriaNueva();
-        iniciarSugerenciaDeImagen();
         iniciarEstadoEnLinea();
         iniciarMarcasEnLinea();
     });

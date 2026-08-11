@@ -1,10 +1,12 @@
 import os
 import secrets
 
-from flask import Flask, jsonify, render_template, request
+from flask import (Flask, flash, jsonify, redirect, render_template,
+                   request, url_for)
 
 import datos
 import descuentos
+import imagenes
 from admin import bp_admin
 
 
@@ -69,6 +71,34 @@ app.register_blueprint(bp_admin)
 # Cuántos productos se muestran por página en el catálogo
 POR_PAGINA = 24
 
+# Una foto de celular puede pesar varios MB: sin tope entra entera a memoria
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+
+
+@app.errorhandler(413)
+def archivo_demasiado_grande(error):
+    flash('La foto es demasiado pesada (el máximo son 16 MB). '
+          'Probá con otra o sacala con menos calidad.', 'error')
+    return redirect(request.referrer or url_for('admin.lista'))
+
+
+def foto_de(producto):
+    """La dirección de la foto para mostrar, o None si no hay.
+
+    Las fotos nuevas guardan la URL completa del servicio externo; las
+    viejas, un nombre de archivo en static/img/. Se aceptan las dos.
+    """
+    valor = (producto.get('imagen') or '').strip()
+
+    if not valor:
+        return None
+    if imagenes.es_url(valor):
+        return valor
+    if datos.imagen_existe(valor):
+        return url_for('static', filename='img/' + valor)
+
+    return None
+
 
 # --- IMÁGENES DE PRODUCTO ---
 # Los productos declaran un archivo en "imagen", pero puede que todavía no
@@ -79,6 +109,7 @@ POR_PAGINA = 24
 def utilidades_template():
     return {
         'imagen_existe': datos.imagen_existe,
+        'foto_de': foto_de,
         'estado_stock': datos.estado_stock,
         # El carrito vive en localStorage y puede tener productos que se
         # agotaron después: necesita esta lista para marcarlos.

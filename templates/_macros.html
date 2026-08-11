@@ -5,7 +5,7 @@
    granel o por unidad, su estado de stock, si tiene foto y qué botón le
    corresponde. Sirve en cualquier página que muestre productos.
 
-   Se importa "with context" porque usa imagen_existe() y estado_stock(),
+   Se importa "with context" porque usa foto_de() y estado_stock(),
    que app.py inyecta en el contexto de las plantillas:
 
        {% from '_macros.html' import card_producto with context %}
@@ -29,10 +29,10 @@
 
     <div class="card-media">
         <span class="card-inicial" aria-hidden="true">{{ p.nombre[0]|upper }}</span>
-        {% if imagen_existe(p.imagen) %}
+        {% set foto = foto_de(p) %}
+        {% if foto %}
         <img class="card-img" loading="lazy" onerror="this.remove()"
-             src="{{ url_for('static', filename='img/' ~ p.imagen) }}"
-             alt="{{ p.nombre }}">
+             src="{{ foto }}" alt="{{ p.nombre }}">
         {% endif %}
         {% if stock == 'ultimas' %}
         <span class="badge-stock badge-ultimas">Últimas unidades</span>

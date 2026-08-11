@@ -723,3 +723,52 @@ textarea:focus {
         margin-top: var(--e-8);
     }
 }
+
+/* --- Foto del producto ------------------------------------------------ */
+.foto-actual {
+    display: flex;
+    align-items: center;
+    gap: var(--e-4);
+    margin-bottom: var(--e-3);
+    padding: var(--e-3);
+    background: var(--verde-50);
+    border-radius: var(--r-card);
+}
+
+.foto-actual img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border: 1px solid var(--borde);
+    border-radius: var(--r-chico);
+    flex: none;
+}
+
+.campo-foto {
+    display: block;
+    width: 100%;
+    padding: var(--e-3);
+    background: var(--blanco);
+    border: 1px dashed var(--borde);
+    border-radius: var(--r-chico);
+    font-family: var(--fuente-ui);
+    font-size: var(--texto-chico);
+    cursor: pointer;
+}
+
+.campo-foto::file-selector-button {
+    margin-right: var(--e-3);
+    padding: var(--e-2) var(--e-4);
+    background: var(--verde-700);
+    color: var(--blanco);
+    border: none;
+    border-radius: var(--r-chico);
+    font-family: inherit;
+    font-size: var(--texto-chico);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.campo-foto::file-selector-button:hover {
+    background: var(--verde-500);
+}

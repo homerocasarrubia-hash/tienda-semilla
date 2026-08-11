@@ -285,7 +285,6 @@ def evaluar(candidato, marca, significativas):
 def descargar_y_guardar(url, destino):
     """Baja la imagen, la normaliza y la guarda como JPG."""
     import requests
-    from PIL import Image
 
     respuesta = requests.get(url, timeout=TIMEOUT, stream=True,
                              headers={'User-Agent': 'Mozilla/5.0 (fotos.py)'})
@@ -302,28 +301,10 @@ def descargar_y_guardar(url, destino):
             raise ValueError('la imagen pesa más de %d MB' % (MAXIMO_BYTES // 1024 // 1024))
     crudo.seek(0)
 
-    imagen = Image.open(crudo)
-    imagen.load()
-
-    # Los PNG con transparencia van sobre blanco: si no, el alfa se convierte
-    # en negro y el packaging queda con bordes sucios.
-    if imagen.mode in ('RGBA', 'LA', 'P'):
-        imagen = imagen.convert('RGBA')
-        fondo = Image.new('RGB', imagen.size, (255, 255, 255))
-        fondo.paste(imagen, mask=imagen.split()[-1])
-        imagen = fondo
-    else:
-        imagen = imagen.convert('RGB')
-
-    imagen.thumbnail((LADO_MAXIMO_FINAL, LADO_MAXIMO_FINAL), Image.LANCZOS)
-
-    # Se escribe en un temporal y se renombra: una corrida interrumpida no
-    # deja un JPG cortado en static/img/.
-    temporal = destino + '.tmp'
-    imagen.save(temporal, 'JPEG', quality=CALIDAD_JPG, optimize=True)
-    os.replace(temporal, destino)
-
-    return imagen.size
+    # El procesamiento (EXIF, alfa sobre blanco, achicar, JPG) vive en
+    # imagenes.py, compartido con el panel: una sola implementación.
+    import imagenes
+    return imagenes.guardar_en_disco(crudo.getvalue(), destino)
 
 
 # =========================================================================

@@ -12,6 +12,7 @@ from sqlalchemy import delete, func, insert, or_, select, update
 from sqlalchemy.sql import case
 
 import db
+import imagenes
 
 CARPETA = os.path.dirname(os.path.abspath(__file__))
 CARPETA_IMAGENES = os.path.join(CARPETA, 'static', 'img')
@@ -395,4 +396,17 @@ def imagenes_disponibles():
 
 
 def imagen_existe(nombre):
+    """Archivo presente en static/img/. Solo aplica a las fotos viejas."""
     return bool(nombre) and nombre.lower() in imagenes_disponibles()
+
+
+def tiene_foto(producto):
+    """Si el producto tiene una foto publicable.
+
+    Sirve para las dos épocas: las nuevas guardan la URL completa del
+    servicio externo, las viejas un nombre de archivo local.
+    """
+    valor = (producto.get('imagen') or '').strip()
+    if not valor:
+        return False
+    return imagenes.es_url(valor) or imagen_existe(valor)
