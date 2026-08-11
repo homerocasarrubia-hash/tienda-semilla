@@ -85,6 +85,27 @@
     </label>
 
     <fieldset class="campo campo-tipo">
+        <legend class="campo-titulo">Destacar en la tienda</legend>
+
+        <label class="opcion">
+            <input type="checkbox" name="es_oferta"
+                   {% if producto and producto.es_oferta %}checked{% endif %}>
+            <span>Marcar como oferta</span>
+        </label>
+
+        <label class="opcion">
+            <input type="checkbox" name="es_novedad"
+                   {% if producto and producto.es_novedad %}checked{% endif %}>
+            <span>Marcar como novedad</span>
+        </label>
+
+        <span class="campo-ayuda">
+            Los productos en oferta aparecen en «Ofertas» del menú, y los
+            marcados como novedad en «Novedades».
+        </span>
+    </fieldset>
+
+    <fieldset class="campo campo-tipo">
         <legend class="campo-titulo">¿Cómo se vende?</legend>
 
         <label class="opcion">

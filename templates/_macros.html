@@ -39,10 +39,14 @@
         {% elif agotado %}
         <span class="badge-stock badge-agotado">Sin stock</span>
         {% endif %}
+        {% if p.es_oferta %}
+        <span class="badge-oferta">Oferta</span>
+        {% endif %}
     </div>
 
     <div class="card-cuerpo">
-        <h3 class="card-nombre">{{ p.nombre }}</h3>
+        <h3 class="card-nombre">{{ p.nombre
+            }}{% if p.es_novedad %} <span class="card-nuevo">Nuevo</span>{% endif %}</h3>
         <p class="card-desc">{{ p.descripcion }}</p>
 
         {# El selector de presentación no tiene sentido si no se puede comprar #}

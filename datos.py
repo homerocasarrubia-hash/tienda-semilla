@@ -20,7 +20,14 @@ RUTA_JSON = os.path.join(CARPETA, 'productos.json')
 # Orden en que se arma cada diccionario, para que el JSON exportado quede
 # igual al de siempre.
 _ORDEN_CLAVES = ('id', 'nombre', 'descripcion', 'precio_100g', 'precio_kg',
-                 'precio', 'categoria', 'subcategoria', 'imagen', 'stock')
+                 'precio', 'categoria', 'subcategoria', 'imagen', 'stock',
+                 'es_oferta', 'es_novedad')
+
+# Marcas que se pueden prender y apagar desde el listado del panel
+MARCAS = (
+    ('es_oferta', 'Oferta'),
+    ('es_novedad', 'Novedad'),
+)
 
 ESTADOS_STOCK = (
     ('disponible', 'Disponible'),
@@ -87,6 +94,8 @@ def _valores(producto):
         'precio': producto.get('precio'),
         'precio_100g': producto.get('precio_100g'),
         'precio_kg': producto.get('precio_kg'),
+        'es_oferta': bool(producto.get('es_oferta')),
+        'es_novedad': bool(producto.get('es_novedad')),
     }
 
 
@@ -198,6 +207,18 @@ def filtrar_sin_tacc():
                   .order_by(*_orden_publico()))
 
 
+def filtrar_ofertas():
+    return _filas(select(_tabla)
+                  .where(_tabla.c.es_oferta.is_(True))
+                  .order_by(*_orden_publico()))
+
+
+def filtrar_novedades():
+    return _filas(select(_tabla)
+                  .where(_tabla.c.es_novedad.is_(True))
+                  .order_by(*_orden_publico()))
+
+
 def filtrar_por_subcategoria(subcat):
     return _filas(select(_tabla)
                   .where(_tabla.c.subcategoria == subcat)
@@ -285,6 +306,21 @@ def eliminar(id_producto):
         cx.execute(delete(_tabla).where(_tabla.c.id == id_producto))
 
     return producto
+
+
+def cambiar_marca(id_producto, campo, valor):
+    """Prende o apaga es_oferta / es_novedad sin tocar el resto."""
+    if campo not in dict(MARCAS):
+        return None
+
+    with db.motor().begin() as cx:
+        resultado = cx.execute(update(_tabla)
+                               .where(_tabla.c.id == id_producto)
+                               .values(**{campo: bool(valor)}))
+        if resultado.rowcount == 0:
+            return None
+
+    return obtener(id_producto)
 
 
 def actualizar_precios(cambios):

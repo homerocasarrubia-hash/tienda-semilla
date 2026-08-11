@@ -1,0 +1,20 @@
+# Configuración del servicio en Render.
+# Render no usa Procfile (eso es de Heroku): el estándar es el "Start
+# Command", que se puede dejar acá o cargar a mano en el panel.
+services:
+  - type: web
+    name: semilla-tienda-natural
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      # sync: false = se cargan a mano en el panel de Render y NO viajan
+      # en el repositorio.
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      # Render la genera sola y queda fija entre deploys.
+      - key: SECRET_KEY
+        generateValue: true

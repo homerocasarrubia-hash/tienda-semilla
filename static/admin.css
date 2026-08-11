@@ -470,6 +470,27 @@ textarea:focus {
     background: var(--verde-50);
 }
 
+/* Oferta y novedad: una casilla por fila */
+.col-marca {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.form-marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--e-2);
+}
+
+.check-marca {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--ocre);
+    cursor: pointer;
+}
+
 .stock-guardado {
     font-size: var(--texto-mini);
     color: var(--verde-700);

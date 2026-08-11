@@ -5,8 +5,8 @@ ni se imprime en ningún lado.
 """
 import os
 
-from sqlalchemy import (Column, Integer, MetaData, Numeric, String, Table,
-                        Text, create_engine)
+from sqlalchemy import (Boolean, Column, Integer, MetaData, Numeric, String,
+                        Table, Text, create_engine)
 
 TABLA_POR_DEFECTO = 'productos'
 
@@ -89,20 +89,35 @@ def tabla(nombre=TABLA_POR_DEFECTO):
             Column('precio', Numeric(12, 2), nullable=True),
             Column('precio_100g', Numeric(12, 2), nullable=True),
             Column('precio_kg', Numeric(12, 2), nullable=True),
+            Column('es_oferta', Boolean, nullable=False, server_default='false'),
+            Column('es_novedad', Boolean, nullable=False, server_default='false'),
             extend_existing=True,
         )
 
     return _tablas[nombre]
 
 
+# Columnas que se agregaron después de la primera versión de la tabla. Se
+# aplican con ALTER TABLE sobre la tabla existente: nunca se recrea nada ni
+# se tocan los datos que ya están cargados.
+COLUMNAS_AGREGADAS = (
+    ('es_oferta', 'BOOLEAN NOT NULL DEFAULT FALSE'),
+    ('es_novedad', 'BOOLEAN NOT NULL DEFAULT FALSE'),
+)
+
+
 def crear_tabla(nombre=TABLA_POR_DEFECTO):
-    """CREATE TABLE IF NOT EXISTS, más los índices que usan los filtros."""
-    from sqlalchemy import Index, text
+    """CREATE TABLE IF NOT EXISTS, las columnas nuevas y los índices."""
+    from sqlalchemy import text
 
     t = tabla(nombre)
     t.create(motor(), checkfirst=True)
 
     with motor().begin() as cx:
+        for columna, definicion in COLUMNAS_AGREGADAS:
+            cx.execute(text('ALTER TABLE %s ADD COLUMN IF NOT EXISTS %s %s'
+                            % (nombre, columna, definicion)))
+
         cx.execute(text('CREATE INDEX IF NOT EXISTS idx_%s_categoria '
                         'ON %s (categoria)' % (nombre, nombre)))
         cx.execute(text('CREATE INDEX IF NOT EXISTS idx_%s_subcategoria '

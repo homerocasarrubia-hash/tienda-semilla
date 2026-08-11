@@ -979,6 +979,39 @@ body.sin-scroll {
     background: var(--ocre);
 }
 
+/* La oferta va en la esquina opuesta al estado de stock, así una card
+   puede tener las dos cosas sin que se pisen. */
+.badge-oferta {
+    position: absolute;
+    top: var(--e-2);
+    right: var(--e-2);
+    z-index: 1;
+    padding: var(--e-1) var(--e-2);
+    background: var(--ocre);
+    border-radius: var(--r-chico);
+    color: var(--blanco);
+    font-size: var(--texto-mini);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+/* Novedad: más discreto, al lado del nombre y sin ocupar la imagen */
+.card-nuevo {
+    display: inline-block;
+    padding: 0 var(--e-1);
+    background: var(--verde-50);
+    border-radius: var(--r-chico);
+    color: var(--verde-700);
+    font-family: var(--fuente-ui);
+    font-size: var(--texto-mini);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
 .badge-agotado {
     background: var(--tinta-60);
 }
@@ -1516,4 +1549,49 @@ body.sin-scroll {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
+}
+
+/* --- Paginador del catálogo ------------------------------------------- */
+.paginador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--e-4);
+    flex-wrap: wrap;
+    margin-top: var(--e-12);
+    padding-top: var(--e-6);
+    border-top: 1px solid var(--borde);
+}
+
+.paginador-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--e-2);
+    padding: var(--e-3) var(--e-4);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-chico);
+    color: var(--verde-700);
+    font-size: var(--texto-chico);
+    font-weight: 600;
+    transition: background var(--trans), border-color var(--trans);
+}
+
+a.paginador-link:hover {
+    background: var(--verde-50);
+    border-color: var(--verde-500);
+    color: var(--verde-900);
+}
+
+.paginador-link.inactivo {
+    color: var(--tinta-60);
+    opacity: 0.5;
+}
+
+.paginador-atras {
+    transform: rotate(180deg);
+}
+
+.paginador-posicion {
+    font-size: var(--texto-chico);
+    color: var(--tinta-60);
 }

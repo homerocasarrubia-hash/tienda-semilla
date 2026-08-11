@@ -22,7 +22,8 @@
 
         {% if productos %}
         <p class="contador-resultados">
-            {{ productos|length }} producto{{ '' if productos|length == 1 else 's' }}
+            {{ total }} producto{{ '' if total == 1 else 's' }}{% if paginas > 1 %} ·
+            mostrando {{ desde }}-{{ hasta }}{% endif %}
         </p>
 
         <div class="grid-productos">
@@ -32,6 +33,38 @@
 
             {% endfor %}
         </div>
+
+        {% if paginas > 1 %}
+        <nav class="paginador" aria-label="Páginas de resultados">
+            {% if pagina > 1 %}
+            <a class="paginador-link" rel="prev"
+               href="{{ url_for('compras', **dict(request.args, pagina=pagina - 1)) }}">
+                <svg class="ico ico-chico paginador-atras" aria-hidden="true"><use href="#ico-chevron"></use></svg>
+                Anterior
+            </a>
+            {% else %}
+            <span class="paginador-link inactivo">
+                <svg class="ico ico-chico paginador-atras" aria-hidden="true"><use href="#ico-chevron"></use></svg>
+                Anterior
+            </span>
+            {% endif %}
+
+            <span class="paginador-posicion">Página {{ pagina }} de {{ paginas }}</span>
+
+            {% if pagina < paginas %}
+            <a class="paginador-link" rel="next"
+               href="{{ url_for('compras', **dict(request.args, pagina=pagina + 1)) }}">
+                Siguiente
+                <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-chevron"></use></svg>
+            </a>
+            {% else %}
+            <span class="paginador-link inactivo">
+                Siguiente
+                <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-chevron"></use></svg>
+            </span>
+            {% endif %}
+        </nav>
+        {% endif %}
 
         {% else %}
         <div class="estado-vacio">

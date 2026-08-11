@@ -7,7 +7,9 @@
     "precio_kg": 18000,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_energy.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "precio_kg": 19000,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_energy_sin_mani.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 3,
@@ -27,7 +31,9 @@
     "precio_kg": 0,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_tropical.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 4,
@@ -37,7 +43,9 @@
     "precio_kg": 0,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_frutos_secos.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 5,
@@ -47,7 +55,9 @@
     "precio_kg": 0,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_frutos_sin_mani.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 6,
@@ -57,7 +67,9 @@
     "precio_kg": 0,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_salty.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 7,
@@ -67,7 +79,9 @@
     "precio_kg": 0,
     "categoria": "Mix de Frutos Secos",
     "imagen": "mix_ahumado.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 8,
@@ -77,7 +91,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_omega_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 9,
@@ -87,7 +103,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_peanut_butter_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 10,
@@ -97,7 +115,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_premium_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 11,
@@ -107,7 +127,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_stevia_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 12,
@@ -117,7 +139,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_ultra_protein_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 13,
@@ -127,7 +151,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_keto_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 14,
@@ -137,7 +163,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_tropical_monarca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 15,
@@ -147,7 +175,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_almendra_caju_arandanos_integra.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 16,
@@ -157,7 +187,9 @@
     "precio_kg": 0,
     "categoria": "Granolas",
     "imagen": "granola_chocolate_cacao_almendra_integra.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 17,
@@ -168,7 +200,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Trigo",
     "imagen": "harina_trigo_integral_molcol.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 18,
@@ -179,7 +213,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Trigo",
     "imagen": "harina_trigo_integral_organica_brotes.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 19,
@@ -190,7 +226,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Trigo",
     "imagen": "harina_trigo_sarraceno_olienka.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 20,
@@ -201,7 +239,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Frutos Secos",
     "imagen": "harina_almendras_con_piel_nacional.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 21,
@@ -212,7 +252,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Frutos Secos",
     "imagen": "harina_almendras_sin_piel_nacional.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 22,
@@ -223,7 +265,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Frutos Secos",
     "imagen": "harina_almendras_sin_piel_premium.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 23,
@@ -234,7 +278,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Frutos Secos",
     "imagen": "harina_castanas_caju.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 24,
@@ -245,7 +291,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Otras",
     "imagen": "harina_coco.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 25,
@@ -256,7 +304,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Otras",
     "imagen": "harina_algarroba.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 26,
@@ -267,7 +317,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Legumbres",
     "imagen": "harina_garbanzo_molcol.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 27,
@@ -278,7 +330,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Legumbres",
     "imagen": "harina_soja_molcol.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 28,
@@ -289,7 +343,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Semillas",
     "imagen": "harina_lino_sol_azteca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 29,
@@ -300,7 +356,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Semillas",
     "imagen": "harina_chia_sol_azteca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 30,
@@ -311,7 +369,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Semillas",
     "imagen": "harina_sesamo_integral_sol_azteca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 31,
@@ -322,7 +382,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Cereales",
     "imagen": "harina_maiz_abati_molcol.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 32,
@@ -333,7 +395,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Cereales",
     "imagen": "harina_avena_molcol.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 33,
@@ -344,7 +408,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Cereales",
     "imagen": "harina_centeno_molcol.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 34,
@@ -354,7 +420,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Cereales",
     "imagen": "harina_maiz_pan.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 35,
@@ -364,7 +432,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Frutos Secos",
     "imagen": "harina_mani_snackwell.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 36,
@@ -374,7 +444,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Cereales",
     "imagen": "harina_quinoa_natural_seed.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 37,
@@ -384,7 +456,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Semillas",
     "imagen": "harina_girasol_natural_seed.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 38,
@@ -394,7 +468,9 @@
     "categoria": "Harinas",
     "subcategoria": "Harina Frutos Secos",
     "imagen": "harina_almendras_piel_natural_seed.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 39,
@@ -405,7 +481,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "lentejas_rojas.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 40,
@@ -416,7 +494,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "lentejon.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 41,
@@ -427,7 +507,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "lentejas.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 42,
@@ -438,7 +520,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "poroto_alubia.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 43,
@@ -449,7 +533,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "poroto_negro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 44,
@@ -460,7 +546,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "poroto_aduki.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 45,
@@ -471,7 +559,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "porotos_lupines.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 46,
@@ -482,7 +572,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "porotos_pallares.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 47,
@@ -493,7 +585,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "poroto_colorado.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 48,
@@ -504,7 +598,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "poroto_bolita.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 49,
@@ -515,7 +611,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "poroto_soja.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 50,
@@ -526,7 +624,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "garbanzos.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 51,
@@ -537,7 +637,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "arvejas.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 52,
@@ -548,7 +650,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "soja_texturizada_fina.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 53,
@@ -559,7 +663,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Legumbres",
     "imagen": "soja_texturizada_gruesa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 54,
@@ -570,7 +676,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Cereales",
     "imagen": "trigo_candeal_pelado.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 55,
@@ -581,7 +689,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Cereales",
     "imagen": "trigo_burgol_fino.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 56,
@@ -592,7 +702,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Cereales",
     "imagen": "maiz_pisingallo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 57,
@@ -603,7 +715,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Cereales",
     "imagen": "maiz_blanco.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 58,
@@ -614,7 +728,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Maní",
     "imagen": "mani_crudo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 59,
@@ -625,7 +741,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Maní",
     "imagen": "mani_sin_sal.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 60,
@@ -636,7 +754,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Maní",
     "imagen": "mani_con_sal.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 61,
@@ -647,7 +767,9 @@
     "categoria": "Cereales y Legumbres",
     "subcategoria": "Maní",
     "imagen": "mani_con_cascara.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 62,
@@ -657,7 +779,9 @@
     "precio_kg": 0,
     "categoria": "Arroces",
     "imagen": "arroz_yamani.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 63,
@@ -667,7 +791,9 @@
     "precio_kg": 0,
     "categoria": "Arroces",
     "imagen": "arroz_integral_largo_fino.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 64,
@@ -677,7 +803,9 @@
     "precio_kg": 0,
     "categoria": "Arroces",
     "imagen": "arroz_koshihikari.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 164,
@@ -687,7 +815,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "almendras_chocolate_negro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 165,
@@ -697,7 +827,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "almendras_chocolate_blanco.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 166,
@@ -707,7 +839,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "pasas_chocolate_negro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 167,
@@ -717,7 +851,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "mani_chocolate_semiamargo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 168,
@@ -727,7 +863,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "lentejas_chocolate.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 169,
@@ -737,7 +875,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "mini_rocklets.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 170,
@@ -747,7 +887,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "gotas_chocolate_blanco.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 171,
@@ -757,7 +899,9 @@
     "precio_kg": 0,
     "categoria": "Chocolatería",
     "imagen": "gotas_chocolate_negro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 161,
@@ -767,7 +911,9 @@
     "precio_kg": 0,
     "categoria": "Tés e Infusiones",
     "imagen": "te_negro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 162,
@@ -777,7 +923,9 @@
     "precio_kg": 0,
     "categoria": "Tés e Infusiones",
     "imagen": "te_verde.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 163,
@@ -787,7 +935,9 @@
     "precio_kg": 0,
     "categoria": "Tés e Infusiones",
     "imagen": "te_rojo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 172,
@@ -796,7 +946,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_oliva_chaquiago_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 173,
@@ -805,7 +957,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_oliva_chaquiago_5lt.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 174,
@@ -814,7 +968,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_virgen_gby_125.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 175,
@@ -823,7 +979,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_virgen_gby_225.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 176,
@@ -832,7 +990,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_virgen_gby_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 177,
@@ -841,7 +1001,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_virgen_1lt.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 178,
@@ -850,7 +1012,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_neutro_gby_125.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 179,
@@ -859,7 +1023,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_neutro_gby_225.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 180,
@@ -868,7 +1034,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_neutro_gby_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 181,
@@ -877,7 +1045,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_coco_neutro_1lt.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 182,
@@ -886,7 +1056,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_palta_chia_graal_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 183,
@@ -895,7 +1067,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_chia_sol_azteca_150.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 184,
@@ -904,7 +1078,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_sesamo_sol_azteca_150.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 185,
@@ -913,7 +1089,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_lino_sol_azteca_150.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 186,
@@ -922,7 +1100,9 @@
     "precio": 0,
     "categoria": "Aceites",
     "imagen": "aceite_almendras_sol_azteca_100.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 200,
@@ -931,7 +1111,9 @@
     "precio": 0,
     "categoria": "Vinagres",
     "imagen": "vinagre_vino_chaquiago_1lt.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 201,
@@ -940,7 +1122,9 @@
     "precio": 0,
     "categoria": "Vinagres",
     "imagen": "vinagre_alcohol_chaquiago_1lt.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 202,
@@ -949,7 +1133,9 @@
     "precio": 0,
     "categoria": "Vinagres",
     "imagen": "vinagre_manzana_pampagourmet_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 203,
@@ -958,7 +1144,9 @@
     "precio": 0,
     "categoria": "Vinagres",
     "imagen": "vinagre_manzana_pampagourmet_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 204,
@@ -967,7 +1155,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_king_natural_245.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 205,
@@ -976,7 +1166,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_king_natural_485.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 206,
@@ -985,7 +1177,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_king_crunchy_350.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 207,
@@ -994,7 +1188,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_king_vita_350.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 208,
@@ -1003,7 +1199,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_entrenuts_natural_370.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 209,
@@ -1012,7 +1210,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_entrenuts_coco_370.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 210,
@@ -1021,7 +1221,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_entrenuts_sal_370.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 211,
@@ -1030,7 +1232,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_entrenuts_salted_caramel_370.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 212,
@@ -1039,7 +1243,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "mani_entrenuts_cookies_cream_370.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 213,
@@ -1048,7 +1254,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "tahina_zeeny_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 214,
@@ -1057,7 +1265,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "pistacho_felices_vacas_220.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 215,
@@ -1066,7 +1276,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "pistacho_ancestral_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 216,
@@ -1075,7 +1287,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "pistacho_sol_azteca_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 217,
@@ -1084,7 +1298,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "calabaza_sol_azteca_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 218,
@@ -1093,7 +1309,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "caju_sol_azteca_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 219,
@@ -1102,7 +1320,9 @@
     "precio": 0,
     "categoria": "Pastas Untables",
     "imagen": "almendras_sol_azteca_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 187,
@@ -1111,7 +1331,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "jalapeno_verde_recetas_180.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 188,
@@ -1120,7 +1342,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "jalapeno_ahumado_recetas_180.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 189,
@@ -1129,7 +1353,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "jalapeno_rojo_recetas_180.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 190,
@@ -1138,7 +1364,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "salsa_soja_recetas_180.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 191,
@@ -1147,7 +1375,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "salsa_inglesa_recetas_180.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 192,
@@ -1156,7 +1386,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "aceto_balsamico_recetas_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 193,
@@ -1165,7 +1397,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "salsa_soja_bitarwan_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 194,
@@ -1174,7 +1408,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "salsa_soja_bitarwan_1lt.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 195,
@@ -1183,7 +1419,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "tonkatsu_alcaraz_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 196,
@@ -1192,7 +1430,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "teriyaki_alcaraz_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 197,
@@ -1201,7 +1441,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "jalapeno_chovi_60.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 198,
@@ -1210,7 +1452,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "chili_pampagourmet_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 199,
@@ -1219,7 +1463,9 @@
     "precio": 0,
     "categoria": "Salsas",
     "imagen": "spicy_mango_pampagourmet_295.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 87,
@@ -1229,7 +1475,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "anis_verde.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 88,
@@ -1239,7 +1487,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "alcachofa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 89,
@@ -1249,7 +1499,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "ajenjo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 90,
@@ -1259,7 +1511,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "atamisqui.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 91,
@@ -1269,7 +1523,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "altamisa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 92,
@@ -1279,7 +1535,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "artemisa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 93,
@@ -1289,7 +1547,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "acoro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 94,
@@ -1299,7 +1559,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "bardana.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 95,
@@ -1309,7 +1571,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "bolsa_de_pastor.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 96,
@@ -1319,7 +1583,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "boldo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 97,
@@ -1329,7 +1595,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "burro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 98,
@@ -1339,7 +1607,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "carqueja.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 99,
@@ -1349,7 +1619,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "contrayerba.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 100,
@@ -1359,7 +1631,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "congorosa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 101,
@@ -1369,7 +1643,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "corteza_chanar.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 102,
@@ -1379,7 +1655,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cedron.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 103,
@@ -1389,7 +1667,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "ceibo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 104,
@@ -1399,7 +1679,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cuassia_amarga.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 105,
@@ -1409,7 +1691,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cola_de_caballo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 106,
@@ -1419,7 +1703,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cepa_caballo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 107,
@@ -1429,7 +1715,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cardo_mariano.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 108,
@@ -1439,7 +1727,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cardo_santo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 109,
@@ -1449,7 +1739,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "cola_de_quirquincho.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 110,
@@ -1459,7 +1751,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "diente_de_leon.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 111,
@@ -1469,7 +1763,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "doradilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 112,
@@ -1479,7 +1775,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "eucaliptus.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 113,
@@ -1489,7 +1787,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "estigma_de_maiz.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 114,
@@ -1499,7 +1799,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "fresno.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 115,
@@ -1509,7 +1811,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "grataegus.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 116,
@@ -1519,7 +1823,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "ginkgo_biloba.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 117,
@@ -1529,7 +1835,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "hibiscus.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 118,
@@ -1539,7 +1847,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "hiperico.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 119,
@@ -1549,7 +1859,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "hisopo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 120,
@@ -1559,7 +1871,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "incayuyo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 121,
@@ -1569,7 +1883,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "jarilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 122,
@@ -1579,7 +1895,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "llanten.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 123,
@@ -1589,7 +1907,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "lavanda.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 124,
@@ -1599,7 +1919,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "melisa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 125,
@@ -1609,7 +1931,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "mastuerzo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 126,
@@ -1619,7 +1943,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "manzanilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 127,
@@ -1629,7 +1955,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "menta.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 128,
@@ -1639,7 +1967,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "marrubio.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 129,
@@ -1649,7 +1979,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "marcela.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 130,
@@ -1659,7 +1991,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "moringa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 131,
@@ -1669,7 +2003,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "muerdago.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 132,
@@ -1679,7 +2015,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "muna_muna.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 133,
@@ -1689,7 +2027,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "mil_hombres.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 134,
@@ -1699,7 +2039,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "matico.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 135,
@@ -1709,7 +2051,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "ortiga.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 136,
@@ -1719,7 +2063,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "palo_azul.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 137,
@@ -1729,7 +2075,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "pulmonaria.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 138,
@@ -1739,7 +2087,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "palo_santo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 139,
@@ -1749,7 +2099,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "palo_amarillo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 140,
@@ -1759,7 +2111,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "pasionaria.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 141,
@@ -1769,7 +2123,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "poleo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 142,
@@ -1779,7 +2135,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "peperina.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 143,
@@ -1789,7 +2147,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "paico.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 144,
@@ -1799,7 +2159,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "rompepiedra.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 145,
@@ -1809,7 +2171,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "rica_rica.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 146,
@@ -1819,7 +2183,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "ruda.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 147,
@@ -1829,7 +2195,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "retamilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 148,
@@ -1839,7 +2207,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "romerillo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 149,
@@ -1849,7 +2219,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "rosa_mosqueta.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 150,
@@ -1859,7 +2231,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "regaliz.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 151,
@@ -1869,7 +2243,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "stevia.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 152,
@@ -1879,7 +2255,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "sen.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 153,
@@ -1889,7 +2267,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "salvia_blanca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 154,
@@ -1899,7 +2279,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "sombra_de_toro.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 155,
@@ -1909,7 +2291,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "suico.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 156,
@@ -1919,7 +2303,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "tusca.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 157,
@@ -1929,7 +2315,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "verbena.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 158,
@@ -1939,7 +2327,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "vira_vira.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 159,
@@ -1949,7 +2339,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "yerba_de_pollo.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 160,
@@ -1959,7 +2351,9 @@
     "precio_kg": 0,
     "categoria": "Hierbas Medicinales",
     "imagen": "zarzaparrilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 65,
@@ -1970,7 +2364,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Avena",
     "imagen": "almohaditas_avena_frutilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 66,
@@ -1981,7 +2377,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Avena",
     "imagen": "almohaditas_avena_chocolate.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 67,
@@ -1992,7 +2390,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Avena",
     "imagen": "almohaditas_avena_limon_chocolate.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 68,
@@ -2003,7 +2403,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Avena",
     "imagen": "almohaditas_avena_limon.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 69,
@@ -2014,7 +2416,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Avena",
     "imagen": "almohaditas_avena_avellana.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 70,
@@ -2025,7 +2429,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Arroz",
     "imagen": "almohaditas_arroz_frutilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 71,
@@ -2036,7 +2442,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Arroz",
     "imagen": "almohaditas_arroz_limon.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 72,
@@ -2047,7 +2455,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Arroz",
     "imagen": "almohaditas_arroz_avellana.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 73,
@@ -2058,7 +2468,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Almohaditas de Arroz",
     "imagen": "almohaditas_arroz_chocolate.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 74,
@@ -2069,7 +2481,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Ositos",
     "imagen": "ositos_avena.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 75,
@@ -2080,7 +2494,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Ositos",
     "imagen": "ositos_frutilla.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 76,
@@ -2091,7 +2507,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Copos de Maíz",
     "imagen": "copos_maiz_azucarados.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 77,
@@ -2102,7 +2520,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Copos de Maíz",
     "imagen": "copos_maiz_sin_azucar.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 78,
@@ -2113,7 +2533,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Copos de Maíz",
     "imagen": "copos_maiz_integral.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 79,
@@ -2124,7 +2546,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Tutucas",
     "imagen": "tutucas_con_azucar.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 80,
@@ -2135,7 +2559,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Tutucas",
     "imagen": "tutucas_sin_azucar.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 81,
@@ -2146,7 +2572,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Otros Cereales",
     "imagen": "anillitos_frutados.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 82,
@@ -2157,7 +2585,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Otros Cereales",
     "imagen": "quinoa_pop.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 83,
@@ -2168,7 +2598,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Otros Cereales",
     "imagen": "crispin_arroz.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 84,
@@ -2179,7 +2611,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Otros Cereales",
     "imagen": "bastoncito_salvado.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 85,
@@ -2190,7 +2624,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Otros Cereales",
     "imagen": "bolitas_chocolate.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 86,
@@ -2201,7 +2637,9 @@
     "categoria": "Desayuno",
     "subcategoria": "Otros Cereales",
     "imagen": "arroz_inflado.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 220,
@@ -2210,7 +2648,9 @@
     "precio": 0,
     "categoria": "Arroces",
     "imagen": "arroz_calasparra_murcia_1kg.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 221,
@@ -2219,7 +2659,9 @@
     "precio": 0,
     "categoria": "Arroces",
     "imagen": "arroz_jazmin_tailandia_1kg.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 222,
@@ -2229,7 +2671,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Star Nutrition",
     "imagen": "whey_protein_doy_pack_star_nutrition_908g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 223,
@@ -2239,7 +2683,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Star Nutrition",
     "imagen": "creatina_monohidratada_micronizada_star_nutrition_300g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 224,
@@ -2249,7 +2695,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Star Nutrition",
     "imagen": "multivitaminico_all_in_one_star_nutrition_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 225,
@@ -2259,7 +2707,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "whey_protein_truemade_isolate_ena_930g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 226,
@@ -2269,7 +2719,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "100_whey_ena_900g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 227,
@@ -2279,7 +2731,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "whey_protein_truemade_isolate_doy_pack_ena_453g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 228,
@@ -2289,7 +2743,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "creatina_monohidratada_doy_pack_ena_300g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 229,
@@ -2299,7 +2755,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "bcaa_reload_ena_220g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 230,
@@ -2309,7 +2767,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "pre_war_ena_400g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 231,
@@ -2319,7 +2779,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "enargy_gel_con_cafeina_ena.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 232,
@@ -2329,7 +2791,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "enargy_gel_sin_cafeina_ena.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 233,
@@ -2339,7 +2803,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "ENA",
     "imagen": "protein_bar_ena.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 234,
@@ -2349,7 +2815,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "GUM",
     "imagen": "creatina_en_gummies_gum_60gomitas.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 235,
@@ -2359,7 +2827,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Gentech",
     "imagen": "whey_protein_7900_gentech_1kg.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 236,
@@ -2369,7 +2839,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Gentech",
     "imagen": "creatina_monohidrato_gentech_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 237,
@@ -2379,7 +2851,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Gentech",
     "imagen": "creatina_monohidrato_gentech_500g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 238,
@@ -2389,7 +2863,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Gentech",
     "imagen": "iron_bar_gentech.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 239,
@@ -2399,7 +2875,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Gentech",
     "imagen": "low_carb_barrita_gentech.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 240,
@@ -2409,7 +2887,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Xtrength",
     "imagen": "best_whey_protein_xtrength_907g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 241,
@@ -2419,7 +2899,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Xtrength",
     "imagen": "advance_whey_protein_xtrength_907g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 242,
@@ -2429,7 +2911,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "whey_protein_ultratech_454g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 243,
@@ -2439,7 +2923,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "whey_protein_ultratech_1kg.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 244,
@@ -2449,7 +2935,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "creatina_monohidratada_ultratech_300g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 245,
@@ -2459,7 +2947,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "fat_burner_for_men_ultratech_120caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 246,
@@ -2469,7 +2959,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "fat_burner_for_women_ultratech_120caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 247,
@@ -2479,7 +2971,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "energy_gel_sin_cafeina_ultratech_32g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 248,
@@ -2489,7 +2983,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "energy_gel_con_cafeina_ultratech_32g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 249,
@@ -2499,7 +2995,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "amino_2500_ultratech_150comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 250,
@@ -2509,7 +3007,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Ultratech",
     "imagen": "bcaa_2000_ultratech_120caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 251,
@@ -2519,7 +3019,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "pancakes_proteicos_granger_400g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 252,
@@ -2529,7 +3031,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "omelettes_proteicos_jamon_y_queso_granger_210g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 253,
@@ -2539,7 +3043,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "pancakes_proteicos_granger_300g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 254,
@@ -2549,7 +3055,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "keto_pancakes_granger_200g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 255,
@@ -2559,7 +3067,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "gelatina_con_colageno_granger_150g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 256,
@@ -2569,7 +3079,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "pancake_proteico_dulce_de_leche_edicion_limitada_granger_300g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 257,
@@ -2579,7 +3091,9 @@
     "categoria": "Suplementos Deportivos",
     "subcategoria": "Granger",
     "imagen": "pancake_proteico_vegan_chocolate_granger_400g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 258,
@@ -2589,7 +3103,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Hydor",
     "imagen": "colageno_hidrolizado_defense_hydor_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 259,
@@ -2599,7 +3115,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Hydor",
     "imagen": "colageno_hidrolizado_clear_hydor_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 260,
@@ -2609,7 +3127,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Hydor",
     "imagen": "colageno_vitality_probiotic_hydor_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 261,
@@ -2619,7 +3139,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Hydor",
     "imagen": "colageno_hidrolizado_sunny_hydor_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 262,
@@ -2629,7 +3151,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Hydor",
     "imagen": "colageno_hidrolizado_vitamina_c_hydor_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 263,
@@ -2639,7 +3163,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Hydor",
     "imagen": "colageno_hidrolizado_silhouette_hydor_150g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 264,
@@ -2649,7 +3175,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "centella_asiatica_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 265,
@@ -2659,7 +3187,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "potasio_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 266,
@@ -2669,7 +3199,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "maca_concentrada_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 267,
@@ -2679,7 +3211,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "spirulina_concentrada_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 268,
@@ -2689,7 +3223,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "resveratrol_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 269,
@@ -2699,7 +3235,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "omega_3_vegetal_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 270,
@@ -2709,7 +3247,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "triptofano_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 271,
@@ -2719,7 +3259,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "aceite_de_primula_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 272,
@@ -2729,7 +3271,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "peptidos_de_colageno_natier_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 273,
@@ -2739,7 +3283,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "clorofila_bebible_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 274,
@@ -2749,7 +3295,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "clorofila_bebible_natier_500ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 275,
@@ -2759,7 +3307,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "curcuma_concentrada_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 276,
@@ -2769,7 +3319,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "fucus_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 277,
@@ -2779,7 +3331,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "moringa_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 278,
@@ -2789,7 +3343,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "citrato_de_magnesio_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 279,
@@ -2799,7 +3355,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "zinc_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 280,
@@ -2809,7 +3367,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "colageno_magnesio_natier_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 281,
@@ -2819,7 +3379,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "probiotico_digestivo_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 282,
@@ -2829,7 +3391,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "aceite_esencial_de_oregano_natier_30ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 283,
@@ -2839,7 +3403,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "bisglicinato_de_magnesio_natier_50comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 284,
@@ -2849,7 +3415,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_a_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 285,
@@ -2859,7 +3427,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "shot_energia_natier.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 286,
@@ -2869,7 +3439,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "aloe_vera_sistema_digestivo_natier_500ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 287,
@@ -2879,7 +3451,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "acido_hialuronico_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 288,
@@ -2889,7 +3463,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "hierro_quelado_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 289,
@@ -2899,7 +3475,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "relax_blend_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 290,
@@ -2909,7 +3487,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "selenio_quelado_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 291,
@@ -2919,7 +3499,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_k2_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 292,
@@ -2929,7 +3511,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "coenzima_q10_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 293,
@@ -2939,7 +3523,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "aloe_vera_bebible_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 294,
@@ -2949,7 +3535,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "aloe_vera_bebible_natier_500ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 295,
@@ -2959,7 +3547,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "ajo_negro_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 296,
@@ -2969,7 +3559,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "canela_diabet_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 297,
@@ -2979,7 +3571,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "alcachofa_higras_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 298,
@@ -2989,7 +3583,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "aloe_vera_sistema_digestivo_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 299,
@@ -2999,7 +3595,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_d_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 300,
@@ -3009,7 +3607,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_b12_bebible_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 301,
@@ -3019,7 +3619,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "magnesio_en_polvo_natier_200g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 302,
@@ -3029,7 +3631,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_b12_bebible_natier_500ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 303,
@@ -3039,7 +3643,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitaminas_k2_d3_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 304,
@@ -3049,7 +3655,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_c_concentrada_natier_250g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 305,
@@ -3059,7 +3667,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "glutamina_en_polvo_natier_200g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 306,
@@ -3069,7 +3679,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "yodo_l_tirosina_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 307,
@@ -3079,7 +3691,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "omega_3_epa_dha_natier_60caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 308,
@@ -3089,7 +3703,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_c_concentrada_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 309,
@@ -3099,7 +3715,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vitamina_b12_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 310,
@@ -3109,7 +3727,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "jengibre_vitamina_c_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 311,
@@ -3119,7 +3739,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "vinagre_de_sidra_de_manzana_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 312,
@@ -3129,7 +3751,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "colageno_hidrolizado_vitamina_e_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 313,
@@ -3139,7 +3763,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "curcuma_pimienta_negra_natier_50caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 314,
@@ -3149,7 +3775,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Natier",
     "imagen": "centella_asiatica_jengibre_natier_250ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 315,
@@ -3159,7 +3787,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "citrato_de_magnesio_limon_vitaminway_180g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 316,
@@ -3169,7 +3799,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "nad_advance_formula_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 317,
@@ -3179,7 +3811,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "magnesio_sport_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 318,
@@ -3189,7 +3823,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "vitamina_d_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 319,
@@ -3199,7 +3835,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "omega_3_duo_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 320,
@@ -3209,7 +3847,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "citrato_de_potasio_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 321,
@@ -3219,7 +3859,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "vitamina_b12_vitaminway_20caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 322,
@@ -3229,7 +3871,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "vitamina_c_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 323,
@@ -3239,7 +3883,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "multivitaminico_energia_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 324,
@@ -3249,7 +3895,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "colageno_calcio_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 325,
@@ -3259,7 +3907,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "citrato_de_magnesio_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 326,
@@ -3269,7 +3919,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "magnesio_stress_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 327,
@@ -3279,7 +3931,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "vitamina_c_bebible_vitaminway_195g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 328,
@@ -3289,7 +3943,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "melena_de_leon_vitaminway_30caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 329,
@@ -3299,7 +3955,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitaminway",
     "imagen": "super_blend_6_hongos_vitaminway_60caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 330,
@@ -3309,7 +3967,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Medinatural",
     "imagen": "aceite_de_oregano_medinatural_30ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 331,
@@ -3319,7 +3979,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Medinatural",
     "imagen": "aceite_de_curcuma_con_pimienta_negra_medinatural_30ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 332,
@@ -3329,7 +3991,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Medinatural",
     "imagen": "aceite_de_romero_con_vitamina_e_medinatural_30ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 333,
@@ -3339,7 +4003,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "ashwagandha_sundance_60caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 334,
@@ -3349,7 +4015,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "cardo_mariano_milk_thistle_sundance_60caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 335,
@@ -3359,7 +4027,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "aceite_de_oregano_sundance_60caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 336,
@@ -3369,7 +4039,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "aceite_de_pescado_sundance_100caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 337,
@@ -3379,7 +4051,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "magnesio_sundance_100caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 338,
@@ -3389,7 +4063,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "selenio_sundance_100caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 339,
@@ -3399,7 +4075,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Sundance",
     "imagen": "vitamina_b12_sundance_90caps.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 340,
@@ -3409,7 +4087,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "spirulina_en_polvo_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 341,
@@ -3419,7 +4099,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "chlorella_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 342,
@@ -3429,7 +4111,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "curcuma_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 343,
@@ -3439,7 +4123,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "moringa_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 344,
@@ -3449,7 +4135,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "matcha_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 345,
@@ -3459,7 +4147,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "cacao_nibs_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 346,
@@ -3469,7 +4159,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "wakame_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 347,
@@ -3479,7 +4171,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Organikal Super Food",
     "imagen": "remolacha_organikal_super_food_50g.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 348,
@@ -3489,7 +4183,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Dabar Frecuencial",
     "imagen": "ormus_patagonia_dabar_frecuencial_500ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 349,
@@ -3499,7 +4195,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Dabar Frecuencial",
     "imagen": "solucion_frecuencial_antistress_dabar_frecuencial_500ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 350,
@@ -3509,7 +4207,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Dabar Frecuencial",
     "imagen": "comprimidos_detox_dabar_frecuencial_120comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 351,
@@ -3519,7 +4219,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Vitabiosa",
     "imagen": "bebida_probiotica_vitabiosa.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 352,
@@ -3529,7 +4231,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "betacaroteno_geonat_30comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 353,
@@ -3539,7 +4243,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "circulac_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 354,
@@ -3549,7 +4255,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "algimina_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 355,
@@ -3559,7 +4267,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "resveratrol_geonat_30comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 356,
@@ -3569,7 +4279,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "aceite_de_oregano_geonat_30ml.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 357,
@@ -3579,7 +4291,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "blackmaca_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 358,
@@ -3589,7 +4303,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "moringa_geonat_30comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 359,
@@ -3599,7 +4315,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "centella_forte_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 360,
@@ -3609,7 +4327,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "ginseng_ginkgo_geonat_40comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 361,
@@ -3619,7 +4339,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "arandano_rojo_puro_geonat_30comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 362,
@@ -3629,7 +4351,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "colageno_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 363,
@@ -3639,7 +4363,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "magnesio_geonat_30comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 364,
@@ -3649,7 +4375,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "arandano_azul_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 365,
@@ -3659,7 +4387,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "cafe_verde_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 366,
@@ -3669,7 +4399,9 @@
     "categoria": "Suplementos",
     "subcategoria": "Geonat",
     "imagen": "ginseng_coreano_geonat_60comp.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 367,
@@ -3679,7 +4411,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "granola_integra_250.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 368,
@@ -3689,7 +4423,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "talita_queso_happy_food_100.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 369,
@@ -3699,7 +4435,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "talita_clasica_happy_food_100.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 370,
@@ -3709,7 +4447,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "talita_jamon_happy_food_100.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 371,
@@ -3719,7 +4459,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "alfajor_surtido_happy_food_50.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 372,
@@ -3729,7 +4471,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "alfajor_sin_azucar_happy_food_50.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 373,
@@ -3739,7 +4483,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "alfajor_dulce_leche_happy_food_50.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 374,
@@ -3749,7 +4495,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "alfajor_crema_mani_happy_food_50.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 375,
@@ -3759,7 +4507,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "alfajor_coco_dulce_leche_sin_azucar_happy_food_50.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 376,
@@ -3769,7 +4519,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "galletita_naranja_familiar_happy_food_120.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 377,
@@ -3779,7 +4531,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "galletita_limon_familiar_happy_food_120.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 378,
@@ -3789,7 +4543,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "galletita_coco_familiar_happy_food_120.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 379,
@@ -3799,7 +4555,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "bizcochito_natuzen_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 380,
@@ -3809,7 +4567,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Galletas y Alfajores",
     "imagen": "galleta_cuadrada_arroz_ajuar_rojas_95.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 381,
@@ -3819,7 +4579,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_reposteria_natuzen_1kg.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 382,
@@ -3829,7 +4591,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_reposteria_natuzen_450.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 383,
@@ -3839,7 +4603,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_bizcochuelo_natuzen_450.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 384,
@@ -3849,7 +4615,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_pan_natuzen_450.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 385,
@@ -3859,7 +4627,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_pizza_natuzen_450.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 386,
@@ -3869,7 +4639,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "rebozador_pan_rallado_natuzen_450.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 387,
@@ -3879,7 +4651,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "rebozador_arroz_arrozen_240.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 388,
@@ -3889,7 +4663,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_universal_sana_mundi_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 389,
@@ -3899,7 +4675,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "premezcla_pan_pizza_sana_mundi_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 390,
@@ -3909,7 +4687,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Premezclas y Rebozadores",
     "imagen": "rebozador_sana_mundi_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 391,
@@ -3919,7 +4699,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_maiz_wakas_300.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 392,
@@ -3929,7 +4711,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_amaranto_wakas_300.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 393,
@@ -3939,7 +4723,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_quinoa_wakas_300.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 394,
@@ -3949,7 +4735,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_chia_wakas_300.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 395,
@@ -3959,7 +4747,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_kale_wakas_300.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 396,
@@ -3969,7 +4759,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_garbanzo_alubia_wakas_300.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 397,
@@ -3979,7 +4771,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_caseritos_morron_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 398,
@@ -3989,7 +4783,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_caseritos_espinaca_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 399,
@@ -3999,7 +4795,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_caseritos_multivegetal_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 400,
@@ -4009,7 +4807,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_caseritos_huevo_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 401,
@@ -4019,7 +4819,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_monos_huevo_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 402,
@@ -4029,7 +4831,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_fusilli_tirabuzon_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 403,
@@ -4039,7 +4843,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Fideos",
     "imagen": "fideos_fusilli_multivegetal_dona_rosa_400.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 404,
@@ -4049,7 +4855,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Algas",
     "imagen": "algas_marinas_kombu_argendiet_100.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 405,
@@ -4059,7 +4867,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Algas",
     "imagen": "algas_marinas_nori_argendiet_50.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 406,
@@ -4069,7 +4879,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Algas",
     "imagen": "algas_marinas_sushi_argendiet_6.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 407,
@@ -4079,7 +4891,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Algas",
     "imagen": "algas_marinas_sushi_argendiet_12.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 408,
@@ -4089,7 +4903,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Levaduras",
     "imagen": "levadura_cerveza_levex_10.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 409,
@@ -4099,7 +4915,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Levaduras",
     "imagen": "levadura_virgen_nutrileva_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 410,
@@ -4109,7 +4927,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Levaduras",
     "imagen": "levadura_virgen_nutrileva_500.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 411,
@@ -4119,7 +4939,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Levaduras",
     "imagen": "levadura_sabor_manzana_nutrileva_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 412,
@@ -4129,7 +4951,9 @@
     "categoria": "Sin TACC",
     "subcategoria": "Levaduras",
     "imagen": "levadura_sabor_queso_nutrileva_200.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 413,
@@ -4139,7 +4963,9 @@
     "categoria": "Cervezas",
     "subcategoria": "Straus",
     "imagen": "cerveza_straus_classic_355.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 414,
@@ -4149,7 +4975,9 @@
     "categoria": "Cervezas",
     "subcategoria": "Straus",
     "imagen": "cerveza_straus_golden_355.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 415,
@@ -4159,7 +4987,9 @@
     "categoria": "Cervezas",
     "subcategoria": "Straus",
     "imagen": "cerveza_straus_californian_hops_355.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 416,
@@ -4169,7 +4999,9 @@
     "categoria": "Cervezas",
     "subcategoria": "Linz",
     "imagen": "cerveza_linz_clasica_355.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   },
   {
     "id": 417,
@@ -4179,6 +5011,8 @@
     "categoria": "Cervezas",
     "subcategoria": "Linz",
     "imagen": "cerveza_linz_tostada_355.jpg",
-    "stock": "disponible"
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   }
 ]

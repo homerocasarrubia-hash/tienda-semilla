@@ -155,10 +155,53 @@
         }, 1200);
     }
 
+    /* Oferta y novedad desde el listado, mismo patrón que el estado ------- */
+
+    function iniciarMarcasEnLinea() {
+        var formularios = document.querySelectorAll('.form-marca');
+        if (!formularios.length) return;
+
+        formularios.forEach(function (form) {
+            var casilla = form.querySelector('.check-marca');
+            var boton = form.querySelector('.btn-guardar-marca');
+            if (!casilla) return;
+
+            if (boton) boton.hidden = true;
+
+            var anterior = casilla.checked;
+
+            casilla.addEventListener('change', function () {
+                var elegido = casilla.checked;
+                casilla.disabled = true;
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'X-Requested-With': 'fetch' },
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (respuesta) {
+                        if (!respuesta.ok) throw new Error(respuesta.mensaje);
+                        anterior = elegido;
+                        marcarGuardado(form);
+                    })
+                    .catch(function (e) {
+                        casilla.checked = anterior;
+                        alert('No se pudo guardar el cambio. ' +
+                              'Probá de nuevo o recargá la página.\n\n' + e.message);
+                    })
+                    .then(function () {
+                        casilla.disabled = false;
+                    });
+            });
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         iniciarTipoDePrecio();
         iniciarCategoriaNueva();
         iniciarSugerenciaDeImagen();
         iniciarEstadoEnLinea();
+        iniciarMarcasEnLinea();
     });
 })();

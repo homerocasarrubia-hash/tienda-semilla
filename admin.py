@@ -67,6 +67,7 @@ def variables_comunes():
         'todas_las_subcategorias': datos.subcategorias(),
         'estados_stock': datos.ESTADOS_STOCK,
         'estado_stock': datos.estado_stock,
+        'marcas': datos.MARCAS,
     }
 
 
@@ -109,6 +110,7 @@ def lista():
     q = request.args.get('q', '').strip()
     cat = request.args.get('cat', '').strip()
     stock = request.args.get('stock', '').strip()
+    marca = request.args.get('marca', '').strip()
 
     productos = datos.cargar()
     total = len(productos)
@@ -123,6 +125,9 @@ def lista():
     elif stock:
         productos = [p for p in productos if datos.estado_stock(p) == stock]
 
+    if marca in dict(datos.MARCAS):
+        productos = [p for p in productos if p.get(marca)]
+
     if q:
         busqueda = q.lower()
         productos = [
@@ -135,6 +140,8 @@ def lista():
     sin_precio = sum(1 for p in todos if not _tiene_precio(p))
     sin_foto = sum(1 for p in todos if not datos.imagen_existe(p.get('imagen')))
     agotados = sum(1 for p in todos if datos.estado_stock(p) == 'sin_stock')
+    en_oferta = sum(1 for p in todos if p.get('es_oferta'))
+    novedades = sum(1 for p in todos if p.get('es_novedad'))
 
     return render_template('admin/lista.html',
                            productos=productos,
@@ -142,9 +149,12 @@ def lista():
                            sin_precio=sin_precio,
                            sin_foto=sin_foto,
                            agotados=agotados,
+                           en_oferta=en_oferta,
+                           novedades=novedades,
                            q=q,
                            cat=cat,
-                           stock=stock)
+                           stock=stock,
+                           marca=marca)
 
 
 @bp_admin.route('/productos/<int:id_producto>/stock', methods=['POST'])
@@ -178,6 +188,36 @@ def _tiene_precio(p):
     if 'precio_100g' in p:
         return bool(p.get('precio_100g')) or bool(p.get('precio_kg'))
     return bool(p.get('precio'))
+
+
+@bp_admin.route('/productos/<int:id_producto>/marca', methods=['POST'])
+def cambiar_marca(id_producto):
+    """Prende o apaga oferta / novedad desde el listado."""
+    campo = request.form.get('campo', '').strip()
+    valor = request.form.get('valor', '') in ('1', 'true', 'on')
+    etiquetas = dict(datos.MARCAS)
+
+    producto = datos.obtener(id_producto)
+
+    if producto is None:
+        mensaje, categoria = 'Ese producto ya no está en el catálogo.', 'error'
+    elif campo not in etiquetas:
+        mensaje, categoria = 'Esa marca no existe.', 'error'
+    else:
+        datos.cambiar_marca(id_producto, campo, valor)
+        mensaje = '«%s»: %s %s.' % (producto['nombre'], etiquetas[campo].lower(),
+                                    'activada' if valor else 'desactivada')
+        categoria = 'ok'
+
+    if request.headers.get('X-Requested-With') == 'fetch':
+        return jsonify({'ok': categoria == 'ok', 'mensaje': mensaje})
+
+    flash(mensaje, categoria)
+    return redirect(url_for('admin.lista',
+                            q=request.form.get('q', ''),
+                            cat=request.form.get('cat', ''),
+                            stock=request.form.get('filtro_stock', ''),
+                            marca=request.form.get('filtro_marca', '')))
 
 
 # --- alta y edición ------------------------------------------------------
@@ -418,5 +458,9 @@ def _leer_formulario():
 
     stock = f.get('stock', '').strip()
     producto['stock'] = stock if stock in dict(datos.ESTADOS_STOCK) else 'disponible'
+
+    # Las casillas solo llegan en el formulario cuando están tildadas
+    producto['es_oferta'] = 'es_oferta' in f
+    producto['es_novedad'] = 'es_novedad' in f
 
     return producto, errores

@@ -7,7 +7,8 @@
         <h1>Productos</h1>
         <p class="admin-resumen">
             {{ total }} en el catálogo · {{ sin_precio }} todavía sin precio ·
-            {{ sin_foto }} todavía sin foto · {{ agotados }} sin stock
+            {{ sin_foto }} todavía sin foto · {{ agotados }} sin stock ·
+            {{ en_oferta }} en oferta · {{ novedades }} novedades
         </p>
     </div>
     <a href="{{ url_for('admin.nuevo') }}" class="btn-primario">
@@ -33,9 +34,15 @@
         <option value="ultimas" {% if stock == 'ultimas' %}selected{% endif %}>Solo últimas unidades</option>
     </select>
 
+    <select name="marca">
+        <option value="">Ofertas y novedades: todo</option>
+        <option value="es_oferta" {% if marca == 'es_oferta' %}selected{% endif %}>Solo ofertas</option>
+        <option value="es_novedad" {% if marca == 'es_novedad' %}selected{% endif %}>Solo novedades</option>
+    </select>
+
     <button type="submit" class="btn-primario">Buscar</button>
 
-    {% if q or cat or stock %}
+    {% if q or cat or stock or marca %}
     <a href="{{ url_for('admin.lista') }}" class="btn-texto">Limpiar</a>
     {% endif %}
 </form>
@@ -54,6 +61,9 @@
             <th>Categoría</th>
             <th>Precios</th>
             <th class="col-stock">Estado</th>
+            {% for campo, etiqueta in marcas %}
+            <th class="col-marca">{{ etiqueta }}</th>
+            {% endfor %}
             <th class="col-foto">Foto</th>
             <th><span class="solo-lectores">Acciones</span></th>
         </tr>
@@ -110,6 +120,24 @@
                     <button type="submit" class="btn-texto btn-guardar-stock">Guardar</button>
                 </form>
             </td>
+
+            {% for campo, etiqueta in marcas %}
+            <td class="col-marca" data-titulo="{{ etiqueta }}">
+                <form method="post" class="form-marca"
+                      action="{{ url_for('admin.cambiar_marca', id_producto=p.id) }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                    <input type="hidden" name="campo" value="{{ campo }}">
+                    <input type="hidden" name="q" value="{{ q }}">
+                    <input type="hidden" name="cat" value="{{ cat }}">
+                    <input type="hidden" name="filtro_stock" value="{{ stock }}">
+                    <input type="hidden" name="filtro_marca" value="{{ marca }}">
+                    <input type="checkbox" name="valor" value="1" class="check-marca"
+                           {% if p[campo] %}checked{% endif %}
+                           aria-label="{{ etiqueta }}: {{ p.nombre }}">
+                    <button type="submit" class="btn-texto btn-guardar-marca">Guardar</button>
+                </form>
+            </td>
+            {% endfor %}
 
             <td class="col-foto" data-titulo="Foto">
                 {% if imagen_existe(p.imagen) %}

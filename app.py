@@ -43,17 +43,30 @@ _cargar_env()
 app = Flask(__name__)
 
 # --- SESIÓN DEL PANEL DE ADMINISTRACIÓN ---
-# La clave firma la cookie de sesión. Si no está definida en el entorno se
-# genera una al azar: el panel funciona igual, pero cada reinicio del servidor
-# cierra la sesión abierta.
+# La clave firma la cookie de sesión.
 app.secret_key = os.environ.get('SECRET_KEY')
+
 if not app.secret_key:
+    if __name__ != '__main__':
+        # Servido por gunicorn: cada worker generaría una clave distinta y
+        # las sesiones del panel fallarían de a ratos, según qué worker
+        # atienda cada pedido. Mejor no arrancar que andar a medias.
+        raise RuntimeError(
+            'Falta la variable de entorno SECRET_KEY.\n'
+            'En Render se carga en Environment; render.yaml ya la declara '
+            'con generateValue para que se genere sola.')
+
+    # Ejecución local con "python app.py": una clave al azar alcanza, solo
+    # hay que volver a entrar al panel después de cada reinicio.
     app.secret_key = secrets.token_hex(32)
     print('AVISO: no hay SECRET_KEY definida en el entorno. Se generó una '
           'temporal, así que vas a tener que entrar de nuevo al panel cada '
           'vez que reinicies el servidor.')
 
 app.register_blueprint(bp_admin)
+
+# Cuántos productos se muestran por página en el catálogo
+POR_PAGINA = 24
 
 
 # --- IMÁGENES DE PRODUCTO ---
@@ -100,10 +113,18 @@ def compras():
     busqueda = request.args.get('q', '').lower().strip()
     subcat = request.args.get('subcat', '').strip()
     cat = request.args.get('cat', '').strip()
+    oferta = request.args.get('oferta', '').strip()
+    novedad = request.args.get('novedad', '').strip()
 
     # Cada consulta trae ya los agotados al final y, dentro de cada grupo,
     # el orden del catálogo.
-    if cat == 'Sin TACC':
+    if oferta:
+        resultados = datos.filtrar_ofertas()
+        titulo = 'Ofertas'
+    elif novedad:
+        resultados = datos.filtrar_novedades()
+        titulo = 'Novedades'
+    elif cat == 'Sin TACC':
         # Lo sin TACC está repartido: además de su categoría propia, hay
         # harinas, cervezas y suplementos que lo aclaran en el nombre.
         resultados = datos.filtrar_sin_tacc()
@@ -121,7 +142,29 @@ def compras():
         resultados = datos.catalogo_ordenado()
         titulo = "Nuestros Productos"
 
-    return render_template('productos.html', productos=resultados, titulo=titulo)
+    # Sin límite, el catálogo completo son 417 cards: en un teléfono eso da
+    # una página de más de 200.000 px (unas 269 pantallas) y medio mega de
+    # HTML. 24 por página entra justo en 1, 2, 3 y 4 columnas.
+    total = len(resultados)
+    paginas = max(1, -(-total // POR_PAGINA))
+
+    try:
+        pagina = int(request.args.get('pagina', 1))
+    except ValueError:
+        pagina = 1
+    pagina = max(1, min(pagina, paginas))
+
+    desde = (pagina - 1) * POR_PAGINA
+    productos = resultados[desde:desde + POR_PAGINA]
+
+    return render_template('productos.html',
+                           productos=productos,
+                           titulo=titulo,
+                           total=total,
+                           pagina=pagina,
+                           paginas=paginas,
+                           desde=desde + 1 if total else 0,
+                           hasta=desde + len(productos))
 
 
 if __name__ == '__main__':

@@ -94,8 +94,8 @@
 ] %}
 
 {% set enlaces_secundarios = [
-    ('Ofertas', '/compras?q=Ofertas'),
-    ('Novedades', '#'),
+    ('Ofertas', '/compras?oferta=1'),
+    ('Novedades', '/compras?novedad=1'),
     ('Quiénes Somos', inicio_prefijo ~ '#quienes-somos'),
     ('Contacto', inicio_prefijo ~ '#contacto'),
     ('Ubicación', inicio_prefijo ~ '#seccion-mapa')
@@ -134,11 +134,6 @@
             <button type="button" class="icon-btn btn-buscar-mobile" data-accion="toggle-buscador" aria-label="Buscar">
                 <svg class="ico" aria-hidden="true"><use href="#ico-buscar"></use></svg>
             </button>
-
-            <a href="#" class="icon-btn">
-                <svg class="ico" aria-hidden="true"><use href="#ico-corazon"></use></svg>
-                <span>Favoritos</span>
-            </a>
 
             <button type="button" class="icon-btn" data-accion="toggle-carrito" aria-controls="carrito-lateral">
                 <svg class="ico" aria-hidden="true"><use href="#ico-carrito"></use></svg>
