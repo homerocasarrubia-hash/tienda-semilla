@@ -5014,5 +5014,27 @@
     "stock": "disponible",
     "es_oferta": false,
     "es_novedad": false
+  },
+  {
+    "id": 418,
+    "nombre": "Cerveza Big Tartaruga Atlantic x 500 ml - SIN TACC",
+    "descripcion": "",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "imagen": "cerveza_big_tartaruga_atlantic_500_sin_tacc.jpg",
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
+  },
+  {
+    "id": 419,
+    "nombre": "Cerveza Big Tartaruga Pacific x 500 ml - SIN TACC",
+    "descripcion": "",
+    "precio": 0,
+    "categoria": "Cervezas",
+    "imagen": "cerveza_big_tartaruga_pacific_500_sin_tacc.jpg",
+    "stock": "disponible",
+    "es_oferta": false,
+    "es_novedad": false
   }
 ]
