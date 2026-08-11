@@ -1,0 +1,112 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Descuentos{% endblock %}
+
+{% block contenido %}
+<div class="admin-encabezado">
+    <div>
+        <h1>Códigos de descuento</h1>
+        <p class="admin-resumen">
+            {{ descuentos|length }} código{{ '' if descuentos|length == 1 else 's' }} ·
+            {{ descuentos|selectattr('activo')|list|length }} activo{{ '' if descuentos|selectattr('activo')|list|length == 1 else 's' }}
+        </p>
+    </div>
+</div>
+
+{% if errores %}
+<div class="aviso aviso-error">
+    <p class="aviso-titulo">No se creó todavía. Revisá esto:</p>
+    <ul>
+        {% for e in errores %}
+        <li>{{ e }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<form method="post" class="form-admin form-descuento">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+    <div class="campos-precio">
+        <label class="campo">
+            <span class="campo-titulo">Código</span>
+            <input type="text" name="codigo" value="{{ codigo }}" required
+                   placeholder="BIENVENIDA10" autocomplete="off">
+            <span class="campo-ayuda">
+                La frase que va a escribir el cliente. No importan las mayúsculas.
+            </span>
+        </label>
+
+        <label class="campo">
+            <span class="campo-titulo">Descuento</span>
+            <input type="text" inputmode="numeric" name="porcentaje"
+                   value="{{ porcentaje }}" required placeholder="10">
+            <span class="campo-ayuda">Del 1 al 100. Solo el número, sin el signo %.</span>
+        </label>
+    </div>
+
+    <div class="form-acciones">
+        <button type="submit" class="btn-primario">
+            <svg class="ico ico-chico" aria-hidden="true"><use href="#ico-mas"></use></svg>
+            Crear código
+        </button>
+    </div>
+</form>
+
+{% if descuentos %}
+<div class="tabla-scroll">
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Descuento</th>
+            <th class="col-marca">Activo</th>
+            <th>Creado</th>
+            <th><span class="solo-lectores">Acciones</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in descuentos %}
+        <tr>
+            <td data-titulo="Código"><span class="tabla-nombre">{{ d.codigo }}</span></td>
+
+            <td data-titulo="Descuento">
+                <span class="tabla-precio">{{ d.porcentaje }}%</span>
+            </td>
+
+            <td class="col-marca" data-titulo="Activo">
+                <form method="post" class="form-marca"
+                      action="{{ url_for('admin.cambiar_activo_descuento', id_descuento=d.id) }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                    <input type="checkbox" name="valor" value="1" class="check-marca"
+                           {% if d.activo %}checked{% endif %}
+                           aria-label="Activo: {{ d.codigo }}">
+                    <button type="submit" class="btn-texto btn-guardar-marca">Guardar</button>
+                </form>
+            </td>
+
+            <td data-titulo="Creado">
+                <span class="tabla-sub">{{ d.creado_en.strftime('%d/%m/%Y') }}</span>
+            </td>
+
+            <td class="tabla-acciones">
+                <a href="{{ url_for('admin.eliminar_descuento', id_descuento=d.id) }}"
+                   class="link-peligro">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% else %}
+<div class="admin-vacio">
+    <svg class="ico ico-grande" aria-hidden="true"><use href="#ico-hoja"></use></svg>
+    <p>Todavía no hay ningún código de descuento.</p>
+</div>
+{% endif %}
+
+<p class="campo-ayuda campo-ayuda-suelta">
+    Un código desactivado deja de funcionar en el acto: si alguien lo tenía
+    puesto en su carrito, se le quita solo la próxima vez que abra la página.
+</p>
+{% endblock %}

@@ -5,8 +5,8 @@ ni se imprime en ningún lado.
 """
 import os
 
-from sqlalchemy import (Boolean, Column, Integer, MetaData, Numeric, String,
-                        Table, Text, create_engine)
+from sqlalchemy import (Boolean, Column, DateTime, Integer, MetaData, Numeric,
+                        String, Table, Text, create_engine, func)
 
 TABLA_POR_DEFECTO = 'productos'
 
@@ -104,6 +104,41 @@ COLUMNAS_AGREGADAS = (
     ('es_oferta', 'BOOLEAN NOT NULL DEFAULT FALSE'),
     ('es_novedad', 'BOOLEAN NOT NULL DEFAULT FALSE'),
 )
+
+
+TABLA_DESCUENTOS = 'descuentos'
+
+
+def tabla_descuentos(nombre=TABLA_DESCUENTOS):
+    """Códigos de descuento. Tabla aparte: no toca nada de productos."""
+    if nombre not in _tablas:
+        _tablas[nombre] = Table(
+            nombre, _metadata,
+            Column('id', Integer, primary_key=True),
+            Column('codigo', Text, nullable=False),
+            Column('porcentaje', Integer, nullable=False),
+            Column('activo', Boolean, nullable=False, server_default='true'),
+            Column('creado_en', DateTime(timezone=True),
+                   server_default=func.now(), nullable=False),
+            extend_existing=True,
+        )
+
+    return _tablas[nombre]
+
+
+def crear_tabla_descuentos(nombre=TABLA_DESCUENTOS):
+    from sqlalchemy import text
+
+    t = tabla_descuentos(nombre)
+    t.create(motor(), checkfirst=True)
+
+    with motor().begin() as cx:
+        # La unicidad del código no distingue mayúsculas: la garantiza la
+        # base, no solo la validación de Python.
+        cx.execute(text('CREATE UNIQUE INDEX IF NOT EXISTS idx_%s_codigo '
+                        'ON %s (lower(codigo))' % (nombre, nombre)))
+
+    return t
 
 
 def crear_tabla(nombre=TABLA_POR_DEFECTO):

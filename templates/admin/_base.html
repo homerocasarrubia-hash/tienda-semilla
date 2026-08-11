@@ -27,9 +27,11 @@
 
             <nav class="admin-nav">
                 <a href="{{ url_for('admin.lista') }}"
-                   class="{{ 'activo' if request.endpoint != 'admin.precios' }}">Productos</a>
+                   class="{{ 'activo' if request.endpoint != 'admin.precios' and 'descuento' not in (request.endpoint or '') }}">Productos</a>
                 <a href="{{ url_for('admin.precios') }}"
                    class="{{ 'activo' if request.endpoint == 'admin.precios' }}">Precios</a>
+                <a href="{{ url_for('admin.lista_descuentos') }}"
+                   class="{{ 'activo' if 'descuento' in (request.endpoint or '') }}">Descuentos</a>
                 <a href="{{ url_for('inicio') }}" target="_blank" rel="noopener">Ver la tienda</a>
             </nav>
 

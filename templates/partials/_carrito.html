@@ -19,8 +19,42 @@
     </div>
 
     <div class="carrito-footer">
+
+        <div class="descuento-caja">
+            <label class="descuento-label" for="codigo-descuento">
+                ¿Tenés un código de descuento?
+            </label>
+
+            <div class="descuento-fila" id="descuento-formulario">
+                <input type="text" id="codigo-descuento" autocomplete="off"
+                       placeholder="Escribí el código" aria-describedby="descuento-mensaje">
+                <button type="button" class="btn-aplicar" data-accion="aplicar-descuento">
+                    Aplicar
+                </button>
+            </div>
+
+            <div class="descuento-aplicado" id="descuento-aplicado" hidden>
+                <span class="descuento-etiqueta" id="descuento-etiqueta"></span>
+                <button type="button" class="descuento-quitar" data-accion="quitar-descuento">
+                    Quitar
+                </button>
+            </div>
+
+            <p class="descuento-mensaje" id="descuento-mensaje" role="status" hidden></p>
+        </div>
+
+        <div class="carrito-linea" id="linea-subtotal" hidden>
+            <span>Subtotal</span>
+            <span>$<span id="carrito-subtotal">0</span></span>
+        </div>
+
+        <div class="carrito-linea carrito-linea-descuento" id="linea-descuento" hidden>
+            <span id="linea-descuento-etiqueta">Descuento</span>
+            <span>−$<span id="carrito-descuento">0</span></span>
+        </div>
+
         <div class="carrito-total">
-            <span class="carrito-total-label">Total</span>
+            <span class="carrito-total-label" id="carrito-total-label">Total</span>
             <span class="carrito-total-monto">$<span id="carrito-total">0</span></span>
         </div>
 

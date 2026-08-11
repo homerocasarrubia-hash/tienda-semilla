@@ -4,6 +4,7 @@ import secrets
 from flask import Flask, jsonify, render_template, request
 
 import datos
+import descuentos
 from admin import bp_admin
 
 
@@ -106,6 +107,27 @@ def buscar():
     # palabra del nombre, ordenado por qué tan al principio coincide—, ahora
     # resuelto por la base en vez de recorriendo el catálogo entero.
     return jsonify(datos.autocompletar(q, limite=8))
+
+
+@app.route('/validar-descuento')
+def validar_descuento():
+    """Responde SOLO por el código que se le manda.
+
+    Nunca devuelve el listado de códigos ni pistas sobre cuáles existen:
+    un código inexistente y uno desactivado dan exactamente la misma
+    respuesta.
+    """
+    codigo = request.args.get('codigo', '').strip()
+    encontrado = descuentos.validar(codigo) if codigo else None
+
+    if encontrado is None:
+        return jsonify({'valido': False, 'porcentaje': 0})
+
+    return jsonify({
+        'valido': True,
+        'codigo': encontrado['codigo'],
+        'porcentaje': encontrado['porcentaje'],
+    })
 
 
 @app.route('/compras')

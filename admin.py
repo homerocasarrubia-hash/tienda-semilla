@@ -12,6 +12,7 @@ from flask import (Blueprint, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 
 import datos
+import descuentos
 
 bp_admin = Blueprint('admin', __name__, url_prefix='/admin')
 
@@ -294,6 +295,68 @@ def eliminar(id_producto):
         return redirect(url_for('admin.lista'))
 
     return render_template('admin/eliminar.html', producto=producto)
+
+
+# --- descuentos ----------------------------------------------------------
+
+@bp_admin.route('/descuentos', methods=['GET', 'POST'])
+def lista_descuentos():
+    errores = []
+    codigo = ''
+    porcentaje_texto = ''
+
+    if request.method == 'POST':
+        codigo, porcentaje, errores = descuentos.revisar(
+            request.form.get('codigo'), request.form.get('porcentaje'))
+        porcentaje_texto = request.form.get('porcentaje', '')
+
+        if not errores:
+            creado = descuentos.crear(codigo, porcentaje)
+            flash('Se creó el código «%s» con %d%% de descuento.'
+                  % (creado['codigo'], creado['porcentaje']), 'ok')
+            return redirect(url_for('admin.lista_descuentos'))
+
+    return render_template('admin/descuentos.html',
+                           descuentos=descuentos.listar(),
+                           errores=errores,
+                           codigo=codigo,
+                           porcentaje=porcentaje_texto)
+
+
+@bp_admin.route('/descuentos/<int:id_descuento>/activo', methods=['POST'])
+def cambiar_activo_descuento(id_descuento):
+    valor = request.form.get('valor', '') in ('1', 'true', 'on')
+    encontrado = descuentos.obtener(id_descuento)
+
+    if encontrado is None:
+        mensaje, categoria = 'Ese código ya no existe.', 'error'
+    else:
+        descuentos.cambiar_activo(id_descuento, valor)
+        mensaje = '«%s» quedó %s.' % (encontrado['codigo'],
+                                      'activo' if valor else 'desactivado')
+        categoria = 'ok'
+
+    if request.headers.get('X-Requested-With') == 'fetch':
+        return jsonify({'ok': categoria == 'ok', 'mensaje': mensaje})
+
+    flash(mensaje, categoria)
+    return redirect(url_for('admin.lista_descuentos'))
+
+
+@bp_admin.route('/descuentos/<int:id_descuento>/eliminar', methods=['GET', 'POST'])
+def eliminar_descuento(id_descuento):
+    encontrado = descuentos.obtener(id_descuento)
+
+    if encontrado is None:
+        flash('Ese código ya no existe.', 'error')
+        return redirect(url_for('admin.lista_descuentos'))
+
+    if request.method == 'POST':
+        descuentos.eliminar(id_descuento)
+        flash('Se eliminó el código «%s».' % encontrado['codigo'], 'ok')
+        return redirect(url_for('admin.lista_descuentos'))
+
+    return render_template('admin/eliminar_descuento.html', descuento=encontrado)
 
 
 # --- precios en lote -----------------------------------------------------

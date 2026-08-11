@@ -1595,3 +1595,138 @@ a.paginador-link:hover {
     font-size: var(--texto-chico);
     color: var(--tinta-60);
 }
+
+/* --- Código de descuento en el carrito -------------------------------- */
+.descuento-caja {
+    margin-bottom: var(--e-4);
+    padding-bottom: var(--e-4);
+    border-bottom: 1px solid var(--borde);
+}
+
+.descuento-label {
+    display: block;
+    margin-bottom: var(--e-2);
+    font-size: var(--texto-mini);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--tinta-60);
+}
+
+.descuento-fila {
+    display: flex;
+    gap: var(--e-2);
+}
+
+.descuento-fila input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: var(--e-2) var(--e-3);
+    font-family: inherit;
+    font-size: var(--texto-chico);
+    color: var(--tinta);
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--r-chico);
+    outline: none;
+    text-transform: uppercase;
+    transition: border-color var(--trans), box-shadow var(--trans);
+}
+
+.descuento-fila input::placeholder {
+    text-transform: none;
+    color: var(--tinta-60);
+}
+
+.descuento-fila input:focus {
+    border-color: var(--verde-500);
+    box-shadow: var(--anillo-foco);
+}
+
+.btn-aplicar {
+    flex: none;
+    padding: var(--e-2) var(--e-4);
+    background: transparent;
+    color: var(--verde-700);
+    border: 1px solid var(--verde-700);
+    border-radius: var(--r-chico);
+    font-size: var(--texto-chico);
+    font-weight: 600;
+    transition: background var(--trans), color var(--trans);
+}
+
+.btn-aplicar:hover {
+    background: var(--verde-50);
+    color: var(--verde-900);
+}
+
+.descuento-aplicado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--e-2);
+    margin-top: var(--e-2);
+    padding: var(--e-2) var(--e-3);
+    background: var(--verde-50);
+    border-radius: var(--r-chico);
+}
+
+.descuento-etiqueta {
+    font-size: var(--texto-chico);
+    font-weight: 600;
+    color: var(--verde-900);
+}
+
+.descuento-quitar {
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--tinta-60);
+    font-size: var(--texto-mini);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color var(--trans);
+}
+
+.descuento-quitar:hover {
+    color: var(--ocre);
+}
+
+.descuento-mensaje {
+    margin-top: var(--e-2);
+    font-size: var(--texto-mini);
+    line-height: 1.4;
+}
+
+.descuento-mensaje.ok {
+    color: var(--verde-700);
+}
+
+.descuento-mensaje.error {
+    color: var(--ocre);
+}
+
+/* Líneas de subtotal y descuento: solo aparecen con un código aplicado */
+.carrito-linea {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: var(--e-2);
+    font-size: var(--texto-chico);
+    color: var(--tinta-60);
+}
+
+.carrito-linea-descuento {
+    color: var(--ocre);
+    font-weight: 600;
+}
+
+.carrito-linea[hidden] {
+    display: none;
+}
+
+/* El acumulado por peso necesita más lugar que un número suelto */
+.stepper-cantidad.gramaje {
+    min-width: 52px;
+    font-size: var(--texto-mini);
+}

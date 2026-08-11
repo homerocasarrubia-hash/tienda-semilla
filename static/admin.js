@@ -172,11 +172,17 @@
 
             casilla.addEventListener('change', function () {
                 var elegido = casilla.checked;
+
+                // El FormData se arma ANTES de deshabilitar: un control
+                // deshabilitado no viaja en el envío, y sin el campo "valor"
+                // el servidor entendía siempre "desactivar" (el toggle podía
+                // apagar pero nunca volver a prender).
+                var datos = new FormData(form);
                 casilla.disabled = true;
 
                 fetch(form.action, {
                     method: 'POST',
-                    body: new FormData(form),
+                    body: datos,
                     headers: { 'X-Requested-With': 'fetch' },
                 })
                     .then(function (r) { return r.json(); })

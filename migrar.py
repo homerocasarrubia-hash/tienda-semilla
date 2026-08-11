@@ -60,7 +60,8 @@ def importar(reiniciar=False):
     print('productos en productos.json: %d' % len(productos))
 
     tabla = db.crear_tabla()
-    print('tabla lista (se creó si no existía)')
+    db.crear_tabla_descuentos()
+    print('tablas listas (se crearon si no existían)')
 
     if reiniciar:
         with db.motor().begin() as cx:

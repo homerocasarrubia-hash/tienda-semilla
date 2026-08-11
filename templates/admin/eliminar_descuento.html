@@ -1,0 +1,28 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Eliminar código{% endblock %}
+
+{% block contenido %}
+<div class="confirmar-caja">
+    <h1>¿Eliminar este código?</h1>
+
+    <div class="confirmar-producto">
+        <p class="confirmar-nombre">{{ descuento.codigo }}</p>
+        <p class="confirmar-dato">{{ descuento.porcentaje }}% de descuento ·
+           {{ 'activo' if descuento.activo else 'desactivado' }}</p>
+    </div>
+
+    <p class="confirmar-texto">
+        Deja de funcionar para siempre. Si solo querés pausarlo por un tiempo,
+        conviene desactivarlo en vez de borrarlo: así lo podés volver a prender
+        cuando quieras.
+    </p>
+
+    <div class="form-acciones">
+        <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <button type="submit" class="btn-peligro">Sí, eliminar</button>
+        </form>
+        <a href="{{ url_for('admin.lista_descuentos') }}" class="btn-primario">No, volver</a>
+    </div>
+</div>
+{% endblock %}
