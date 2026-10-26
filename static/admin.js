@@ -158,7 +158,45 @@
         });
     }
 
+    /* Fotos sugeridas: Usar / Ninguna sirve sin recargar la página ------
+       Sin JS, cada botón es un formulario común que recarga la lista. */
+
+    function iniciarFotosSugeridas() {
+        var formularios = document.querySelectorAll('.form-usar, .form-ninguna');
+        if (!formularios.length) return;
+
+        formularios.forEach(function (form) {
+            form.addEventListener('submit', function (evento) {
+                evento.preventDefault();
+
+                var bloque = form.closest('.sugerencia-producto');
+                var datos = new FormData(form);
+                bloque.classList.add('procesando');
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: datos,
+                    headers: { 'X-Requested-With': 'fetch' },
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (respuesta) {
+                        if (!respuesta.ok) throw new Error(respuesta.mensaje);
+                        bloque.remove();
+                        if (!document.querySelector('.sugerencia-producto')) {
+                            window.location.reload();
+                        }
+                    })
+                    .catch(function (e) {
+                        bloque.classList.remove('procesando');
+                        alert('No se pudo guardar el cambio. ' +
+                              'Probá de nuevo o recargá la página.\n\n' + e.message);
+                    });
+            });
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+        iniciarFotosSugeridas();
         iniciarTipoDePrecio();
         iniciarCategoriaNueva();
         iniciarEstadoEnLinea();

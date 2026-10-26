@@ -1,0 +1,66 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Fotos{% endblock %}
+
+{% block contenido %}
+<div class="admin-encabezado">
+    <div>
+        <h1>Fotos sugeridas</h1>
+        <p class="admin-resumen">
+            {{ resumen.productos_por_revisar }} producto{{ '' if resumen.productos_por_revisar == 1 else 's' }}
+            con fotos para revisar ({{ resumen.fotos_por_revisar }} fotos) ·
+            {{ resumen.sin_foto_con_codigo }} sin foto y con código ·
+            {{ resumen.sin_buscar }} todavía sin buscar
+        </p>
+    </div>
+    <a href="{{ url_for('admin.fotos_codigos') }}" class="btn-secundario">Cargar códigos de barras</a>
+</div>
+
+{% if grupos %}
+<div class="sugerencias">
+    {% for g in grupos %}
+    <section class="sugerencia-producto" data-producto="{{ g.producto.id }}">
+        <header class="sugerencia-cabecera">
+            <div>
+                <span class="tabla-nombre">{{ g.producto.nombre }}</span>
+                <span class="tabla-sub">{{ g.producto.categoria }} · código {{ g.codigo }}</span>
+                {% if g.tiene_foto %}
+                <span class="tabla-sub">Ya tiene foto: si elegís una, la reemplaza.</span>
+                {% endif %}
+            </div>
+
+            <form method="post" class="form-ninguna"
+                  action="{{ url_for('admin.fotos_ninguna', id_producto=g.producto.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <button type="submit" class="btn-texto">Ninguna sirve</button>
+            </form>
+        </header>
+
+        <ul class="sugerencia-fotos">
+            {% for f in g.fotos %}
+            <li class="sugerencia-foto">
+                <span class="sugerencia-etiqueta {{ 'es-catalogo' if f.es_catalogo }}">{{ f.etiqueta }}</span>
+                <img src="{{ f.url }}" alt="Foto sugerida de {{ g.producto.nombre }}"
+                     loading="lazy" referrerpolicy="no-referrer">
+                <form method="post" class="form-usar"
+                      action="{{ url_for('admin.fotos_usar', id_sugerencia=f.id) }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                    <button type="submit" class="btn-primario">Usar</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endfor %}
+</div>
+{% else %}
+<div class="admin-vacio">
+    <svg class="ico ico-grande" aria-hidden="true"><use href="#ico-sin-resultados"></use></svg>
+    {% if resumen.con_codigo == 0 %}
+    <p>Todavía no hay códigos de barras cargados. Cargalos y después corré el buscador.</p>
+    {% else %}
+    <p>No hay fotos para revisar. Para buscar más, corré <code>python scripts/buscar_fotos.py</code> en la compu.</p>
+    {% endif %}
+    <a href="{{ url_for('admin.fotos_codigos') }}" class="btn-primario">Cargar códigos de barras</a>
+</div>
+{% endif %}
+{% endblock %}

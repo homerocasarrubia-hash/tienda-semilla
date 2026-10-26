@@ -11,8 +11,10 @@ import secrets
 from flask import (Blueprint, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 
+import buscador_fotos
 import datos
 import descuentos
+import fotos_sugeridas
 imagenes = None  # se importa perezoso, ver _resolver_foto
 
 bp_admin = Blueprint('admin', __name__, url_prefix='/admin')
@@ -247,6 +249,7 @@ def nuevo():
         producto['imagen'], avisos, _ = _resolver_foto(None)
 
         creado = datos.crear(producto)
+        fotos_sugeridas.guardar_codigo(creado['id'], _codigo_del_formulario())
         flash('Se agregó «%s» al catálogo.' % creado['nombre'], 'ok')
         for aviso in avisos:
             flash(aviso, 'error')
@@ -286,6 +289,7 @@ def editar(id_producto):
         editado['imagen'], avisos, anterior = _resolver_foto(producto)
 
         datos.actualizar(id_producto, editado)
+        fotos_sugeridas.guardar_codigo(id_producto, _codigo_del_formulario())
         flash('Se guardaron los cambios de «%s».' % editado['nombre'], 'ok')
         for aviso in avisos:
             flash(aviso, 'error')
@@ -296,6 +300,7 @@ def editar(id_producto):
 
         return redirect(url_for('admin.lista'))
 
+    producto['codigo_barras'] = fotos_sugeridas.codigo_de(id_producto)
     return render_template('admin/formulario.html',
                            producto=producto, errores=[], es_nuevo=False)
 
@@ -310,6 +315,7 @@ def eliminar(id_producto):
 
     if request.method == 'POST':
         datos.eliminar(id_producto)
+        fotos_sugeridas.limpiar_producto(id_producto)
         flash('Se eliminó «%s» del catálogo.' % producto['nombre'], 'ok')
         return redirect(url_for('admin.lista'))
 
@@ -376,6 +382,103 @@ def eliminar_descuento(id_descuento):
         return redirect(url_for('admin.lista_descuentos'))
 
     return render_template('admin/eliminar_descuento.html', descuento=encontrado)
+
+
+# --- fotos por código de barras ------------------------------------------
+
+@bp_admin.route('/fotos')
+def fotos():
+    return render_template('admin/fotos.html',
+                           grupos=fotos_sugeridas.pendientes(),
+                           resumen=fotos_sugeridas.resumen())
+
+
+def _responder_foto(mensaje, ok, destino):
+    if request.headers.get('X-Requested-With') == 'fetch':
+        return jsonify({'ok': ok, 'mensaje': mensaje})
+
+    flash(mensaje, 'ok' if ok else 'error')
+    return redirect(destino)
+
+
+@bp_admin.route('/fotos/<int:id_sugerencia>/usar', methods=['POST'])
+def fotos_usar(id_sugerencia):
+    ok, mensaje = fotos_sugeridas.usar(id_sugerencia)
+    return _responder_foto(mensaje, ok, url_for('admin.fotos'))
+
+
+@bp_admin.route('/fotos/producto/<int:id_producto>/ninguna', methods=['POST'])
+def fotos_ninguna(id_producto):
+    fotos_sugeridas.descartar_producto(id_producto)
+    return _responder_foto('Listo, se descartaron esas fotos.', True,
+                           url_for('admin.fotos'))
+
+
+@bp_admin.route('/fotos/codigos', methods=['GET', 'POST'])
+def fotos_codigos():
+    """Carga de códigos de barras en lote, igual que la de precios."""
+    cat = request.args.get('cat', '').strip()
+    todos = request.args.get('todos', '').strip()
+
+    if request.method == 'POST':
+        cat = request.form.get('cat', '').strip()
+        todos = request.form.get('todos', '').strip()
+        actuales = fotos_sugeridas.codigos()
+        por_id = {p['id']: p for p in datos.cargar()}
+        errores = []
+        cambios = {}
+        escritos = {}
+
+        for campo, valor in request.form.items():
+            if not campo.startswith('codigo-'):
+                continue
+            try:
+                id_producto = int(campo[len('codigo-'):])
+            except ValueError:
+                continue
+            if id_producto not in por_id:
+                continue
+
+            escritos[id_producto] = valor.strip()
+            codigo = buscador_fotos.normalizar_codigo(valor)
+            if codigo is None:
+                errores.append('«%s»: el código «%s» no parece correcto.'
+                               % (por_id[id_producto]['nombre'], valor.strip()))
+            elif codigo != actuales.get(id_producto, ''):
+                cambios[id_producto] = codigo
+
+        if errores:
+            # Se vuelve a mostrar la página con lo escrito: perder una tanda
+            # de códigos tipeados por un error sería peor que el error.
+            for e in errores:
+                flash(e, 'error')
+            flash('No se guardó nada. Corregí lo marcado y guardá de nuevo.', 'error')
+            return render_template('admin/fotos_codigos.html',
+                                   productos=_productos_para_codigos(cat, todos),
+                                   codigos=actuales, escritos=escritos,
+                                   cat=cat, todos=todos)
+
+        for id_producto, codigo in cambios.items():
+            fotos_sugeridas.guardar_codigo(id_producto, codigo)
+        flash('Se guardaron %d código%s.' % (len(cambios), '' if len(cambios) == 1 else 's')
+              if cambios else 'No cambiaste ningún código.', 'ok')
+
+        return redirect(url_for('admin.fotos_codigos', cat=cat, todos=todos))
+
+    return render_template('admin/fotos_codigos.html',
+                           productos=_productos_para_codigos(cat, todos),
+                           codigos=fotos_sugeridas.codigos(), escritos={},
+                           cat=cat, todos=todos)
+
+
+def _productos_para_codigos(cat, todos):
+    productos = datos.cargar()
+    if cat:
+        productos = [p for p in productos if p.get('categoria', '') == cat]
+    if not todos:
+        # Lo que sirve cargar: lo que todavía no tiene foto
+        productos = [p for p in productos if not datos.tiene_foto(p)]
+    return productos
 
 
 # --- precios en lote -----------------------------------------------------
@@ -536,6 +639,11 @@ def _leer_precio(texto, que_precio, nombre_producto=''):
     return (int(numero) if numero == int(numero) else round(numero, 2)), None
 
 
+def _codigo_del_formulario():
+    """El código de barras ya limpio ('' si no puso ninguno)."""
+    return buscador_fotos.normalizar_codigo(request.form.get('codigo_barras')) or ''
+
+
 def _leer_formulario():
     """Arma el producto a partir del formulario y junta los errores."""
     f = request.form
@@ -584,6 +692,15 @@ def _leer_formulario():
 
     stock = f.get('stock', '').strip()
     producto['stock'] = stock if stock in dict(datos.ESTADOS_STOCK) else 'disponible'
+
+    # El código de barras no es una columna del producto: viaja aparte, pero
+    # se valida acá junto con el resto y se devuelve para repintar el campo.
+    producto['codigo_barras'] = f.get('codigo_barras', '').strip()
+    if buscador_fotos.normalizar_codigo(producto['codigo_barras']) is None:
+        errores.append('El código de barras no parece correcto. Son los '
+                       'números que están debajo de las rayitas (8, 12, 13 o '
+                       '14 dígitos). Fijate si se te escapó un número, o '
+                       'dejalo vacío.')
 
     # Las casillas solo llegan en el formulario cuando están tildadas
     producto['es_oferta'] = 'es_oferta' in f

@@ -146,6 +146,17 @@
         dejalo vacío: en la tienda va a decir «Precio a confirmar».
     </p>
 
+    <label class="campo">
+        <span class="campo-titulo">Código de barras <span class="campo-opcional">opcional</span></span>
+        <input type="text" name="codigo_barras" inputmode="numeric" autocomplete="off"
+               value="{{ producto.codigo_barras if producto and producto.codigo_barras else '' }}">
+        <span class="campo-ayuda">
+            Los números que están debajo de las rayitas del envase. Sirve para
+            buscar la foto sola en la sección «Fotos». Los productos sueltos
+            no tienen: dejalo vacío.
+        </span>
+    </label>
+
     <div class="campo">
         <span class="campo-titulo">Foto <span class="campo-opcional">opcional</span></span>
 

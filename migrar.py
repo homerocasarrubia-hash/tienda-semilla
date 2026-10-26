@@ -61,6 +61,7 @@ def importar(reiniciar=False):
 
     tabla = db.crear_tabla()
     db.crear_tabla_descuentos()
+    db.crear_tablas_fotos()
     print('tablas listas (se crearon si no existían)')
 
     if reiniciar:

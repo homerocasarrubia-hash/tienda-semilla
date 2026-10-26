@@ -1,0 +1,78 @@
+{% extends 'admin/_base.html' %}
+{% block titulo %}Códigos de barras{% endblock %}
+
+{% block contenido %}
+<div class="admin-encabezado">
+    <div>
+        <h1>Códigos de barras</h1>
+        <p class="admin-resumen">
+            Escribí el código de los productos envasados (los números debajo
+            de las rayitas). Los sueltos se dejan vacíos. Guardá todo junto al final.
+        </p>
+    </div>
+    <a href="{{ url_for('admin.fotos') }}" class="btn-texto">Volver a Fotos</a>
+</div>
+
+<form class="admin-filtros" method="get" action="{{ url_for('admin.fotos_codigos') }}">
+    <select name="cat">
+        <option value="">Todas las categorías</option>
+        {% for c in todas_las_categorias %}
+        <option value="{{ c }}" {% if c == cat %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+    </select>
+
+    <label class="opcion">
+        <input type="checkbox" name="todos" value="1" {% if todos %}checked{% endif %}>
+        <span>Mostrar también los que ya tienen foto</span>
+    </label>
+
+    <button type="submit" class="btn-primario">Mostrar</button>
+</form>
+
+{% if productos %}
+<form method="post" action="{{ url_for('admin.fotos_codigos') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <input type="hidden" name="cat" value="{{ cat }}">
+    <input type="hidden" name="todos" value="{{ todos }}">
+
+    <p class="admin-resultado">{{ productos|length }} producto{{ '' if productos|length == 1 else 's' }}.</p>
+
+    <div class="tabla-scroll">
+    <table class="tabla tabla-precios">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Código de barras</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in productos %}
+            <tr>
+                <td>
+                    <span class="tabla-nombre">{{ p.nombre }}</span>
+                    <span class="tabla-sub">{{ p.categoria }}</span>
+                </td>
+                <td data-titulo="Código de barras">
+                    <input type="text" inputmode="numeric" autocomplete="off" class="input-precio input-codigo"
+                           name="codigo-{{ p.id }}"
+                           value="{{ escritos[p.id] if p.id in escritos else codigos.get(p.id, '') }}"
+                           aria-label="Código de barras de {{ p.nombre }}">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="barra-guardar">
+        <button type="submit" class="btn-primario">Guardar códigos</button>
+    </div>
+</form>
+{% else %}
+<div class="admin-vacio">
+    <svg class="ico ico-grande" aria-hidden="true"><use href="#ico-sin-resultados"></use></svg>
+    <p>No hay productos sin foto en esa categoría.</p>
+    <a href="{{ url_for('admin.fotos_codigos', todos=1) }}" class="btn-primario">Mostrar todos</a>
+</div>
+{% endif %}
+{% endblock %}

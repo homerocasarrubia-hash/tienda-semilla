@@ -141,6 +141,81 @@ def crear_tabla_descuentos(nombre=TABLA_DESCUENTOS):
     return t
 
 
+# --- buscador de fotos por código de barras ------------------------------
+# Tablas aparte (solo aditivo): no se toca la de productos, así el sitio
+# publicado sigue funcionando igual aunque estas todavía no existan.
+
+TABLA_CODIGOS = 'codigos_barras'
+TABLA_SUGERENCIAS = 'fotos_sugeridas'
+TABLA_BUSQUEDAS = 'busqueda_fotos'
+
+
+def tabla_codigos(nombre=TABLA_CODIGOS):
+    """Código de barras de cada producto (los sueltos no tienen)."""
+    if nombre not in _tablas:
+        _tablas[nombre] = Table(
+            nombre, _metadata,
+            Column('producto_id', Integer, primary_key=True, autoincrement=False),
+            Column('codigo', Text, nullable=False),
+            extend_existing=True,
+        )
+    return _tablas[nombre]
+
+
+def tabla_sugerencias(nombre=TABLA_SUGERENCIAS):
+    """Fotos encontradas, a la espera de que alguien las revise."""
+    if nombre not in _tablas:
+        _tablas[nombre] = Table(
+            nombre, _metadata,
+            Column('id', Integer, primary_key=True),
+            Column('producto_id', Integer, nullable=False),
+            Column('url', Text, nullable=False),
+            Column('etiqueta', Text, nullable=False),
+            Column('fuente', Text, nullable=False, server_default=''),
+            Column('orden', Integer, nullable=False, server_default='0'),
+            # pendiente | usada | descartada
+            Column('estado', String(12), nullable=False, server_default='pendiente'),
+            Column('creado_en', DateTime(timezone=True),
+                   server_default=func.now(), nullable=False),
+            extend_existing=True,
+        )
+    return _tablas[nombre]
+
+
+def tabla_busquedas(nombre=TABLA_BUSQUEDAS):
+    """Qué productos ya se buscaron: es lo que permite retomar si se corta."""
+    if nombre not in _tablas:
+        _tablas[nombre] = Table(
+            nombre, _metadata,
+            Column('producto_id', Integer, primary_key=True, autoincrement=False),
+            Column('codigo', Text, nullable=False),
+            # con_fotos | sin_resultados | error
+            Column('estado', String(16), nullable=False),
+            Column('buscado_en', DateTime(timezone=True),
+                   server_default=func.now(), nullable=False),
+            extend_existing=True,
+        )
+    return _tablas[nombre]
+
+
+def crear_tablas_fotos(codigos=TABLA_CODIGOS, sugerencias=TABLA_SUGERENCIAS,
+                       busquedas=TABLA_BUSQUEDAS):
+    """CREATE TABLE IF NOT EXISTS de las tres tablas. Idempotente."""
+    from sqlalchemy import text
+
+    tablas = (tabla_codigos(codigos), tabla_sugerencias(sugerencias),
+              tabla_busquedas(busquedas))
+    for t in tablas:
+        t.create(motor(), checkfirst=True)
+
+    with motor().begin() as cx:
+        # Una misma foto no se sugiere dos veces para el mismo producto
+        cx.execute(text('CREATE UNIQUE INDEX IF NOT EXISTS idx_%s_unica '
+                        'ON %s (producto_id, url)' % (sugerencias, sugerencias)))
+
+    return tablas
+
+
 def crear_tabla(nombre=TABLA_POR_DEFECTO):
     """CREATE TABLE IF NOT EXISTS, las columnas nuevas y los índices."""
     from sqlalchemy import text
