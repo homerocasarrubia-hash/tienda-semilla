@@ -44,6 +44,12 @@ def url_de_conexion():
     if url.startswith('postgres://'):
         url = 'postgresql://' + url[len('postgres://'):]
 
+    # SQLAlchemy 2.1 cambió el driver por defecto de "postgresql://" a
+    # psycopg 3, que acá no está instalado. Se fija psycopg2 de forma
+    # explícita para que no dependa de qué versión instale Render.
+    if url.startswith('postgresql://'):
+        url = 'postgresql+psycopg2://' + url[len('postgresql://'):]
+
     return url
 
 
