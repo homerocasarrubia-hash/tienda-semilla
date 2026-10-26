@@ -11,7 +11,10 @@ Busca primero en supermercados online (catálogo, fondo blanco) y, si no
 aparece, en Open Food Facts. Las fotos encontradas no se publican: quedan
 en el panel, en "Fotos", para que las revises (Usar / Ninguna sirve).
 
-Los productos sin código de barras (los sueltos) se saltean.
+Con código de barras busca por código. Sin código, busca por el nombre, pero
+solo en productos por unidad (envasados) y solo si el título que devuelve el
+sitio se parece al nombre. Los que se venden por peso (sueltos) se saltean.
+Con --solo-codigos no busca por nombre.
 
 Si se corta (Ctrl+C, se cae internet), volvé a correrlo: sigue desde donde
 quedó, porque cada producto se anota apenas se termina de buscar.
@@ -38,6 +41,8 @@ def main():
                         help='buscar solo el producto con este N°')
     parser.add_argument('--rehacer', action='store_true',
                         help='incluir también los que ya se buscaron')
+    parser.add_argument('--solo-codigos', action='store_true',
+                        help='no buscar por nombre a los que no tienen código')
     parser.add_argument('--lista', action='store_true',
                         help='solo mostrar qué se buscaría')
     args = parser.parse_args()
@@ -54,31 +59,37 @@ def main():
         return 1
 
     pendientes = fotos_sugeridas.para_buscar(solo_id=args.producto,
-                                             rehacer=args.rehacer)
+                                             rehacer=args.rehacer,
+                                             por_nombre=not args.solo_codigos)
     if args.limite > 0:
         pendientes = pendientes[:args.limite]
 
     if not pendientes:
-        print('No hay nada para buscar: todos los productos con código y sin '
-              'foto ya se buscaron.\n(Los que no tienen código de barras se '
-              'saltean. Cargalos en el panel, en Fotos > Códigos.)')
+        print('No hay nada para buscar: todos los productos sin foto que se '
+              'pueden buscar ya se buscaron.\n(Los sueltos, que se venden por '
+              'peso, se saltean.)')
         return 0
 
     print('Productos para buscar: %d' % len(pendientes))
     if args.lista:
         for p in pendientes:
-            print('  %4d  %-13s  %s' % (p['id'], p['codigo'], p['nombre']))
+            print('  %4d  %-13s  %s' % (p['id'], p['codigo'] or '(nombre)', p['nombre']))
         return 0
 
     sesion = buscador_fotos.nueva_sesion()
     limitador = buscador_fotos.Limitador(buscador_fotos.INTERVALO_OFF)
+    limitador_texto = buscador_fotos.Limitador(buscador_fotos.INTERVALO_OFF_TEXTO)
     totales = {'con_fotos': 0, 'sin_resultados': 0, 'error': 0}
     fotos_nuevas = 0
 
     try:
         for numero, p in enumerate(pendientes, 1):
-            resultado = buscador_fotos.buscar(p['codigo'], sesion=sesion,
-                                              limitador_off=limitador)
+            if p['codigo']:
+                resultado = buscador_fotos.buscar(p['codigo'], sesion=sesion,
+                                                  limitador_off=limitador)
+            else:
+                resultado = buscador_fotos.buscar_por_nombre(
+                    p['nombre'], sesion=sesion, limitador_off=limitador_texto)
             nuevas = fotos_sugeridas.registrar_busqueda(
                 p['id'], p['codigo'], resultado)
 
@@ -92,7 +103,8 @@ def main():
                 'error': 'falló la conexión (se reintenta la próxima vez)',
             }[resultado.estado]
             print('[%d/%d] %s - %s: %s' % (numero, len(pendientes),
-                                            p['codigo'], p['nombre'], detalle))
+                                            p['codigo'] or 'por nombre',
+                                            p['nombre'], detalle))
             sys.stdout.flush()
     except KeyboardInterrupt:
         print('\nCortado. Lo hecho hasta acá quedó guardado: volvé a correrlo '

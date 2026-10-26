@@ -478,6 +478,88 @@ sys.stdout = real
 comprobar('No hay nada para buscar' in salida.getvalue(), 'sin pendientes lo dice')
 bf.buscar = buscar_original
 
+# =========================================================================
+print('búsqueda por nombre')
+comprobar(bf.coincide('Aceite de Oliva Zuelo 500cc', 'Zuelo Aceite de oliva extra virgen 500 cc'),
+          'se parece (tildes y orden aparte)')
+comprobar(bf.coincide('Té Verde', 'TÉ VERDE Taragüi x 20'), 'tildes y mayúsculas')
+comprobar(not bf.coincide('Aceite de Oliva Zuelo', 'Aceite de girasol Cocinero'),
+          'otro aceite no cuenta')
+comprobar(not bf.coincide('Almohadita Frutilla', 'Frutilla congelada'), 'una sola palabra no alcanza')
+comprobar(not bf.coincide('', 'algo') and not bf.coincide('de la', 'algo'), 'nombre vacío o sin palabras')
+
+
+def ficha_nombre(titulo, marca, id_imagen):
+    return [{'productName': titulo, 'brand': marca, 'items': [{'images': [
+        {'imageUrl': 'https://x.vteximg.com.br/arquivos/ids/%s/foto.jpg?v=1' % id_imagen}]}]}]
+
+
+s = Sesion({
+    'carrefour': Resp(206, ficha_nombre('Aceite de oliva extra virgen 500 cc', 'Zuelo', 31)),
+    'jumbo': Resp(200, ficha_nombre('Aceite de girasol', 'Cocinero', 32)),     # otro producto
+    'diaonline': Resp(200, ficha_nombre('Aceite oliva Zuelo', '', 33)),
+})
+fotos, errores = bf.fotos_vtex_nombre('Aceite de Oliva Zuelo', s, hosts=bf.HOSTS_VTEX[:3], dormir=SIN_PAUSA)
+comprobar(len(fotos) == 2 and errores == 0 and all('-1000-1000' in f['url'] for f in fotos),
+          'descarta el que no se parece y amplía: %r' % fotos)
+comprobar('carrefour' in fotos[0]['fuente'] and 'Aceite de oliva' in fotos[0]['fuente'],
+          'guarda de dónde y con qué título (para revisar)')
+comprobar(all('?ft=Aceite%20de%20Oliva%20Zuelo&' in u for u in s.pedidos), 'texto codificado en la dirección')
+
+OFF_TEXTO = Resp(200, {'products': [
+    {'product_name': 'Fideos', 'brands': 'Otra', 'image_front_url': 'https://off.org/mal.jpg'},
+    {'product_name': 'Aceite de oliva', 'brands': 'Zuelo', 'image_front_url': 'https://off.org/bien.jpg'}]})
+s = Sesion({'catalog_system': Resp(200, []), 'search.pl': OFF_TEXTO})
+r = bf.buscar_por_nombre('Aceite de Oliva Zuelo', sesion=s, limitador_off=bf.Limitador(0), dormir=SIN_PAUSA)
+comprobar(r.estado == 'con_fotos' and r.fotos[0]['url'] == 'https://off.org/bien.jpg'
+          and r.fotos[0]['etiqueta'] == 'Open Food Facts', 'sin catálogo cae a Open Food Facts y elige el que se parece')
+
+s = Sesion({'catalog_system': Resp(200, []), 'search.pl': Resp(200, {'products': []})})
+comprobar(bf.buscar_por_nombre('Té rojo', sesion=s, limitador_off=bf.Limitador(0), dormir=SIN_PAUSA).estado == 'sin_resultados',
+          'nada parecido = sin_resultados')
+s = Sesion({'catalog_system': Resp(500), 'search.pl': Resp(503)})
+comprobar(bf.buscar_por_nombre('Té rojo', sesion=s, limitador_off=bf.Limitador(0), dormir=SIN_PAUSA).estado == 'error',
+          'caídas = error, se reintenta')
+comprobar(bf.INTERVALO_OFF_TEXTO >= 6, 'la búsqueda por texto de OFF va despacio')
+
+print('qué se busca por nombre')
+u1 = producto('Mermelada de durazno', categoria='Dulces')                 # unidad, sin código
+g1 = producto('Mix suelto', categoria='Frutos', precio=None, precio_100g=5, precio_kg=50)  # granel
+u2 = producto('Dulce de leche', categoria='Dulces', imagen='https://res.cloudinary.com/x/a.jpg')  # con foto
+ids = [p['id'] for p in fs.para_buscar()]
+comprobar(u1['id'] in ids, 'unidad sin código se busca por nombre')
+comprobar(g1['id'] not in ids and u2['id'] not in ids, 'suelto y con foto se saltean')
+comprobar(u1['id'] not in [p['id'] for p in fs.para_buscar(por_nombre=False)], '--solo-codigos lo saca')
+item = [p for p in fs.para_buscar() if p['id'] == u1['id']][0]
+comprobar(item['codigo'] == '' and item['nombre'] == 'Mermelada de durazno', 'sin código viene vacío')
+
+fs.registrar_busqueda(u1['id'], '', bf.Resultado(
+    [{'url': 'https://x/ids/77-1000-1000/m.jpg', 'etiqueta': 'Catálogo', 'fuente': 'jumbo: Mermelada Durazno'}], 0))
+comprobar(u1['id'] not in [p['id'] for p in fs.para_buscar()], 'lo buscado por nombre no se repite')
+grupo = [g for g in fs.pendientes() if g['producto']['id'] == u1['id']][0]
+comprobar(grupo['codigo'] == '' and grupo['fotos'][0]['fuente'] == 'jumbo: Mermelada Durazno',
+          'queda para revisar con su título')
+html = cliente.get('/admin/fotos').get_data(as_text=True)
+comprobar('buscada por nombre' in html and 'jumbo: Mermelada Durazno' in html, 'el panel lo muestra')
+fs.guardar_codigo(u1['id'], '7790895000782')
+comprobar(u1['id'] in [p['id'] for p in fs.para_buscar()], 'si después le ponés código, se vuelve a buscar')
+
+# El script usa el nombre cuando no hay código
+resto = [p for p in fs.para_buscar() if p['codigo'] == '' ]
+for p in fs.para_buscar():
+    fs.registrar_busqueda(p['id'], p['codigo'], bf.Resultado([], 0))
+fs.guardar_codigo(u1['id'], '')
+usados = []
+bf.buscar_por_nombre = lambda nombre, **kw: (usados.append(nombre), bf.Resultado([], 0))[1]
+bf.buscar = lambda codigo, **kw: (usados.append('codigo ' + codigo), bf.Resultado([], 0))[1]
+sys.argv = ['buscar_fotos.py']
+sys.stdout = io.StringIO()
+cli.main()
+sys.stdout = real
+comprobar(usados == ['Mermelada de durazno'], 'el script busca por nombre al que no tiene código: %r' % usados)
+bf.buscar = buscar_original
+
+
 imagenes.borrar = imagenes_borrar
 print()
 if fallas:

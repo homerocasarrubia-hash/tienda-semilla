@@ -12,7 +12,7 @@
             {{ resumen.sin_buscar }} todavía sin buscar
         </p>
     </div>
-    <a href="{{ url_for('admin.fotos_codigos') }}" class="btn-secundario">Cargar códigos de barras</a>
+    <a href="{{ url_for('admin.fotos_codigos') }}" class="btn-primario">Cargar códigos de barras</a>
 </div>
 
 {% if grupos %}
@@ -22,7 +22,7 @@
         <header class="sugerencia-cabecera">
             <div>
                 <span class="tabla-nombre">{{ g.producto.nombre }}</span>
-                <span class="tabla-sub">{{ g.producto.categoria }} · código {{ g.codigo }}</span>
+                <span class="tabla-sub">{{ g.producto.categoria }} · {{ 'código ' ~ g.codigo if g.codigo else 'buscada por nombre' }}</span>
                 {% if g.tiene_foto %}
                 <span class="tabla-sub">Ya tiene foto: si elegís una, la reemplaza.</span>
                 {% endif %}
@@ -41,6 +41,7 @@
                 <span class="sugerencia-etiqueta {{ 'es-catalogo' if f.es_catalogo }}">{{ f.etiqueta }}</span>
                 <img src="{{ f.url }}" alt="Foto sugerida de {{ g.producto.nombre }}"
                      loading="lazy" referrerpolicy="no-referrer">
+                {% if f.fuente %}<span class="tabla-sub">{{ f.fuente }}</span>{% endif %}
                 <form method="post" class="form-usar"
                       action="{{ url_for('admin.fotos_usar', id_sugerencia=f.id) }}">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token }}">

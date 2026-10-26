@@ -104,10 +104,12 @@ def estados_de_busqueda():
             select(_t['busquedas'].c.producto_id, _t['busquedas'].c.estado))}
 
 
-def para_buscar(solo_id=None, rehacer=False):
+def para_buscar(solo_id=None, rehacer=False, por_nombre=True):
     """Productos con código y sin foto que todavía no se buscaron.
 
-    Los que no tienen código (los sueltos) no aparecen: se saltean.
+    Sin código, se busca por el nombre solo si es un producto por unidad
+    (envasado); los que se venden por peso son sueltos y se saltean.
+    `por_nombre=False` limita todo a los que tienen código.
     Retomar es simplemente volver a llamar: lo ya buscado no se repite.
     `rehacer=True` incluye también lo ya buscado.
     """
@@ -119,8 +121,10 @@ def para_buscar(solo_id=None, rehacer=False):
         id_producto = p['id']
         if solo_id is not None and id_producto != solo_id:
             continue
-        codigo = por_producto.get(id_producto)
-        if not codigo or datos.tiene_foto(p):
+        codigo = por_producto.get(id_producto) or ''
+        if datos.tiene_foto(p):
+            continue
+        if not codigo and not (por_nombre and 'precio_100g' not in p):
             continue
         if not rehacer and hechos.get(id_producto) in _TERMINADOS:
             continue
@@ -174,7 +178,7 @@ def pendientes():
     por_producto = {}
     for f in filas:
         por_producto.setdefault(f.producto_id, []).append({
-            'id': f.id, 'url': f.url, 'etiqueta': f.etiqueta,
+            'id': f.id, 'url': f.url, 'etiqueta': f.etiqueta, 'fuente': f.fuente,
             'es_catalogo': f.etiqueta == buscador_fotos.ETIQUETA_CATALOGO})
 
     if not por_producto:

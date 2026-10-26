@@ -6,6 +6,8 @@ Open Food Facts. Este módulo solo habla con internet: no toca la base.
 """
 import re
 import time
+import unicodedata
+from urllib.parse import quote
 
 import requests
 
@@ -33,6 +35,11 @@ URL_OFF = 'https://world.openfoodfacts.org/api/v2/product/{codigo}.json'
 MAXIMO_CATALOGO = 4
 PAUSA_ENTRE_HOSTS = 0.3
 INTERVALO_OFF = 1.0
+# La búsqueda por texto de Open Food Facts tiene un límite más estricto
+# (unas 10 por minuto): se la trata con mucha más calma.
+INTERVALO_OFF_TEXTO = 7.0
+URL_OFF_TEXTO = 'https://world.openfoodfacts.org/cgi/search.pl'
+PARECIDO_MINIMO = 0.6
 TIEMPO_ESPERA = (6, 20)
 
 _ID_VTEX = re.compile(r'/arquivos/ids/(\d+)(?:-\d+-\d+)?/')
@@ -197,6 +204,139 @@ def fotos_off(codigo, sesion, limitador):
                           'fuente': 'openfoodfacts'})
 
     return fotos[:1], 0
+
+
+# --- búsqueda por nombre -------------------------------------------------
+
+_SOBRAN = {'con', 'sin', 'del', 'las', 'los', 'una', 'uno', 'por', 'para',
+           'las', 'que', 'mas'}
+
+
+def _palabras(texto):
+    sin_tildes = unicodedata.normalize('NFKD', str(texto or ''))
+    sin_tildes = ''.join(c for c in sin_tildes if not unicodedata.combining(c))
+    return {w for w in re.findall(r'[a-z0-9]+', sin_tildes.lower())
+            if len(w) >= 3 and w not in _SOBRAN}
+
+
+def coincide(nombre, titulo, minimo=PARECIDO_MINIMO):
+    """¿El título que devolvió el sitio se parece al nombre del producto?
+
+    Se pide que aparezca al menos el 60% de las palabras del nombre (y al
+    menos dos si el nombre tiene dos o más): mejor una foto de menos que la
+    de otro producto.
+    """
+    buscadas = _palabras(nombre)
+    if not buscadas:
+        return False
+    encontradas = buscadas & _palabras(titulo)
+    if len(buscadas) >= 2 and len(encontradas) < 2:
+        return False
+    return len(encontradas) / len(buscadas) >= minimo
+
+
+def fotos_vtex_nombre(nombre, sesion, hosts=HOSTS_VTEX, maximo=MAXIMO_CATALOGO,
+                      pausa=PAUSA_ENTRE_HOSTS, dormir=time.sleep):
+    """Texto libre en cada supermercado. Devuelve (fotos, errores)."""
+    fotos = []
+    vistas = set()
+    errores = 0
+
+    for numero, host in enumerate(hosts):
+        if len(fotos) >= maximo:
+            break
+        if numero:
+            dormir(pausa)
+
+        try:
+            r = sesion.get(URL_VTEX.format(host=host) + '?ft=' + quote(nombre.strip())
+                           + '&_from=0&_to=5', timeout=TIEMPO_ESPERA)
+        except requests.RequestException:
+            errores += 1
+            continue
+
+        if r.status_code == 404:
+            continue
+        if r.status_code not in (200, 206):
+            errores += 1
+            continue
+
+        try:
+            productos = r.json()
+        except ValueError:
+            errores += 1
+            continue
+
+        if not isinstance(productos, list):
+            continue
+
+        # De cada supermercado, el primer resultado que de verdad se parezca
+        for producto in productos:
+            producto = producto or {}
+            titulo = '%s %s' % (producto.get('brand') or '', producto.get('productName') or '')
+            if not coincide(nombre, titulo):
+                continue
+
+            url = None
+            for item in producto.get('items') or []:
+                imagenes_item = [i for i in (item.get('images') or []) if i.get('imageUrl')]
+                if imagenes_item:
+                    url = ampliar_vtex(imagenes_item[0]['imageUrl'])
+                    break
+            if not url or _id_de_imagen(url) in vistas:
+                continue
+
+            vistas.add(_id_de_imagen(url))
+            fotos.append({'url': url, 'etiqueta': ETIQUETA_CATALOGO,
+                          'fuente': '%s: %s' % (host, (producto.get('productName') or '').strip())})
+            break
+
+    return fotos[:maximo], errores
+
+
+def fotos_off_nombre(nombre, sesion, limitador):
+    """Búsqueda por texto en Open Food Facts. Devuelve (fotos, errores)."""
+    limitador.esperar()
+
+    try:
+        r = sesion.get(URL_OFF_TEXTO + '?search_simple=1&action=process&json=1&page_size=8'
+                       '&fields=product_name,brands,image_front_url&search_terms='
+                       + quote(nombre.strip()), timeout=TIEMPO_ESPERA)
+    except requests.RequestException:
+        return [], 1
+
+    if r.status_code != 200:
+        return [], 1
+
+    try:
+        productos = r.json().get('products') or []
+    except (ValueError, AttributeError):
+        return [], 1
+
+    for producto in productos:
+        titulo = '%s %s' % (producto.get('brands') or '', producto.get('product_name') or '')
+        url = producto.get('image_front_url')
+        if url and imagenes.es_url(url) and coincide(nombre, titulo):
+            return [{'url': url, 'etiqueta': ETIQUETA_OFF,
+                     'fuente': (producto.get('product_name') or '').strip()}], 0
+
+    return [], 0
+
+
+def buscar_por_nombre(nombre, sesion=None, limitador_off=None, hosts=HOSTS_VTEX,
+                      dormir=time.sleep):
+    """Igual que buscar(), pero con el nombre del producto en vez del código."""
+    sesion = sesion or nueva_sesion()
+    limitador_off = limitador_off or Limitador(INTERVALO_OFF_TEXTO)
+
+    fotos, errores = fotos_vtex_nombre(nombre, sesion, hosts=hosts, dormir=dormir)
+
+    if not fotos:
+        extra, errores_off = fotos_off_nombre(nombre, sesion, limitador_off)
+        fotos = extra
+        errores += errores_off
+
+    return Resultado(fotos, errores)
 
 
 # --- todo junto ----------------------------------------------------------
