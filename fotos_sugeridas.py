@@ -104,11 +104,12 @@ def estados_de_busqueda():
             select(_t['busquedas'].c.producto_id, _t['busquedas'].c.estado))}
 
 
-def para_buscar(solo_id=None, rehacer=False, por_nombre=True):
+def para_buscar(solo_id=None, rehacer=False, por_nombre=True, incluir_sueltos=False):
     """Productos con código y sin foto que todavía no se buscaron.
 
     Sin código, se busca por el nombre solo si es un producto por unidad
     (envasado); los que se venden por peso son sueltos y se saltean.
+    `incluir_sueltos=True` busca por nombre también a los que se venden por peso.
     `por_nombre=False` limita todo a los que tienen código.
     Retomar es simplemente volver a llamar: lo ya buscado no se repite.
     `rehacer=True` incluye también lo ya buscado.
@@ -124,7 +125,7 @@ def para_buscar(solo_id=None, rehacer=False, por_nombre=True):
         codigo = por_producto.get(id_producto) or ''
         if datos.tiene_foto(p):
             continue
-        if not codigo and not (por_nombre and 'precio_100g' not in p):
+        if not codigo and not (por_nombre and (incluir_sueltos or 'precio_100g' not in p)):
             continue
         if not rehacer and hechos.get(id_producto) in _TERMINADOS:
             continue

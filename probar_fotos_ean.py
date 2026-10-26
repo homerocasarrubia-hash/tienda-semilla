@@ -567,6 +567,9 @@ ids = [p['id'] for p in fs.para_buscar()]
 comprobar(u1['id'] in ids, 'unidad sin código se busca por nombre')
 comprobar(g1['id'] not in ids and u2['id'] not in ids, 'suelto y con foto se saltean')
 comprobar(u1['id'] not in [p['id'] for p in fs.para_buscar(por_nombre=False)], '--solo-codigos lo saca')
+comprobar(g1['id'] in [p['id'] for p in fs.para_buscar(incluir_sueltos=True)]
+          and u2['id'] not in [p['id'] for p in fs.para_buscar(incluir_sueltos=True)],
+          '--incluir-sueltos suma los de peso, pero no los que ya tienen foto')
 item = [p for p in fs.para_buscar() if p['id'] == u1['id']][0]
 comprobar(item['codigo'] == '' and item['nombre'] == 'Mermelada de durazno', 'sin código viene vacío')
 
@@ -595,6 +598,56 @@ cli.main()
 sys.stdout = real
 comprobar(usados == ['Mermelada de durazno'], 'el script busca por nombre al que no tiene código: %r' % usados)
 bf.buscar = buscar_original
+
+
+print('fotos cuadradas y centradas')
+from PIL import Image as _I  # noqa: E402
+
+
+def _bytes(imagen, formato='PNG'):
+    buf = io.BytesIO()
+    imagen.save(buf, formato)
+    return imagenes.procesar(buf.getvalue())
+
+
+# Producto rojo de 200x400 con mucho borde blanco, en una foto de 1000x700
+foto = _I.new('RGB', (1000, 700), 'white')
+foto.paste(_I.new('RGB', (200, 400), (200, 20, 20)), (700, 100))   # corrido a la derecha
+sal = _I.open(io.BytesIO(_bytes(foto)))
+comprobar(sal.size == (800, 800), 'sale cuadrada 800x800: %r' % (sal.size,))
+caja = _I.eval(sal.convert('L'), lambda v: 255 if v < 200 else 0).getbbox()
+cx, cy = (caja[0] + caja[2]) / 2, (caja[1] + caja[3]) / 2
+comprobar(abs(cx - 400) <= 2 and abs(cy - 400) <= 2, 'el producto queda centrado: %r' % (caja,))
+comprobar(caja[1] >= 40 and caja[3] <= 760, 'deja margen blanco arriba y abajo: %r' % (caja,))
+comprobar(sal.getpixel((5, 5)) == (255, 255, 255) and sal.getpixel((795, 795)) == (255, 255, 255),
+          'fondo blanco')
+
+# Dos fotos de producto de distinto tamaño de lienzo quedan del mismo tamaño
+grande = _I.new('RGB', (1600, 1600), 'white'); grande.paste(_I.new('RGB', (300, 600), (10, 90, 10)), (100, 100))
+chica = _I.new('RGB', (700, 900), 'white'); chica.paste(_I.new('RGB', (200, 400), (10, 90, 10)), (20, 40))
+cajas = []
+for f in (grande, chica):
+    s_ = _I.open(io.BytesIO(_bytes(f)))
+    cajas.append(_I.eval(s_.convert('L'), lambda v: 255 if v < 200 else 0).getbbox())
+comprobar(abs((cajas[0][3] - cajas[0][1]) - (cajas[1][3] - cajas[1][1])) <= 2, 'mismo tamaño de producto en el cuadro: %r' % (cajas,))
+
+# Foto sin borde blanco (todo color): no se recorta, se centra entera
+plana = _I.new('RGB', (600, 300), (30, 60, 120))
+sal = _I.open(io.BytesIO(_bytes(plana)))
+comprobar(sal.size == (800, 800) and sal.getpixel((400, 400)) == (30, 60, 120)
+          and sal.getpixel((400, 20)) == (255, 255, 255), 'foto sin borde blanco: entera y centrada')
+
+# Totalmente blanca o transparente: no rompe
+comprobar(_I.open(io.BytesIO(_bytes(_I.new('RGB', (50, 50), 'white')))).size == (800, 800), 'foto en blanco')
+transp = _I.new('RGBA', (300, 300), (0, 0, 0, 0)); transp.paste(_I.new('RGBA', (100, 100), (0, 0, 255, 255)), (50, 50))
+sal = _I.open(io.BytesIO(_bytes(transp)))
+comprobar(sal.size == (800, 800) and sal.getpixel((5, 5)) == (255, 255, 255), 'PNG con transparencia sobre blanco')
+
+# Foto chica: no se estira más de 2x
+mini = _I.new('RGB', (40, 40), 'white'); mini.paste(_I.new('RGB', (20, 20), (0, 0, 0)), (10, 10))
+sal = _I.open(io.BytesIO(_bytes(mini)))
+caja = _I.eval(sal.convert('L'), lambda v: 255 if v < 128 else 0).getbbox()
+comprobar(caja[2] - caja[0] <= 20 * 2 + 4, 'no estira de más una foto diminuta: %r' % (caja,))
 
 
 imagenes.borrar = imagenes_borrar

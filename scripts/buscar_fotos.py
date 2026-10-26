@@ -14,6 +14,7 @@ en el panel, en "Fotos", para que las revises (Usar / Ninguna sirve).
 Con código de barras busca por código. Sin código, busca por el nombre, pero
 solo en productos por unidad (envasados) y solo si el título que devuelve el
 sitio se parece al nombre. Los que se venden por peso (sueltos) se saltean.
+Con --incluir-sueltos busca también a los que se venden por peso.
 Con --solo-codigos no busca por nombre.
 
 Si se corta (Ctrl+C, se cae internet), volvé a correrlo: sigue desde donde
@@ -41,6 +42,8 @@ def main():
                         help='buscar solo el producto con este N°')
     parser.add_argument('--rehacer', action='store_true',
                         help='incluir también los que ya se buscaron')
+    parser.add_argument('--incluir-sueltos', action='store_true',
+                        help='buscar por nombre también los que se venden por peso')
     parser.add_argument('--solo-codigos', action='store_true',
                         help='no buscar por nombre a los que no tienen código')
     parser.add_argument('--lista', action='store_true',
@@ -60,7 +63,8 @@ def main():
 
     pendientes = fotos_sugeridas.para_buscar(solo_id=args.producto,
                                              rehacer=args.rehacer,
-                                             por_nombre=not args.solo_codigos)
+                                             por_nombre=not args.solo_codigos,
+                                             incluir_sueltos=args.incluir_sueltos)
     if args.limite > 0:
         pendientes = pendientes[:args.limite]
 

@@ -14,6 +14,11 @@ import re
 import uuid
 
 LADO_MAXIMO = 800
+# Todas las fotos quedan cuadradas, sobre fondo blanco y con el producto
+# centrado: así la tienda se ve pareja aunque vengan de distintas fuentes.
+MARGEN = 0.06              # espacio blanco alrededor, como fracción del lado
+AMPLIAR_MAXIMO = 2.0       # no se estira una foto chica más que esto
+UMBRAL_BLANCO = 24         # cuánto se tiene que apartar del blanco para ser "producto"
 CALIDAD = 82
 MAXIMO_BYTES = 12 * 1024 * 1024
 CARPETA_REMOTA = 'semilla/productos'
@@ -91,11 +96,38 @@ def procesar(crudo):
     else:
         imagen = imagen.convert('RGB')
 
-    imagen.thumbnail((LADO_MAXIMO, LADO_MAXIMO), Image.LANCZOS)
+    imagen = _centrar_en_cuadrado(imagen)
 
     salida = io.BytesIO()
     imagen.save(salida, 'JPEG', quality=CALIDAD, optimize=True)
     return salida.getvalue()
+
+
+def _centrar_en_cuadrado(imagen):
+    """Recorta el borde blanco sobrante y centra el producto en un cuadrado blanco."""
+    from PIL import Image, ImageChops
+
+    blanco = Image.new('RGB', imagen.size, (255, 255, 255))
+    diferencia = ImageChops.difference(imagen, blanco).convert('L')
+    mascara = diferencia.point(lambda v: 255 if v > UMBRAL_BLANCO else 0)
+    caja = mascara.getbbox()
+
+    ancho, alto = imagen.size
+    # Si no hay nada que se distinga del blanco, o el "producto" es una
+    # mancha mínima, no se recorta: mejor dejar la foto entera.
+    if caja and (caja[2] - caja[0]) * (caja[3] - caja[1]) >= 0.02 * ancho * alto:
+        imagen = imagen.crop(caja)
+
+    util = int(LADO_MAXIMO * (1 - 2 * MARGEN))
+    ancho, alto = imagen.size
+    escala = min(util / ancho, util / alto, AMPLIAR_MAXIMO)
+    nuevo = (max(1, round(ancho * escala)), max(1, round(alto * escala)))
+    if nuevo != imagen.size:
+        imagen = imagen.resize(nuevo, Image.LANCZOS)
+
+    lienzo = Image.new('RGB', (LADO_MAXIMO, LADO_MAXIMO), (255, 255, 255))
+    lienzo.paste(imagen, ((LADO_MAXIMO - nuevo[0]) // 2, (LADO_MAXIMO - nuevo[1]) // 2))
+    return lienzo
 
 
 def guardar_en_disco(crudo, destino):
