@@ -514,6 +514,43 @@ r = bf.buscar_por_nombre('Aceite de Oliva Zuelo', sesion=s, limitador_off=bf.Lim
 comprobar(r.estado == 'con_fotos' and r.fotos[0]['url'] == 'https://off.org/bien.jpg'
           and r.fotos[0]['etiqueta'] == 'Open Food Facts', 'sin catálogo cae a Open Food Facts y elige el que se parece')
 
+SITEMAP = b'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url><loc>https://bio-salud.com.ar/fideos-de-arroz-espinaca-x-300g-soyarroz-106003.html</loc>
+<image:image><image:loc>https://bio-salud.com.ar/media/catalog/product/s/o/soyarroz_espinaca.png</image:loc>
+<image:title>FIDEOS DE ARROZ ESPINACA x 300G SOYARROZ</image:title></image:image></url>
+<url><loc>https://bio-salud.com.ar/fideos-de-arroz-morron-x-300g-soyarroz-106004.html</loc>
+<image:image><image:loc>https://bio-salud.com.ar/media/catalog/product/s/o/soyarroz_morron.png</image:loc>
+<image:title>FIDEOS DE ARROZ MORRON x 300G SOYARROZ</image:title></image:image></url>
+<url><loc>https://bio-salud.com.ar/vinagre-625019.html</loc>
+<image:image><image:loc>https://bio-salud.com.ar/media/catalog/product/v/i/vinagre.png</image:loc>
+<image:title>VINAGRE DE VINO ORGANICO 250cc PAMPAGOUR</image:title></image:image></url>
+<url><loc>https://bio-salud.com.ar/categoria.html</loc></url>
+</urlset>'''
+bf._indice_biosalud = None
+s = Sesion({'sitemap.xml': Resp(200)})
+s.respuestas['sitemap.xml'].content = SITEMAP
+indice, err = bf.cargar_indice_biosalud(s)
+comprobar(len(indice) == 3 and err == 0 and indice[0]['imagen'].endswith('soyarroz_espinaca.png')
+          and indice[0]['pagina'].endswith('106003.html'), 'lee el sitemap de Biosalud: %r' % indice)
+n = len(s.pedidos)
+bf.cargar_indice_biosalud(s)
+comprobar(len(s.pedidos) == n, 'el sitemap se descarga una sola vez')
+fotos, err = bf.fotos_biosalud('Fideos de arroz espinaca Soyarroz', s)
+comprobar(len(fotos) == 1 and fotos[0]['etiqueta'] == 'Biosalud' and fotos[0]['url'].endswith('espinaca.png')
+          and fotos[0]['fuente'].startswith('FIDEOS'), 'encuentra por nombre y elige el que más se parece: %r' % fotos)
+comprobar(bf.fotos_biosalud('Aceite de coco', s)[0] == [], 'si no está, no inventa')
+s2 = Sesion({'sitemap.xml': Resp(200)}); s2.respuestas['sitemap.xml'].content = SITEMAP
+s2.respuestas['catalog_system'] = Resp(500)
+r = bf.buscar_por_nombre('Vinagre de vino orgánico Pampagour', sesion=s2, limitador_off=bf.Limitador(0), dormir=SIN_PAUSA)
+comprobar(r.estado == 'con_fotos' and r.fotos[0]['etiqueta'] == 'Biosalud'
+          and not any('catalog_system' in u for u in s2.pedidos),
+          'Biosalud va primero; si encuentra no consulta los supermercados')
+bf._indice_biosalud = None
+s3 = Sesion({'sitemap.xml': Resp(500)})
+comprobar(bf.cargar_indice_biosalud(s3) == ([], 1), 'sitemap caído = error, no rompe')
+bf._indice_biosalud = []   # sitemap ya leído, sin coincidencias
+
 s = Sesion({'catalog_system': Resp(200, []), 'search.pl': Resp(200, {'products': []})})
 comprobar(bf.buscar_por_nombre('Té rojo', sesion=s, limitador_off=bf.Limitador(0), dormir=SIN_PAUSA).estado == 'sin_resultados',
           'nada parecido = sin_resultados')

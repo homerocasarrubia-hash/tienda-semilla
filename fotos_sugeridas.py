@@ -150,7 +150,7 @@ def registrar_busqueda(id_producto, codigo, resultado):
         for posicion, foto in enumerate(resultado.fotos):
             if foto['url'] in conocidas:
                 continue
-            base = 0 if foto['etiqueta'] == buscador_fotos.ETIQUETA_CATALOGO else 100
+            base = 0 if foto['etiqueta'] in buscador_fotos.ETIQUETAS_PRIORITARIAS else 100
             cx.execute(insert(s).values(
                 producto_id=id_producto, url=foto['url'],
                 etiqueta=foto['etiqueta'], fuente=foto.get('fuente', ''),
@@ -179,7 +179,7 @@ def pendientes():
     for f in filas:
         por_producto.setdefault(f.producto_id, []).append({
             'id': f.id, 'url': f.url, 'etiqueta': f.etiqueta, 'fuente': f.fuente,
-            'es_catalogo': f.etiqueta == buscador_fotos.ETIQUETA_CATALOGO})
+            'es_catalogo': f.etiqueta in buscador_fotos.ETIQUETAS_PRIORITARIAS})
 
     if not por_producto:
         return []

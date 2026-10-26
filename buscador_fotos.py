@@ -7,6 +7,7 @@ Open Food Facts. Este módulo solo habla con internet: no toca la base.
 import re
 import time
 import unicodedata
+import xml.etree.ElementTree as ET
 from urllib.parse import quote
 
 import requests
@@ -27,6 +28,14 @@ USER_AGENT = 'SemillaTiendaNatural/1.0 (semilla.tiendanatural@gmail.com)'
 
 ETIQUETA_CATALOGO = 'Catálogo'
 ETIQUETA_OFF = 'Open Food Facts'
+ETIQUETA_BIOSALUD = 'Biosalud'
+# Las que van primero en el panel (fotos de catálogo / del proveedor)
+ETIQUETAS_PRIORITARIAS = (ETIQUETA_CATALOGO, ETIQUETA_BIOSALUD)
+
+# Biosalud (distribuidora mayorista, proveedor de la tienda) no deja usar su
+# buscador interno (su robots.txt lo bloquea), pero sí publica un sitemap con
+# el título y la foto de cada producto: se lee una vez y se busca ahí.
+URL_SITEMAP_BIOSALUD = 'https://bio-salud.com.ar/sitemap.xml'
 
 URL_VTEX = 'https://{host}/api/catalog_system/pub/products/search'
 URL_OFF = 'https://world.openfoodfacts.org/api/v2/product/{codigo}.json'
@@ -219,6 +228,18 @@ def _palabras(texto):
             if len(w) >= 3 and w not in _SOBRAN}
 
 
+def _parecido(nombre, titulo):
+    """De 0 a 1: qué parte de las palabras del nombre aparece en el título.
+    Devuelve 0 si no alcanza lo mínimo para considerarlo el mismo producto."""
+    buscadas = _palabras(nombre)
+    if not buscadas:
+        return 0.0
+    encontradas = buscadas & _palabras(titulo)
+    if len(buscadas) >= 2 and len(encontradas) < 2:
+        return 0.0
+    return len(encontradas) / len(buscadas)
+
+
 def coincide(nombre, titulo, minimo=PARECIDO_MINIMO):
     """¿El título que devolvió el sitio se parece al nombre del producto?
 
@@ -226,13 +247,7 @@ def coincide(nombre, titulo, minimo=PARECIDO_MINIMO):
     menos dos si el nombre tiene dos o más): mejor una foto de menos que la
     de otro producto.
     """
-    buscadas = _palabras(nombre)
-    if not buscadas:
-        return False
-    encontradas = buscadas & _palabras(titulo)
-    if len(buscadas) >= 2 and len(encontradas) < 2:
-        return False
-    return len(encontradas) / len(buscadas) >= minimo
+    return _parecido(nombre, titulo) >= minimo
 
 
 def fotos_vtex_nombre(nombre, sesion, hosts=HOSTS_VTEX, maximo=MAXIMO_CATALOGO,
@@ -323,13 +338,80 @@ def fotos_off_nombre(nombre, sesion, limitador):
     return [], 0
 
 
+_indice_biosalud = None
+
+
+def cargar_indice_biosalud(sesion, forzar=False):
+    """Lee el sitemap de Biosalud (una sola vez por corrida).
+
+    Devuelve (lista de {'titulo', 'imagen', 'pagina'}, errores).
+    """
+    global _indice_biosalud
+    if _indice_biosalud is not None and not forzar:
+        return _indice_biosalud, 0
+
+    try:
+        r = sesion.get(URL_SITEMAP_BIOSALUD, timeout=TIEMPO_ESPERA)
+        if r.status_code != 200:
+            return [], 1
+        raiz = ET.fromstring(r.content)
+    except (requests.RequestException, ET.ParseError, AttributeError, TypeError):
+        return [], 1
+
+    indice = []
+    for entrada in raiz.iter():
+        if not entrada.tag.endswith('}url') and entrada.tag != 'url':
+            continue
+        pagina = imagen = titulo = None
+        for hijo in entrada.iter():
+            etiqueta = hijo.tag.split('}')[-1]
+            texto = (hijo.text or '').strip()
+            if etiqueta == 'loc' and hijo is not entrada and pagina is None:
+                pagina = texto            # la primera <loc> es la de la página
+            elif etiqueta == 'loc' and pagina is not None and not imagen:
+                imagen = texto            # la siguiente, dentro de image:image
+            elif etiqueta == 'title':
+                titulo = texto
+        if imagen and imagenes.es_url(imagen) and titulo:
+            indice.append({'titulo': titulo, 'imagen': imagen, 'pagina': pagina})
+
+    _indice_biosalud = indice
+    return indice, 0
+
+
+def fotos_biosalud(nombre, sesion, maximo=2):
+    """Productos de Biosalud que se parecen al nombre. Devuelve (fotos, errores)."""
+    indice, errores = cargar_indice_biosalud(sesion)
+
+    candidatos = []
+    for producto in indice:
+        puntaje = _parecido(nombre, producto['titulo'])
+        if puntaje >= PARECIDO_MINIMO:
+            candidatos.append((puntaje, producto))
+    candidatos.sort(key=lambda c: -c[0])
+
+    # Solo los que empatan con el mejor: si uno encaja perfecto, no se
+    # sugiere además otro sabor o presentación de la misma marca.
+    if candidatos:
+        mejor = candidatos[0][0]
+        candidatos = [c for c in candidatos if c[0] >= mejor - 1e-9]
+
+    return [{'url': p['imagen'], 'etiqueta': ETIQUETA_BIOSALUD,
+             'fuente': p['titulo']} for _, p in candidatos[:maximo]], errores
+
+
 def buscar_por_nombre(nombre, sesion=None, limitador_off=None, hosts=HOSTS_VTEX,
                       dormir=time.sleep):
     """Igual que buscar(), pero con el nombre del producto en vez del código."""
     sesion = sesion or nueva_sesion()
     limitador_off = limitador_off or Limitador(INTERVALO_OFF_TEXTO)
 
-    fotos, errores = fotos_vtex_nombre(nombre, sesion, hosts=hosts, dormir=dormir)
+    # Primero el proveedor de la tienda, después los supermercados
+    fotos, errores = fotos_biosalud(nombre, sesion)
+
+    if not fotos:
+        fotos, errores_vtex = fotos_vtex_nombre(nombre, sesion, hosts=hosts, dormir=dormir)
+        errores += errores_vtex
 
     if not fotos:
         extra, errores_off = fotos_off_nombre(nombre, sesion, limitador_off)
